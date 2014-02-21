@@ -60,6 +60,8 @@
     
     _mainZ = -8.0f;
     
+    /*testing
+     */
     _worldTransformation = [[SSGWorldTransformation alloc] init];
     _worldTransformation.position = [[SSGPosition alloc] initWithX:0 Y:0 Z:0];
     _worldTransformation.orientation = [[SSGOrientation alloc] initWithUpVector:GLKVector3Make(0, 1, 0) upAngle:0 ForwardVector:GLKVector3Make(0, 0, 1) ForwardAngle:0 RightVector:GLKVector3Make(1, 0, 0) RightAngle:0];
