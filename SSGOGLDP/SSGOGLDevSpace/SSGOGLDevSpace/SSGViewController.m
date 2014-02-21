@@ -79,29 +79,25 @@
     self.ship.prs.pz = _mainZ;
     
     [self.ship.prs moveToVector:GLKVector3Make(-1.0f, 1.0f, 0.0f) Duration:2.0f Delay:1.0f IsAbsolute:NO];
-    [self.ship.prs moveToVector:GLKVector3Make(2.0f, -1.0f, self.mainZ) Duration:1.0f Delay:0.0f IsAbsolute:YES];
-    [self.ship.prs setRotationConstantToVector:GLKVector3Make(0.0f, 4.0f*-M_PI, 0.0f)];
+    [self.ship.prs moveToVector:GLKVector3Make(2.5f, 0.0f, self.mainZ) Duration:1.0f Delay:0.0f IsAbsolute:YES];
+    [self.ship.prs setRotationConstantToVector:GLKVector3Make(0.0f, 2.0f*-M_PI, 0.0f)];
     [self.ship.prs rotateToVector:GLKVector3Make(0.0f,0.0f, M_PI) Duration:2.0f Delay:2.0f IsAbsolute:YES];
     [self.ship.prs rotateToVector:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:2.0f Delay:4.0f IsAbsolute:YES];
-    [self.ship.prs scaleToVector:GLKVector3Make(2.0f, 2.0f, 2.0f) Duration:1.0f Delay:4.0f IsAbsolute:YES];
-    [self.ship.prs scaleToVector:GLKVector3Make(1.0f, 1.0f, 1.0f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
-
-    self.ship2 = [[SSGModel alloc] initWithModelFileName:@"torus"];
+    [self.ship.prs scaleToVector:GLKVector3Make(1.0f, 1.0f, 1.0f) Duration:1.0f Delay:4.0f IsAbsolute:YES];
+  
+    self.ship2 = [[SSGModel alloc] initWithModelFileName:@"raizlabsText"];
     [self.ship2 setProjection:_glmgr.projectionMatrix];
-    [self.ship2 setTexture0Id:[SSGAssetManager loadTexture:@"aquaTile" ofType:@"png" shouldLoadWithMipMapping:YES]];
+    [self.ship2 setTexture0Id:[SSGAssetManager loadTexture:@"raizLabsRed" ofType:@"png" shouldLoadWithMipMapping:YES]];
     [self.ship2 setDefaultShaderSettings:_glmgr.defaultShaderSettings];
     [self.ship2 setDimensions2dX:1.0f andY:1.0f];
     self.ship2.alpha = 1.0f;
-    self.ship2.diffuseColor = GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f);
+    self.ship2.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     self.ship2.shadowMax = 0.4f;
-    self.ship2.prs.px = -4.0f;
+    self.ship2.prs.px = -3.0f;
     self.ship2.prs.pz = _mainZ;
-    
-    [self.ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
-     UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
-    [self.view addGestureRecognizer:pinchRecognizer];
-    
+    [self.ship2.prs scaleToVector:GLKVector3Make(4.0f, 4.0f, 4.0f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
     float blinkDelay = 0.15f;
+    
     SSGCommand *blink = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(0.0f) Duration:0.0f IsAbsolute:NO Delay:9.0f];
     blink.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(1.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
     blink.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
@@ -113,6 +109,9 @@
     SSGCommand *fadeOutAndIn = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.0f) Duration:3.0f IsAbsolute:YES Delay:3.0f];
     fadeOutAndIn.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(1.0f) Duration:3.0f IsAbsolute:YES Delay:0.0f];
     [self.ship2 addCommand:fadeOutAndIn];
+    
+    UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
+    [self.view addGestureRecognizer:pinchRecognizer];
 }
 
 -(void)viewDidAppear:(BOOL)animated

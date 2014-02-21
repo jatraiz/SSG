@@ -11,6 +11,7 @@
 		8A2A2206185B75400074FCFC /* SSGHud.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2A2204185B75400074FCFC /* SSGHud.xib */; };
 		8A4E7AB41884620E00441DC1 /* aquaTile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4E7AB31884620E00441DC1 /* aquaTile.png */; };
 		8A4E7AB91884644400441DC1 /* torus.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A4E7AB81884644400441DC1 /* torus.model */; };
+		8AA2742C18B7FD2A009E0908 /* raizlabsText.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AA2742B18B7FD2A009E0908 /* raizlabsText.model */; };
 		8AB73C1918565B5F00EF7A49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB73C1818565B5F00EF7A49 /* Foundation.framework */; };
 		8AB73C1B18565B5F00EF7A49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB73C1A18565B5F00EF7A49 /* CoreGraphics.framework */; };
 		8AB73C1D18565B5F00EF7A49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB73C1C18565B5F00EF7A49 /* UIKit.framework */; };
@@ -53,6 +54,7 @@
 		8A2A2207185B97450074FCFC /* SSGHudDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSGHudDelegate.h; sourceTree = "<group>"; };
 		8A4E7AB31884620E00441DC1 /* aquaTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aquaTile.png; sourceTree = "<group>"; };
 		8A4E7AB81884644400441DC1 /* torus.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = torus.model; sourceTree = "<group>"; };
+		8AA2742B18B7FD2A009E0908 /* raizlabsText.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = raizlabsText.model; sourceTree = "<group>"; };
 		8AB73C1518565B5F00EF7A49 /* SSGOGLDevSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSGOGLDevSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB73C1818565B5F00EF7A49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8AB73C1A18565B5F00EF7A49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -203,6 +205,7 @@
 		8AB73C601856725000EF7A49 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8AA2742B18B7FD2A009E0908 /* raizlabsText.model */,
 				8AF711B418B79ED100A5A99C /* raizlabsLogo.model */,
 				8AF711B618B79F5E00A5A99C /* raizLabsRed.png */,
 				8AB73C2A18565B5F00EF7A49 /* Images.xcassets */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF711B518B79EDD00A5A99C /* raizlabsLogo.model in Resources */,
+				8AA2742C18B7FD2A009E0908 /* raizlabsText.model in Resources */,
 				8AB73C2318565B5F00EF7A49 /* InfoPlist.strings in Resources */,
 				8A4E7AB41884620E00441DC1 /* aquaTile.png in Resources */,
 				8ACD4E30187DCC76000DA4A7 /* test.model in Resources */,
