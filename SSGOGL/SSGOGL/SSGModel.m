@@ -142,12 +142,12 @@
                 {
                     if(command.isAbsolute)
                     {
-                        command.step = GLKVector3Make((command.target.x - self.alpha)/command.duration, 0.0f, 0.0f);
+                        command.step = command1float((command.target.x - self.alpha)/command.duration);
                     }
                     else
                     {
-                        command.step = GLKVector3Make(command.target.x/command.duration, 0.0f, 0.0f);
-                        command.target = GLKVector3Make(command.target.x+self.alpha, 0.0f, 0.0f);
+                        command.step = command1float(command.target.x/command.duration);
+                        command.target = command1float(command.target.x+self.alpha);
                     }
                     command.isStarted = YES;
                 }

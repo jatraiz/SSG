@@ -38,6 +38,7 @@
 		8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A9B03551860B60200C25978 /* SSGOrientation.h */; };
 		8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A633603185BBAD100815F6C /* SSGWorldTransformation.h */; };
 		8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2742518B7ABD6009E0908 /* SSGCommand.m */; };
+		8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AA2742418B7ABD6009E0908 /* SSGCommand.h */; };
 		8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */; };
 		8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */; };
 		8AB8834F18808AA500360546 /* SSGMathC.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8834E18808AA500360546 /* SSGMathC.c */; };
@@ -69,6 +70,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */,
 				8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */,
 				8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */,
 				8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */,

@@ -53,13 +53,16 @@
     [self.glmgr loadDefaultShaderAndSettings];
     self.mainClearColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f);
     [self.glmgr setClearColor:self.mainClearColor];
-    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(45.0f), fabsf(self.view.bounds.size.height / self.view.bounds.size.width), 0.1f, 100.0f);
+    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(5.0f), fabsf(self.view.bounds.size.height / self.view.bounds.size.width), 0.1f, 100.0f);
     self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.width ScreenWidth:self.view.bounds.size.height Fov:GLKMathDegreesToRadians(45.0f)];
     self.view.multipleTouchEnabled = YES;
-    self.preferredFramesPerSecond = 60;
-    self.view.multipleTouchEnabled = YES;
     
-    self.mainZ = -8.0f;
+    self.preferredFramesPerSecond = 60;
+    
+    GLKView *glkView = (GLKView*)self.view;
+    glkView.drawableMultisample = GLKViewDrawableMultisample4X;
+    
+    self.mainZ = -90.0f;
     
     self.worldTransformation = [[SSGWorldTransformation alloc] init];
     self.worldTransformation.position = [[SSGPosition alloc] initWithX:0 Y:0 Z:0];
@@ -77,11 +80,11 @@
     
     [self.ship.prs moveToVector:GLKVector3Make(-1.0f, 1.0f, 0.0f) Duration:2.0f Delay:1.0f IsAbsolute:NO];
     [self.ship.prs moveToVector:GLKVector3Make(2.0f, -1.0f, self.mainZ) Duration:1.0f Delay:0.0f IsAbsolute:YES];
-    [self.ship.prs setRotationConstantToVector:GLKVector3Make(0.0f, -M_PI, 0.0f)];
+    [self.ship.prs setRotationConstantToVector:GLKVector3Make(0.0f, 4.0f*-M_PI, 0.0f)];
     [self.ship.prs rotateToVector:GLKVector3Make(0.0f,0.0f, M_PI) Duration:2.0f Delay:2.0f IsAbsolute:YES];
     [self.ship.prs rotateToVector:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:2.0f Delay:4.0f IsAbsolute:YES];
     [self.ship.prs scaleToVector:GLKVector3Make(2.0f, 2.0f, 2.0f) Duration:1.0f Delay:4.0f IsAbsolute:YES];
-    [self.ship.prs scaleToVector:GLKVector3Make(0.5f, 0.5f, 0.5f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
+    [self.ship.prs scaleToVector:GLKVector3Make(1.0f, 1.0f, 1.0f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
 
     self.ship2 = [[SSGModel alloc] initWithModelFileName:@"torus"];
     [self.ship2 setProjection:_glmgr.projectionMatrix];
@@ -91,24 +94,24 @@
     self.ship2.alpha = 1.0f;
     self.ship2.diffuseColor = GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f);
     self.ship2.shadowMax = 0.4f;
-    self.ship2.prs.px = -1.0f;
+    self.ship2.prs.px = -4.0f;
     self.ship2.prs.pz = _mainZ;
     
     [self.ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
      UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
     [self.view addGestureRecognizer:pinchRecognizer];
     
-    float blinkDelay = 0.1f;
-    SSGCommand *blink = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:10.0f];
-    blink.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(1.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
-    blink.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
-    blink.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(1.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
-    blink.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
-    blink.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(1.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    float blinkDelay = 0.15f;
+    SSGCommand *blink = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(0.0f) Duration:0.0f IsAbsolute:NO Delay:9.0f];
+    blink.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(1.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(1.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:command1float(1.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
     [self.ship addCommand:blink];
     
-    SSGCommand *fadeOutAndIn = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:3.0f IsAbsolute:YES Delay:3.0f];
-    fadeOutAndIn.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:GLKVector3Make(1.0F, 0.0F, 0.0f) Duration:3.0f IsAbsolute:YES Delay:0.0f];
+    SSGCommand *fadeOutAndIn = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.0f) Duration:3.0f IsAbsolute:YES Delay:3.0f];
+    fadeOutAndIn.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(1.0f) Duration:3.0f IsAbsolute:YES Delay:0.0f];
     [self.ship2 addCommand:fadeOutAndIn];
 }
 

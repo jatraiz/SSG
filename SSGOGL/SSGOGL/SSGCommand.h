@@ -15,11 +15,17 @@ typedef NS_ENUM(NSInteger, SSGCommandEnum)
     kSSGCommand_visible
 };
 
+static __inline__ GLKVector4 command1float(float x)
+{
+    GLKVector4 v = { x, 0.0f, 0.0f, 0.0f};
+    return v;
+}
+
 @interface SSGCommand : NSObject
 
 @property (nonatomic) SSGCommandEnum commandEnum;
-@property (nonatomic) GLKVector3 target;
-@property (nonatomic) GLKVector3 step;
+@property (nonatomic) GLKVector4 target;
+@property (nonatomic) GLKVector4 step;
 @property (nonatomic) GLfloat duration;
 @property (nonatomic) GLfloat delay;
 @property (nonatomic) BOOL isAbsolute;
@@ -27,7 +33,7 @@ typedef NS_ENUM(NSInteger, SSGCommandEnum)
 @property (nonatomic) BOOL isFinished;
 @property (nonatomic) SSGCommand *commandOnFinish;
 
-+ (instancetype)commandWithEnum:(SSGCommandEnum) command Target:(GLKVector3)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
-- (instancetype)initWithCommandEnum:(SSGCommandEnum) command Target:(GLKVector3)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
++ (instancetype)commandWithEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
+- (instancetype)initWithCommandEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 
 @end
