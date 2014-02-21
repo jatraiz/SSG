@@ -127,38 +127,53 @@
 
 - (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time
 {
-    if(command.commandEnum == kSSGCommand_alpha)
+    switch (command.commandEnum)
     {
-        if(command.duration == 0.0f)
-        {
-            self.alpha = command.target.x;
-            command.isFinished = YES;
-            return;
-        }
-        else
-        {
-            if(!command.isStarted)
-            {
-                if(command.isAbsolute)
-                {
-                    command.step = GLKVector3Make((command.target.x - self.alpha)/command.duration, 0.0f, 0.0f);
-                }
-                else
-                {
-                    command.step = GLKVector3Make(command.target.x/command.duration, 0.0f, 0.0f);
-                    command.target = GLKVector3Make(command.target.x+self.alpha, 0.0f, 0.0f);
-                }
-                command.isStarted = YES;
-            }
-            
-            command.duration -= time;
-            self.alpha += command.step.x * time;
-            if(command.duration <= 0.0f)
+        case kSSGCommand_alpha:
+            if(command.duration == 0.0f)
             {
                 self.alpha = command.target.x;
                 command.isFinished = YES;
+                return;
             }
-        }
+            else
+            {
+                if(!command.isStarted)
+                {
+                    if(command.isAbsolute)
+                    {
+                        command.step = GLKVector3Make((command.target.x - self.alpha)/command.duration, 0.0f, 0.0f);
+                    }
+                    else
+                    {
+                        command.step = GLKVector3Make(command.target.x/command.duration, 0.0f, 0.0f);
+                        command.target = GLKVector3Make(command.target.x+self.alpha, 0.0f, 0.0f);
+                    }
+                    command.isStarted = YES;
+                }
+                
+                command.duration -= time;
+                self.alpha += command.step.x * time;
+                if(command.duration <= 0.0f)
+                {
+                    self.alpha = command.target.x;
+                    command.isFinished = YES;
+                }
+            }
+            break;
+        case kSSGCommand_visible:
+            if(command.target.x == 0.0f)
+            {
+                self.isHidden = YES;
+            }
+            else
+            {
+                self.isHidden = NO;
+            }
+            command.isFinished = YES;
+            break;
+        default:
+            break;
     }
 }
 
@@ -197,6 +212,11 @@
 
 - (void)draw
 {
+    if(self.isHidden)
+    {
+        return;
+    }
+    
     [SSGShaderManager useProgram:self.defaultShaderSettings.programId];
     //set shader uniforms
     [self.defaultShaderSettings setAlpha:_alpha];

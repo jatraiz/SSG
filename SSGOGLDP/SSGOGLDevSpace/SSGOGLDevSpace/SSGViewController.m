@@ -94,17 +94,24 @@
     self.ship2.prs.px = -1.0f;
     self.ship2.prs.pz = _mainZ;
     
+    [self.ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
+     UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
+    [self.view addGestureRecognizer:pinchRecognizer];
+    
+    float blinkDelay = 0.1f;
+    SSGCommand *blink = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:10.0f];
+    blink.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(1.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(1.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    blink.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_visible Target:GLKVector3Make(1.0f, 0.0f, 0.0f) Duration:0.0f IsAbsolute:NO Delay:blinkDelay];
+    [self.ship addCommand:blink];
     
     SSGCommand *fadeOutAndIn = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:3.0f IsAbsolute:YES Delay:3.0f];
     fadeOutAndIn.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:GLKVector3Make(1.0F, 0.0F, 0.0f) Duration:3.0f IsAbsolute:YES Delay:0.0f];
     [self.ship2 addCommand:fadeOutAndIn];
-    
-    
-    [self.ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
-     UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
-    [self.view addGestureRecognizer:pinchRecognizer];
-
 }
+
 -(void)viewDidAppear:(BOOL)animated
 {
     if(!_firstLoadComplete)
