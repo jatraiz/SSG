@@ -11,6 +11,7 @@
 
 @class SSGDefaultShaderSettings;
 @class SSGPrs;
+@class SSGCommand;
 
 @interface SSGModel : NSObject
 
@@ -27,6 +28,7 @@
 -(void) setDefaultShaderSettings:(SSGDefaultShaderSettings*)defaultShaderSettings;
 -(void) setDimensions2dX:(GLfloat)x andY:(GLfloat)y;
 -(BOOL) isTransformedPointWithinModel2d:(CGPoint)point;
+-(void) addCommand:(SSGCommand*)command;
 -(void) updateWithTime:(GLfloat)time;
 -(void) updateModelViewProjection;
 -(void) draw;

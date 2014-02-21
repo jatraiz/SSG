@@ -12,6 +12,7 @@
 #import "SSGVaoInfo.h"
 #import "SSGShaderManager.h"
 #import "SSGDefaultShaderSettings.h"
+#import "SSGCommand.h"
 
 @interface SSGModel()
 
@@ -22,11 +23,13 @@
 @property (nonatomic) GLKMatrix4 modelViewProjection;
 @property (nonatomic) SSGDefaultShaderSettings *defaultShaderSettings;
 @property (nonatomic) CGPoint dimensions2d;
+@property (nonatomic) NSMutableArray *commands;
+@property (nonatomic) NSMutableArray *finishedCommands;
 @end
 
 @implementation SSGModel
 
--(instancetype) initWithModelFileName:(NSString*)modelFileName
+- (instancetype)initWithModelFileName:(NSString*)modelFileName
 {
     self = [super init];
     if(!self)
@@ -35,33 +38,35 @@
     }
     _prs = [SSGPrs new];
     _vaoInfo = [SSGAssetManager loadVaoInfo:modelFileName];
+    _commands = [[NSMutableArray alloc] init];
+    _finishedCommands = [[NSMutableArray alloc] init];
     
     return self;
 }
 
--(void)setProjection:(GLKMatrix4)projection
+- (void)setProjection:(GLKMatrix4)projection
 {
     _projection = GLKMatrix4MakeWithArray(projection.m);
 }
 
--(void)setTexture0Id:(GLuint)texture0Id
+- (void)setTexture0Id:(GLuint)texture0Id
 {
     _texture0Id = texture0Id;
 }
 
--(void) setDefaultShaderSettings:(SSGDefaultShaderSettings *)defaultShaderSettings
+- (void)setDefaultShaderSettings:(SSGDefaultShaderSettings *)defaultShaderSettings
 {
     _defaultShaderSettings = defaultShaderSettings;
 }
 
--(void) setDimensions2dX:(GLfloat)x andY:(GLfloat)y
+- (void)setDimensions2dX:(GLfloat)x andY:(GLfloat)y
 {
     _dimensions2d = CGPointMake(x, y);
 }
 
 //Assumes point is translated to model's z position
 //Currently not taking into account model rotation
--(BOOL) isTransformedPointWithinModel2d:(CGPoint)point
+- (BOOL)isTransformedPointWithinModel2d:(CGPoint)point
 {
     GLKVector3 scale = GLKVector3Make(1.0f, 1.0f, 1.0f);
     GLKVector3 position = _prs.position;
@@ -78,13 +83,50 @@
     return NO;
 }
 
--(void) updateWithTime:(GLfloat)time
+- (void)addCommand:(SSGCommand *)command
+{
+    [self.commands addObject:command];
+}
+
+- (void)updateWithTime:(GLfloat)time
 {
     [self.prs updateWithTime:time];
+    [self updateCommandsWithTime:time];
     [self updateModelViewProjection];
 }
 
--(void)updateModelViewProjection
+- (void)updateCommandsWithTime:(GLfloat)time
+{
+    //account for delays and process command
+    for(SSGCommand *command in self.commands)
+    {
+        command.delay -= time;
+        if(command.delay <= 0.0f)
+        {
+            [self processCommand:command];
+        }
+        if(command.isFinished)
+        {
+            [self.finishedCommands addObject:command];
+        }
+    }
+    //clean up finished commands
+    for(SSGCommand *command in self.finishedCommands)
+    {
+        if(command.isFinished)
+        {
+            [self.commands removeObject:command];
+        }
+    }
+    [self.finishedCommands removeAllObjects];
+}
+
+- (void)processCommand:(SSGCommand*)command
+{
+    
+}
+
+- (void)updateModelViewProjection
 {
     
     GLKVector3 scale = _prs.scale;
@@ -117,7 +159,7 @@
 }
 
 
--(void)draw
+- (void)draw
 {
     [SSGShaderManager useProgram:self.defaultShaderSettings.programId];
     //set shader uniforms

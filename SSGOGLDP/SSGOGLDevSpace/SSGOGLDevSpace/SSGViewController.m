@@ -48,52 +48,50 @@
    // [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _glmgr = [[SSGOpenGLManager alloc] initWithContextRef:self.context andView:(GLKView*)self.view];
-    [_glmgr loadDefaultShaderAndSettings];
-    _mainClearColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f);
-    [_glmgr setClearColor:_mainClearColor];
-    _glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(45.0f), fabsf(self.view.bounds.size.height / self.view.bounds.size.width), 0.1f, 100.0f);
-    _glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.width ScreenWidth:self.view.bounds.size.height Fov:GLKMathDegreesToRadians(45.0f)];
+    self.glmgr = [[SSGOpenGLManager alloc] initWithContextRef:self.context andView:(GLKView*)self.view];
+    [self.glmgr loadDefaultShaderAndSettings];
+    self.mainClearColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f);
+    [self.glmgr setClearColor:self.mainClearColor];
+    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(45.0f), fabsf(self.view.bounds.size.height / self.view.bounds.size.width), 0.1f, 100.0f);
+    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.width ScreenWidth:self.view.bounds.size.height Fov:GLKMathDegreesToRadians(45.0f)];
     self.view.multipleTouchEnabled = YES;
     self.preferredFramesPerSecond = 60;
     self.view.multipleTouchEnabled = YES;
     
-    _mainZ = -8.0f;
+    self.mainZ = -8.0f;
     
-    /*testing
-     */
-    _worldTransformation = [[SSGWorldTransformation alloc] init];
-    _worldTransformation.position = [[SSGPosition alloc] initWithX:0 Y:0 Z:0];
-    _worldTransformation.orientation = [[SSGOrientation alloc] initWithUpVector:GLKVector3Make(0, 1, 0) upAngle:0 ForwardVector:GLKVector3Make(0, 0, 1) ForwardAngle:0 RightVector:GLKVector3Make(1, 0, 0) RightAngle:0];
+    self.worldTransformation = [[SSGWorldTransformation alloc] init];
+    self.worldTransformation.position = [[SSGPosition alloc] initWithX:0 Y:0 Z:0];
+    self.worldTransformation.orientation = [[SSGOrientation alloc] initWithUpVector:GLKVector3Make(0, 1, 0) upAngle:0 ForwardVector:GLKVector3Make(0, 0, 1) ForwardAngle:0 RightVector:GLKVector3Make(1, 0, 0) RightAngle:0];
     
-    _ship = [[SSGModel alloc] initWithModelFileName:@"raizlabsLogo"];
-    [_ship setProjection:_glmgr.projectionMatrix];
-    [_ship setTexture0Id:[SSGAssetManager loadTexture:@"raizLabsRed" ofType:@"png" shouldLoadWithMipMapping:YES]];
-    [_ship setDefaultShaderSettings:_glmgr.defaultShaderSettings];
-    [_ship setDimensions2dX:1.0f andY:1.0f];
-    _ship.alpha = 1.0f;
-    _ship.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-    _ship.shadowMax = 0.4f;
-    _ship.prs.pz = _mainZ;
-    [_ship.prs moveToVector:GLKVector3Make(-1.0f, 1.0f, 0.0f) Duration:2.0f Delay:1.0f IsAbsolute:NO];
-    [_ship.prs moveToVector:GLKVector3Make(2.0f, -1.0f, _mainZ) Duration:1.0f Delay:0.0f IsAbsolute:YES];
-    [_ship.prs setRotationConstantToVector:GLKVector3Make(M_PI, 0.0f, 0.0f)];
-    [_ship.prs rotateToVector:GLKVector3Make(0.0f,0.0f, M_PI) Duration:2.0f Delay:2.0f IsAbsolute:YES];
-    [_ship.prs rotateToVector:GLKVector3Make(0.0f,0.0f, -M_PI) Duration:2.0f Delay:0.0f IsAbsolute:YES];
-    [_ship.prs scaleToVector:GLKVector3Make(2.0f, 2.0f, 2.0f) Duration:1.0f Delay:4.0f IsAbsolute:YES];
-    [_ship.prs scaleToVector:GLKVector3Make(0.5f, 0.5f, 0.5f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
+    self.ship = [[SSGModel alloc] initWithModelFileName:@"raizlabsLogo"];
+    [self.ship setProjection:_glmgr.projectionMatrix];
+    [self.ship setTexture0Id:[SSGAssetManager loadTexture:@"raizLabsRed" ofType:@"png" shouldLoadWithMipMapping:YES]];
+    [self.ship setDefaultShaderSettings:_glmgr.defaultShaderSettings];
+    [self.ship setDimensions2dX:1.0f andY:1.0f];
+    self.ship.alpha = 1.0f;
+    self.ship.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
+    self.ship.shadowMax = 0.4f;
+    self.ship.prs.pz = _mainZ;
+    [self.ship.prs moveToVector:GLKVector3Make(-1.0f, 1.0f, 0.0f) Duration:2.0f Delay:1.0f IsAbsolute:NO];
+    [self.ship.prs moveToVector:GLKVector3Make(2.0f, -1.0f, self.mainZ) Duration:1.0f Delay:0.0f IsAbsolute:YES];
+    [self.ship.prs setRotationConstantToVector:GLKVector3Make(0.0f, -M_PI, 0.0f)];
+    [self.ship.prs rotateToVector:GLKVector3Make(0.0f,0.0f, M_PI) Duration:2.0f Delay:2.0f IsAbsolute:YES];
+    [self.ship.prs rotateToVector:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:2.0f Delay:4.0f IsAbsolute:YES];
+    [self.ship.prs scaleToVector:GLKVector3Make(2.0f, 2.0f, 2.0f) Duration:1.0f Delay:4.0f IsAbsolute:YES];
+    [self.ship.prs scaleToVector:GLKVector3Make(0.5f, 0.5f, 0.5f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
     
-    _ship2 = [[SSGModel alloc] initWithModelFileName:@"torus"];
-    [_ship2 setProjection:_glmgr.projectionMatrix];
-    [_ship2 setTexture0Id:[SSGAssetManager loadTexture:@"aquaTile" ofType:@"png" shouldLoadWithMipMapping:YES]];
-    [_ship2 setDefaultShaderSettings:_glmgr.defaultShaderSettings];
-    [_ship2 setDimensions2dX:1.0f andY:1.0f];
-    _ship2.alpha = 1.0f;
-   _ship2.diffuseColor = GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f);
-    _ship2.shadowMax = 0.4f;
-    _ship2.prs.px = -1.0f;
-    _ship2.prs.pz = _mainZ;
-    [_ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
+    self.ship2 = [[SSGModel alloc] initWithModelFileName:@"torus"];
+    [self.ship2 setProjection:_glmgr.projectionMatrix];
+    [self.ship2 setTexture0Id:[SSGAssetManager loadTexture:@"aquaTile" ofType:@"png" shouldLoadWithMipMapping:YES]];
+    [self.ship2 setDefaultShaderSettings:_glmgr.defaultShaderSettings];
+    [self.ship2 setDimensions2dX:1.0f andY:1.0f];
+    self.ship2.alpha = 1.0f;
+    self.ship2.diffuseColor = GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f);
+    self.ship2.shadowMax = 0.4f;
+    self.ship2.prs.px = -1.0f;
+    self.ship2.prs.pz = _mainZ;
+    [self.ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
      UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
     [self.view addGestureRecognizer:pinchRecognizer];
 
@@ -129,7 +127,10 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.paused = !self.paused;
+    if(!_hudVC.switchOn)
+    {
+        self.paused = !self.paused;
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event

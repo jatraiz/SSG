@@ -37,6 +37,7 @@
 		8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B03561860B60200C25978 /* SSGOrientation.m */; };
 		8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A9B03551860B60200C25978 /* SSGOrientation.h */; };
 		8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A633603185BBAD100815F6C /* SSGWorldTransformation.h */; };
+		8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2742518B7ABD6009E0908 /* SSGCommand.m */; };
 		8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */; };
 		8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */; };
 		8AB8834F18808AA500360546 /* SSGMathC.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8834E18808AA500360546 /* SSGMathC.c */; };
@@ -132,6 +133,8 @@
 		8A633604185BBAD100815F6C /* SSGWorldTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGWorldTransformation.m; sourceTree = "<group>"; };
 		8A9B03551860B60200C25978 /* SSGOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOrientation.h; sourceTree = "<group>"; };
 		8A9B03561860B60200C25978 /* SSGOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGOrientation.m; sourceTree = "<group>"; };
+		8AA2742418B7ABD6009E0908 /* SSGCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGCommand.h; sourceTree = "<group>"; };
+		8AA2742518B7ABD6009E0908 /* SSGCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGCommand.m; sourceTree = "<group>"; };
 		8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOpenGLManager.h; sourceTree = "<group>"; };
 		8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGOpenGLManager.m; sourceTree = "<group>"; };
 		8AB8834D18808A9400360546 /* SSGMathC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSGMathC.h; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 		8A309ED4183D0334002F08DE /* SSGOGL */ = {
 			isa = PBXGroup;
 			children = (
+				8AA2742318B7ABB9009E0908 /* Commands */,
 				8AB73C4F18565E0600EF7A49 /* OpenGL Managment */,
 				8A309FB4183D3548002F08DE /* Math Utilities */,
 				8A309F41183D083C002F08DE /* Asset Control and Managment */,
@@ -311,6 +315,15 @@
 			name = "Math Utilities";
 			sourceTree = "<group>";
 		};
+		8AA2742318B7ABB9009E0908 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				8AA2742418B7ABD6009E0908 /* SSGCommand.h */,
+				8AA2742518B7ABD6009E0908 /* SSGCommand.m */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
 		8AB73C4F18565E0600EF7A49 /* OpenGL Managment */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +418,7 @@
 				8AB8834F18808AA500360546 /* SSGMathC.c in Sources */,
 				8A309F50183D0AFB002F08DE /* SSGModelData.c in Sources */,
 				8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */,
+				8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */,
 				8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */,
 				8A309FAD183D26A5002F08DE /* SSGShaderManager.m in Sources */,
 				8A309FBA183D4A84002F08DE /* SSGVaoInfo.m in Sources */,

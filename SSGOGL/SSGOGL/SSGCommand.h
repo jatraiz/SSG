@@ -7,7 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKit.h>
+
+typedef NS_ENUM(NSInteger, SSGCommandEnum)
+{
+    kSSGCommand_alpha,
+    kSSGCommand_visible
+};
 
 @interface SSGCommand : NSObject
+
+@property (nonatomic) SSGCommandEnum command;
+@property (nonatomic) GLKVector3 target;
+@property (nonatomic) GLKVector3 step;
+@property (nonatomic) GLfloat duration;
+@property (nonatomic) GLfloat delay;
+@property (nonatomic) BOOL isAbsolute;
+@property (nonatomic) BOOL isStarted;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic) SSGCommand *commandOnFinish;
+
++ (instancetype)SSGCommandWithCommand:(SSGCommandEnum) command Target:(GLKVector3)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
+- (instancetype)initWithCommand:(SSGCommandEnum) command Target:(GLKVector3)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 
 @end
