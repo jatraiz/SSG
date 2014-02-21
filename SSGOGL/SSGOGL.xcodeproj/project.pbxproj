@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A12131F183FEA4800FE204D /* SSGDrawableTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A12131E183FEA4800FE204D /* SSGDrawableTexture.m */; };
+		8A121322183FF2F500FE204D /* SSGDrawableTexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A12131D183FEA4800FE204D /* SSGDrawableTexture.h */; };
+		8A2A2215185BA6CA0074FCFC /* SSGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A2210185BA6CA0074FCFC /* SSGModel.m */; };
+		8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A2212185BA6CA0074FCFC /* SSGPosition.m */; };
+		8A2A2218185BA76C0074FCFC /* SSGPosition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2A2211185BA6CA0074FCFC /* SSGPosition.h */; };
+		8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */; };
+		8A309ED3183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
+		8A309EE1183D0334002F08DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309EE0183D0334002F08DE /* XCTest.framework */; };
+		8A309EE2183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
+		8A309EE7183D0334002F08DE /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ECF183D0334002F08DE /* libSSGOGL.a */; };
+		8A309EED183D0334002F08DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A309EEB183D0334002F08DE /* InfoPlist.strings */; };
+		8A309EEF183D0334002F08DE /* SSGOGLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309EEE183D0334002F08DE /* SSGOGLTests.m */; };
+		8A309F36183D05F6002F08DE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309F35183D05F6002F08DE /* OpenGLES.framework */; };
+		8A309F38183D05FF002F08DE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309F37183D05FF002F08DE /* GLKit.framework */; };
+		8A309F44183D089E002F08DE /* SSGAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309F43183D089E002F08DE /* SSGAssetManager.m */; };
+		8A309F50183D0AFB002F08DE /* SSGModelData.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A309F4F183D0AFB002F08DE /* SSGModelData.c */; };
+		8A309FA7183D25EF002F08DE /* ColorPointSprite.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309F9F183D2375002F08DE /* ColorPointSprite.vsh */; };
+		8A309FA8183D25EF002F08DE /* ColorPointSprite.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FA0183D2375002F08DE /* ColorPointSprite.fsh */; };
+		8A309FA9183D25EF002F08DE /* ModelDefault.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FA4183D2387002F08DE /* ModelDefault.vsh */; };
+		8A309FAA183D25EF002F08DE /* ModelDefault.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FA3183D2387002F08DE /* ModelDefault.fsh */; };
+		8A309FAD183D26A5002F08DE /* SSGShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FAC183D26A5002F08DE /* SSGShaderManager.m */; };
+		8A309FB0183D2D8A002F08DE /* SSGColoredPSShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FAF183D2D8A002F08DE /* SSGColoredPSShaderSettings.m */; };
+		8A309FB3183D3191002F08DE /* SSGDefaultShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FB2183D3191002F08DE /* SSGDefaultShaderSettings.m */; };
+		8A309FB7183D35C2002F08DE /* SSG2DZConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FB6183D35C2002F08DE /* SSG2DZConverter.m */; };
+		8A309FBA183D4A84002F08DE /* SSGVaoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FB9183D4A84002F08DE /* SSGVaoInfo.m */; };
+		8A6335FF185BA90800815F6C /* SSGModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2A220F185BA6CA0074FCFC /* SSGModel.h */; };
+		8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A633604185BBAD100815F6C /* SSGWorldTransformation.m */; };
+		8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B03561860B60200C25978 /* SSGOrientation.m */; };
+		8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A9B03551860B60200C25978 /* SSGOrientation.h */; };
+		8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A633603185BBAD100815F6C /* SSGWorldTransformation.h */; };
+		8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */; };
+		8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */; };
+		8AB8834F18808AA500360546 /* SSGMathC.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8834E18808AA500360546 /* SSGMathC.c */; };
+		8ADA49D218803D88005E8207 /* SSGPrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA49D118803D88005E8207 /* SSGPrs.m */; };
+		8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8ADA49D018803D88005E8207 /* SSGPrs.h */; };
+		8AFBA5C7183EAC13002027F2 /* SSG2DZConverter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FB5183D35C2002F08DE /* SSG2DZConverter.h */; };
+		8AFBA5C8183EAC13002027F2 /* SSGAssetManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309F42183D089E002F08DE /* SSGAssetManager.h */; };
+		8AFBA5CA183EAC13002027F2 /* SSGVaoInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FB8183D4A84002F08DE /* SSGVaoInfo.h */; };
+		8AFBA5CB183EAC13002027F2 /* SSGModelData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309F4E183D0AEA002F08DE /* SSGModelData.h */; };
+		8AFBA5D0183EAC13002027F2 /* SSGShaderManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FAB183D26A5002F08DE /* SSGShaderManager.h */; };
+		8AFBA5D1183EAC13002027F2 /* SSGColoredPSShaderSettings.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FAE183D2D8A002F08DE /* SSGColoredPSShaderSettings.h */; };
+		8AFBA5D2183EAC13002027F2 /* SSGDefaultShaderSettings.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A309FB1183D3191002F08DE /* SSGDefaultShaderSettings.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A309EE5183D0334002F08DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A309EC7183D0334002F08DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A309ECE183D0334002F08DE;
+			remoteInfo = SSGOGL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A309ECD183D0334002F08DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */,
+				8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */,
+				8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */,
+				8A6335FF185BA90800815F6C /* SSGModel.h in CopyFiles */,
+				8A2A2218185BA76C0074FCFC /* SSGPosition.h in CopyFiles */,
+				8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */,
+				8A121322183FF2F500FE204D /* SSGDrawableTexture.h in CopyFiles */,
+				8AFBA5C7183EAC13002027F2 /* SSG2DZConverter.h in CopyFiles */,
+				8AFBA5C8183EAC13002027F2 /* SSGAssetManager.h in CopyFiles */,
+				8AFBA5CA183EAC13002027F2 /* SSGVaoInfo.h in CopyFiles */,
+				8AFBA5CB183EAC13002027F2 /* SSGModelData.h in CopyFiles */,
+				8AFBA5D0183EAC13002027F2 /* SSGShaderManager.h in CopyFiles */,
+				8AFBA5D1183EAC13002027F2 /* SSGColoredPSShaderSettings.h in CopyFiles */,
+				8AFBA5D2183EAC13002027F2 /* SSGDefaultShaderSettings.h in CopyFiles */,
+				8A309FA7183D25EF002F08DE /* ColorPointSprite.vsh in CopyFiles */,
+				8A309FA8183D25EF002F08DE /* ColorPointSprite.fsh in CopyFiles */,
+				8A309FA9183D25EF002F08DE /* ModelDefault.vsh in CopyFiles */,
+				8A309FAA183D25EF002F08DE /* ModelDefault.fsh in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8A12131D183FEA4800FE204D /* SSGDrawableTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGDrawableTexture.h; sourceTree = "<group>"; };
+		8A12131E183FEA4800FE204D /* SSGDrawableTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGDrawableTexture.m; sourceTree = "<group>"; };
+		8A2A220F185BA6CA0074FCFC /* SSGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGModel.h; sourceTree = "<group>"; };
+		8A2A2210185BA6CA0074FCFC /* SSGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGModel.m; sourceTree = "<group>"; };
+		8A2A2211185BA6CA0074FCFC /* SSGPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGPosition.h; sourceTree = "<group>"; };
+		8A2A2212185BA6CA0074FCFC /* SSGPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGPosition.m; sourceTree = "<group>"; };
+		8A2CEA0718804D0000FA4561 /* SSGMoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGMoveCommand.h; sourceTree = "<group>"; };
+		8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGMoveCommand.m; sourceTree = "<group>"; };
+		8A309ECF183D0334002F08DE /* libSSGOGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSGOGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A309ED2183D0334002F08DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A309ED6183D0334002F08DE /* SSGOGL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSGOGL-Prefix.pch"; sourceTree = "<group>"; };
+		8A309EDF183D0334002F08DE /* SSGOGLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSGOGLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A309EE0183D0334002F08DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A309EEA183D0334002F08DE /* SSGOGLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSGOGLTests-Info.plist"; sourceTree = "<group>"; };
+		8A309EEC183D0334002F08DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A309EEE183D0334002F08DE /* SSGOGLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSGOGLTests.m; sourceTree = "<group>"; };
+		8A309F35183D05F6002F08DE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A309F37183D05FF002F08DE /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8A309F42183D089E002F08DE /* SSGAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGAssetManager.h; sourceTree = "<group>"; };
+		8A309F43183D089E002F08DE /* SSGAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGAssetManager.m; sourceTree = "<group>"; };
+		8A309F4E183D0AEA002F08DE /* SSGModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGModelData.h; sourceTree = "<group>"; };
+		8A309F4F183D0AFB002F08DE /* SSGModelData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SSGModelData.c; sourceTree = "<group>"; };
+		8A309F9F183D2375002F08DE /* ColorPointSprite.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorPointSprite.vsh; sourceTree = "<group>"; };
+		8A309FA0183D2375002F08DE /* ColorPointSprite.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorPointSprite.fsh; sourceTree = "<group>"; };
+		8A309FA3183D2387002F08DE /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+		8A309FA4183D2387002F08DE /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A309FAB183D26A5002F08DE /* SSGShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGShaderManager.h; sourceTree = "<group>"; };
+		8A309FAC183D26A5002F08DE /* SSGShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGShaderManager.m; sourceTree = "<group>"; };
+		8A309FAE183D2D8A002F08DE /* SSGColoredPSShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGColoredPSShaderSettings.h; sourceTree = "<group>"; };
+		8A309FAF183D2D8A002F08DE /* SSGColoredPSShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGColoredPSShaderSettings.m; sourceTree = "<group>"; };
+		8A309FB1183D3191002F08DE /* SSGDefaultShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGDefaultShaderSettings.h; sourceTree = "<group>"; };
+		8A309FB2183D3191002F08DE /* SSGDefaultShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGDefaultShaderSettings.m; sourceTree = "<group>"; };
+		8A309FB5183D35C2002F08DE /* SSG2DZConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSG2DZConverter.h; sourceTree = "<group>"; };
+		8A309FB6183D35C2002F08DE /* SSG2DZConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSG2DZConverter.m; sourceTree = "<group>"; };
+		8A309FB8183D4A84002F08DE /* SSGVaoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGVaoInfo.h; sourceTree = "<group>"; };
+		8A309FB9183D4A84002F08DE /* SSGVaoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGVaoInfo.m; sourceTree = "<group>"; };
+		8A633603185BBAD100815F6C /* SSGWorldTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGWorldTransformation.h; sourceTree = "<group>"; };
+		8A633604185BBAD100815F6C /* SSGWorldTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGWorldTransformation.m; sourceTree = "<group>"; };
+		8A9B03551860B60200C25978 /* SSGOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOrientation.h; sourceTree = "<group>"; };
+		8A9B03561860B60200C25978 /* SSGOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGOrientation.m; sourceTree = "<group>"; };
+		8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOpenGLManager.h; sourceTree = "<group>"; };
+		8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGOpenGLManager.m; sourceTree = "<group>"; };
+		8AB8834D18808A9400360546 /* SSGMathC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSGMathC.h; sourceTree = "<group>"; };
+		8AB8834E18808AA500360546 /* SSGMathC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SSGMathC.c; sourceTree = "<group>"; };
+		8ADA49D018803D88005E8207 /* SSGPrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGPrs.h; sourceTree = "<group>"; };
+		8ADA49D118803D88005E8207 /* SSGPrs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGPrs.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A309ECC183D0334002F08DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A309F38183D05FF002F08DE /* GLKit.framework in Frameworks */,
+				8A309F36183D05F6002F08DE /* OpenGLES.framework in Frameworks */,
+				8A309ED3183D0334002F08DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A309EDC183D0334002F08DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A309EE7183D0334002F08DE /* libSSGOGL.a in Frameworks */,
+				8A309EE1183D0334002F08DE /* XCTest.framework in Frameworks */,
+				8A309EE2183D0334002F08DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A12131C183FEA3000FE204D /* CustomTextures */ = {
+			isa = PBXGroup;
+			children = (
+				8A12131D183FEA4800FE204D /* SSGDrawableTexture.h */,
+				8A12131E183FEA4800FE204D /* SSGDrawableTexture.m */,
+			);
+			name = CustomTextures;
+			sourceTree = "<group>";
+		};
+		8A309EC6183D0334002F08DE = {
+			isa = PBXGroup;
+			children = (
+				8A309ED4183D0334002F08DE /* SSGOGL */,
+				8A309EE8183D0334002F08DE /* SSGOGLTests */,
+				8A309ED1183D0334002F08DE /* Frameworks */,
+				8A309ED0183D0334002F08DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A309ED0183D0334002F08DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A309ECF183D0334002F08DE /* libSSGOGL.a */,
+				8A309EDF183D0334002F08DE /* SSGOGLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A309ED1183D0334002F08DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A309F37183D05FF002F08DE /* GLKit.framework */,
+				8A309F35183D05F6002F08DE /* OpenGLES.framework */,
+				8A309ED2183D0334002F08DE /* Foundation.framework */,
+				8A309EE0183D0334002F08DE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A309ED4183D0334002F08DE /* SSGOGL */ = {
+			isa = PBXGroup;
+			children = (
+				8AB73C4F18565E0600EF7A49 /* OpenGL Managment */,
+				8A309FB4183D3548002F08DE /* Math Utilities */,
+				8A309F41183D083C002F08DE /* Asset Control and Managment */,
+				8A12131C183FEA3000FE204D /* CustomTextures */,
+				8A309F3D183D071A002F08DE /* Model */,
+				8A309F9D183D2319002F08DE /* Shader Management */,
+				8A309F9E183D2363002F08DE /* Shaders */,
+				8A309ED5183D0334002F08DE /* Supporting Files */,
+			);
+			path = SSGOGL;
+			sourceTree = "<group>";
+		};
+		8A309ED5183D0334002F08DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A309ED6183D0334002F08DE /* SSGOGL-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A309EE8183D0334002F08DE /* SSGOGLTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A309EEE183D0334002F08DE /* SSGOGLTests.m */,
+				8A309EE9183D0334002F08DE /* Supporting Files */,
+			);
+			path = SSGOGLTests;
+			sourceTree = "<group>";
+		};
+		8A309EE9183D0334002F08DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A309EEA183D0334002F08DE /* SSGOGLTests-Info.plist */,
+				8A309EEB183D0334002F08DE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A309F3D183D071A002F08DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A309FB8183D4A84002F08DE /* SSGVaoInfo.h */,
+				8A309FB9183D4A84002F08DE /* SSGVaoInfo.m */,
+				8A309F4E183D0AEA002F08DE /* SSGModelData.h */,
+				8A309F4F183D0AFB002F08DE /* SSGModelData.c */,
+				8A2A220F185BA6CA0074FCFC /* SSGModel.h */,
+				8A2A2210185BA6CA0074FCFC /* SSGModel.m */,
+				8A633603185BBAD100815F6C /* SSGWorldTransformation.h */,
+				8A633604185BBAD100815F6C /* SSGWorldTransformation.m */,
+				8A2A2211185BA6CA0074FCFC /* SSGPosition.h */,
+				8A2A2212185BA6CA0074FCFC /* SSGPosition.m */,
+				8A9B03551860B60200C25978 /* SSGOrientation.h */,
+				8A9B03561860B60200C25978 /* SSGOrientation.m */,
+				8ADA49D018803D88005E8207 /* SSGPrs.h */,
+				8ADA49D118803D88005E8207 /* SSGPrs.m */,
+				8A2CEA0718804D0000FA4561 /* SSGMoveCommand.h */,
+				8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8A309F41183D083C002F08DE /* Asset Control and Managment */ = {
+			isa = PBXGroup;
+			children = (
+				8A309F42183D089E002F08DE /* SSGAssetManager.h */,
+				8A309F43183D089E002F08DE /* SSGAssetManager.m */,
+			);
+			name = "Asset Control and Managment";
+			sourceTree = "<group>";
+		};
+		8A309F9D183D2319002F08DE /* Shader Management */ = {
+			isa = PBXGroup;
+			children = (
+				8A309FAB183D26A5002F08DE /* SSGShaderManager.h */,
+				8A309FAC183D26A5002F08DE /* SSGShaderManager.m */,
+				8A309FAE183D2D8A002F08DE /* SSGColoredPSShaderSettings.h */,
+				8A309FAF183D2D8A002F08DE /* SSGColoredPSShaderSettings.m */,
+				8A309FB1183D3191002F08DE /* SSGDefaultShaderSettings.h */,
+				8A309FB2183D3191002F08DE /* SSGDefaultShaderSettings.m */,
+			);
+			name = "Shader Management";
+			sourceTree = "<group>";
+		};
+		8A309F9E183D2363002F08DE /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8A309F9F183D2375002F08DE /* ColorPointSprite.vsh */,
+				8A309FA0183D2375002F08DE /* ColorPointSprite.fsh */,
+				8A309FA4183D2387002F08DE /* ModelDefault.vsh */,
+				8A309FA3183D2387002F08DE /* ModelDefault.fsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		8A309FB4183D3548002F08DE /* Math Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8A309FB5183D35C2002F08DE /* SSG2DZConverter.h */,
+				8A309FB6183D35C2002F08DE /* SSG2DZConverter.m */,
+				8AB8834D18808A9400360546 /* SSGMathC.h */,
+				8AB8834E18808AA500360546 /* SSGMathC.c */,
+			);
+			name = "Math Utilities";
+			sourceTree = "<group>";
+		};
+		8AB73C4F18565E0600EF7A49 /* OpenGL Managment */ = {
+			isa = PBXGroup;
+			children = (
+				8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */,
+				8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */,
+			);
+			name = "OpenGL Managment";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A309ECE183D0334002F08DE /* SSGOGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A309EF2183D0334002F08DE /* Build configuration list for PBXNativeTarget "SSGOGL" */;
+			buildPhases = (
+				8A309ECB183D0334002F08DE /* Sources */,
+				8A309ECC183D0334002F08DE /* Frameworks */,
+				8A309ECD183D0334002F08DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSGOGL;
+			productName = SSGOGL;
+			productReference = 8A309ECF183D0334002F08DE /* libSSGOGL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8A309EDE183D0334002F08DE /* SSGOGLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A309EF5183D0334002F08DE /* Build configuration list for PBXNativeTarget "SSGOGLTests" */;
+			buildPhases = (
+				8A309EDB183D0334002F08DE /* Sources */,
+				8A309EDC183D0334002F08DE /* Frameworks */,
+				8A309EDD183D0334002F08DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A309EE6183D0334002F08DE /* PBXTargetDependency */,
+			);
+			name = SSGOGLTests;
+			productName = SSGOGLTests;
+			productReference = 8A309EDF183D0334002F08DE /* SSGOGLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A309EC7183D0334002F08DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Sway Software";
+			};
+			buildConfigurationList = 8A309ECA183D0334002F08DE /* Build configuration list for PBXProject "SSGOGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A309EC6183D0334002F08DE;
+			productRefGroup = 8A309ED0183D0334002F08DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A309ECE183D0334002F08DE /* SSGOGL */,
+				8A309EDE183D0334002F08DE /* SSGOGLTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A309EDD183D0334002F08DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A309EED183D0334002F08DE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A309ECB183D0334002F08DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */,
+				8AB8834F18808AA500360546 /* SSGMathC.c in Sources */,
+				8A309F50183D0AFB002F08DE /* SSGModelData.c in Sources */,
+				8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */,
+				8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */,
+				8A309FAD183D26A5002F08DE /* SSGShaderManager.m in Sources */,
+				8A309FBA183D4A84002F08DE /* SSGVaoInfo.m in Sources */,
+				8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */,
+				8A309F44183D089E002F08DE /* SSGAssetManager.m in Sources */,
+				8A309FB3183D3191002F08DE /* SSGDefaultShaderSettings.m in Sources */,
+				8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */,
+				8ADA49D218803D88005E8207 /* SSGPrs.m in Sources */,
+				8A309FB0183D2D8A002F08DE /* SSGColoredPSShaderSettings.m in Sources */,
+				8A309FB7183D35C2002F08DE /* SSG2DZConverter.m in Sources */,
+				8A12131F183FEA4800FE204D /* SSGDrawableTexture.m in Sources */,
+				8A2A2215185BA6CA0074FCFC /* SSGModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A309EDB183D0334002F08DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A309EEF183D0334002F08DE /* SSGOGLTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A309EE6183D0334002F08DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A309ECE183D0334002F08DE /* SSGOGL */;
+			targetProxy = 8A309EE5183D0334002F08DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A309EEB183D0334002F08DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A309EEC183D0334002F08DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A309EF0183D0334002F08DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8A309EF1183D0334002F08DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A309EF3183D0334002F08DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SSGOGL.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSGOGL/SSGOGL-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8A309EF4183D0334002F08DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SSGOGL.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSGOGL/SSGOGL-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8A309EF6183D0334002F08DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSGOGL/SSGOGL-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SSGOGLTests/SSGOGLTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A309EF7183D0334002F08DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSGOGL/SSGOGL-Prefix.pch";
+				INFOPLIST_FILE = "SSGOGLTests/SSGOGLTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A309ECA183D0334002F08DE /* Build configuration list for PBXProject "SSGOGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A309EF0183D0334002F08DE /* Debug */,
+				8A309EF1183D0334002F08DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A309EF2183D0334002F08DE /* Build configuration list for PBXNativeTarget "SSGOGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A309EF3183D0334002F08DE /* Debug */,
+				8A309EF4183D0334002F08DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A309EF5183D0334002F08DE /* Build configuration list for PBXNativeTarget "SSGOGLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A309EF6183D0334002F08DE /* Debug */,
+				8A309EF7183D0334002F08DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A309EC7183D0334002F08DE /* Project object */;
+}
