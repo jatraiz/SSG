@@ -17,6 +17,7 @@
 #import <SSGOGL/SSGWorldTransformation.h>
 #import <SSGOGL/SSGPrs.h>
 #import "SSGHud.h"
+#import <SSGOGL/SSGCommand.h>
 
 @interface SSGViewController ()
 @property (nonatomic) SSGOpenGLManager *glmgr;
@@ -73,6 +74,7 @@
     self.ship.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     self.ship.shadowMax = 0.4f;
     self.ship.prs.pz = _mainZ;
+    
     [self.ship.prs moveToVector:GLKVector3Make(-1.0f, 1.0f, 0.0f) Duration:2.0f Delay:1.0f IsAbsolute:NO];
     [self.ship.prs moveToVector:GLKVector3Make(2.0f, -1.0f, self.mainZ) Duration:1.0f Delay:0.0f IsAbsolute:YES];
     [self.ship.prs setRotationConstantToVector:GLKVector3Make(0.0f, -M_PI, 0.0f)];
@@ -80,7 +82,7 @@
     [self.ship.prs rotateToVector:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:2.0f Delay:4.0f IsAbsolute:YES];
     [self.ship.prs scaleToVector:GLKVector3Make(2.0f, 2.0f, 2.0f) Duration:1.0f Delay:4.0f IsAbsolute:YES];
     [self.ship.prs scaleToVector:GLKVector3Make(0.5f, 0.5f, 0.5f) Duration:1.0f Delay:0.0f IsAbsolute:YES];
-    
+
     self.ship2 = [[SSGModel alloc] initWithModelFileName:@"torus"];
     [self.ship2 setProjection:_glmgr.projectionMatrix];
     [self.ship2 setTexture0Id:[SSGAssetManager loadTexture:@"aquaTile" ofType:@"png" shouldLoadWithMipMapping:YES]];
@@ -91,6 +93,13 @@
     self.ship2.shadowMax = 0.4f;
     self.ship2.prs.px = -1.0f;
     self.ship2.prs.pz = _mainZ;
+    
+    
+    SSGCommand *fadeOutAndIn = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:GLKVector3Make(0.0f, 0.0f, 0.0f) Duration:3.0f IsAbsolute:YES Delay:3.0f];
+    fadeOutAndIn.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_alpha Target:GLKVector3Make(1.0F, 0.0F, 0.0f) Duration:3.0f IsAbsolute:YES Delay:0.0f];
+    [self.ship2 addCommand:fadeOutAndIn];
+    
+    
     [self.ship2.prs setRotationConstantToVector:GLKVector3Make(M_PI, -M_PI_2, -1.0f)];
      UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchDetected:)];
     [self.view addGestureRecognizer:pinchRecognizer];

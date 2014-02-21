@@ -14,5 +14,5 @@ uniform float u_alpha;
 void main()
 {
     gl_FragColor = texture2D(u_colorMap,v_texCoord) * v_colorVarying;
-    gl_FragColor.a *=u_alpha;
+    gl_FragColor.rgba *=u_alpha;
 }

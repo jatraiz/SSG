@@ -103,10 +103,14 @@
         command.delay -= time;
         if(command.delay <= 0.0f)
         {
-            [self processCommand:command];
+            [self processCommand:command withTime:time];
         }
         if(command.isFinished)
         {
+            if(command.commandOnFinish)
+            {
+                [self addCommand:command.commandOnFinish];
+            }
             [self.finishedCommands addObject:command];
         }
     }
@@ -121,9 +125,41 @@
     [self.finishedCommands removeAllObjects];
 }
 
-- (void)processCommand:(SSGCommand*)command
+- (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time
 {
-    
+    if(command.commandEnum == kSSGCommand_alpha)
+    {
+        if(command.duration == 0.0f)
+        {
+            self.alpha = command.target.x;
+            command.isFinished = YES;
+            return;
+        }
+        else
+        {
+            if(!command.isStarted)
+            {
+                if(command.isAbsolute)
+                {
+                    command.step = GLKVector3Make((command.target.x - self.alpha)/command.duration, 0.0f, 0.0f);
+                }
+                else
+                {
+                    command.step = GLKVector3Make(command.target.x/command.duration, 0.0f, 0.0f);
+                    command.target = GLKVector3Make(command.target.x+self.alpha, 0.0f, 0.0f);
+                }
+                command.isStarted = YES;
+            }
+            
+            command.duration -= time;
+            self.alpha += command.step.x * time;
+            if(command.duration <= 0.0f)
+            {
+                self.alpha = command.target.x;
+                command.isFinished = YES;
+            }
+        }
+    }
 }
 
 - (void)updateModelViewProjection
