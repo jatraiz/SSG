@@ -21,8 +21,6 @@
 		8A2EA3B018CA04FC0071642C /* SSGFontTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3AF18CA04FC0071642C /* SSGFontTesterTests.m */; };
 		8A2EA3BA18CA052E0071642C /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2EA3B918CA052E0071642C /* libSSGOGL.a */; };
 		8A2EA3BD18CA05D40071642C /* SSGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3BC18CA05D40071642C /* SSGViewController.m */; };
-		8A2EA3C018CA090E0071642C /* ModelDefault.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3BE18CA090E0071642C /* ModelDefault.vsh */; };
-		8A2EA3C118CA090E0071642C /* ModelDefault.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3BF18CA090E0071642C /* ModelDefault.fsh */; };
 		8A2EA3C218CA09220071642C /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3BE18CA090E0071642C /* ModelDefault.vsh */; };
 		8A2EA3C318CA09220071642C /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3BF18CA090E0071642C /* ModelDefault.fsh */; };
 		8A2EA3C518CA09460071642C /* raizLabsRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3C418CA09460071642C /* raizLabsRed.png */; };
@@ -296,10 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2EA39B18CA04FC0071642C /* SSGAppDelegate.m in Sources */,
-				8A2EA3C018CA090E0071642C /* ModelDefault.vsh in Sources */,
 				8A2EA3BD18CA05D40071642C /* SSGViewController.m in Sources */,
 				8A2EA39718CA04FC0071642C /* main.m in Sources */,
-				8A2EA3C118CA090E0071642C /* ModelDefault.fsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
