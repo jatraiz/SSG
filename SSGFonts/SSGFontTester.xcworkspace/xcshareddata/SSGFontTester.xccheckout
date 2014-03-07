@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1506923E-D44D-419A-BFE2-8DD7C8F6774E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SSGFontTester</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CBD4BF29-5C43-4EA1-AFE4-C8A5432EEDD7</key>
+		<string>https://github.com/jatraiz/SSG.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SSGFonts/SSGFontTester.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CBD4BF29-5C43-4EA1-AFE4-C8A5432EEDD7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jatraiz/SSG.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CBD4BF29-5C43-4EA1-AFE4-C8A5432EEDD7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CBD4BF29-5C43-4EA1-AFE4-C8A5432EEDD7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SSG</string>
+		</dict>
+	</array>
+</dict>
+</plist>

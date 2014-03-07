@@ -13,8 +13,8 @@
 #import "SSGVaoInfo.h"
 #import "SSGShaderManager.h"
 #import "SSGBitmapFontShaderSettings.h"
+#import "SSGCommand.h"
 
-#define kBufferOffset(i) ((char*)NULL + (i))
 #define kCharMax 1000
 #define kLineBreakChar '~'
 @interface SSGBMFontModel()
@@ -267,6 +267,31 @@
     [self setData:dataArr];
 }
 
+- (void)alternatingCharacterPositionAdjustmentX:(GLfloat)x Y:(GLfloat)y
+{
+    int index = 0;
+    for(int i = 0; i < self.charCount; i++)
+    {
+        dataArr[index] = dataArr[index]+x;
+        dataArr[index+1] = dataArr[index+1]+y;
+        dataArr[index+5] = dataArr[index+5]+x;
+        dataArr[index+6] = dataArr[index+6]+y;
+        dataArr[index+10] = dataArr[index+10]+x;
+        dataArr[index+11] = dataArr[index+11]+y;
+        dataArr[index+15] = dataArr[index+15]+x;
+        dataArr[index+16] = dataArr[index+16]+y;
+        dataArr[index+20] = dataArr[index+20]+x;
+        dataArr[index+21] = dataArr[index+21]+y;
+        dataArr[index+25] = dataArr[index+25]+x;
+        dataArr[index+26] = dataArr[index+26]+y;
+        
+        index += 30;
+        x = -x;
+        y = -y;
+    }
+    [self setData:dataArr];
+}
+
 - (void)clearText
 {
     self.text = @"";
@@ -276,7 +301,38 @@
         {
             dataArr[i] = 0.0f;
         }
+        [self setData:dataArr];
     }
+}
+
+- (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time
+{
+    switch (command.commandEnum) {
+        case kSSGCommand_font_alternatingSplit:
+            if(command.duration <= 0.0f)
+            {
+                [self alternatingCharacterPositionAdjustmentX:command.target.x Y:command.target.y];
+                command.isFinished = YES;
+            }
+            else
+            {
+                if(!command.isStarted)
+                {
+                    command.step = command2float(command.target.x / command.duration, command.target.y / command.duration);
+                    command.isStarted = YES;
+                }
+                command.duration -= time;
+                [self alternatingCharacterPositionAdjustmentX:command.step.x*time Y:command.step.y * time];
+            }
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    [super processCommand:command withTime:time];
+    
 }
 
 - (void)draw

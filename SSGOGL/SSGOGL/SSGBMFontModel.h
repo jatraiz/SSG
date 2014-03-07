@@ -27,5 +27,5 @@
 - (void)updateWithText:(NSString*)str;
 - (void)clearText;
 - (NSString*)getCurrentText;
-
+- (void)alternatingCharacterPositionAdjustmentX:(GLfloat)x Y:(GLfloat)y;
 @end

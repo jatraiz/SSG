@@ -74,7 +74,7 @@
         m.prs.py = 3.25f;
         m.prs.sxyz = 0.4f;
         m.alpha = 0.0f;
-        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.5f) Duration:60.0f IsAbsolute:YES Delay:0.5f]];
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.5f) Duration:30.0f IsAbsolute:YES Delay:0.5f]];
     }
     
     self.fontModel = [[SSGBMFontModel alloc] initWithName:@"fireText" BMFontData:[[SSGBMFontData alloc] initWithFontFile:@"fireText"]];
@@ -126,6 +126,17 @@
     return YES;
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    self.textField.text = nil;
+    [self.fontModel clearText];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.fontModel addCommand:[SSGCommand commandWithEnum:kSSGCommand_font_alternatingSplit Target:command2float(0.5f, 0.5f) Duration:4.0f IsAbsolute:NO Delay:2.0f]];
+}
 
 - (void)update
 {

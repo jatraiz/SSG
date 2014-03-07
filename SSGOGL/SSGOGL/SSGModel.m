@@ -124,6 +124,7 @@
 
 - (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time
 {
+    
     switch (command.commandEnum)
     {
         case kSSGCommand_alpha:
