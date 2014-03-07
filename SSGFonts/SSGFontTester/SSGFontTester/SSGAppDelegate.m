@@ -7,6 +7,7 @@
 //
 
 #import "SSGAppDelegate.h"
+#import "SSGViewController.h"
 
 @implementation SSGAppDelegate
 
@@ -14,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [SSGViewController new];
     [self.window makeKeyAndVisible];
     return YES;
 }
