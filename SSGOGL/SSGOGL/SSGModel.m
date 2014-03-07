@@ -16,15 +16,7 @@
 
 @interface SSGModel()
 
-@property (nonatomic) SSGVaoInfo* vaoInfo;
-@property (nonatomic) GLuint texture0Id;
-@property (nonatomic) GLKMatrix4 projection;
-@property (nonatomic) GLKMatrix3 normalMatrix;
-@property (nonatomic) GLKMatrix4 modelViewProjection;
-@property (nonatomic) SSGDefaultShaderSettings *defaultShaderSettings;
-@property (nonatomic) CGPoint dimensions2d;
-@property (nonatomic) NSMutableArray *commands;
-@property (nonatomic) NSMutableArray *finishedCommands;
+
 @end
 
 @implementation SSGModel
@@ -37,7 +29,12 @@
         return nil;
     }
     _prs = [SSGPrs new];
-    _vaoInfo = [SSGAssetManager loadVaoInfo:modelFileName];
+    //for some subclasses a .model file will not be used on init
+    if(modelFileName)
+    {
+        _vaoInfo = [SSGAssetManager loadVaoInfo:modelFileName];
+        _alpha = 1.0f;
+    }
     _commands = [[NSMutableArray alloc] init];
     _finishedCommands = [[NSMutableArray alloc] init];
     

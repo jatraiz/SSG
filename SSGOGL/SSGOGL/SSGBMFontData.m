@@ -67,7 +67,7 @@ static NSMutableDictionary *dict;
         
         self.charDataArr = [[NSArray alloc] initWithArray:mutCharArr];
         
-        //[self logData];
+        [self logData];
         [dict setObject:self forKey:fontFile];
     }
     return self;

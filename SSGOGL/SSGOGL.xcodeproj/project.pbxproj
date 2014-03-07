@@ -15,6 +15,9 @@
 		8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */; };
 		8A2EA3D318CA143F0071642C /* SSGBMFontCharData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D218CA143F0071642C /* SSGBMFontCharData.m */; };
 		8A2EA3D618CA16100071642C /* SSGBMFontData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D518CA16100071642C /* SSGBMFontData.m */; };
+		8A2EA3D918CA1AC90071642C /* SSGBMFontModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D818CA1AC90071642C /* SSGBMFontModel.m */; };
+		8A2EA3DE18CA2EC10071642C /* SSGBMFontModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2EA3D718CA1AC90071642C /* SSGBMFontModel.h */; };
+		8A2EA3DF18CA2FD10071642C /* SSGBMFontData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2EA3D418CA16100071642C /* SSGBMFontData.h */; };
 		8A309ED3183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
 		8A309EE1183D0334002F08DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309EE0183D0334002F08DE /* XCTest.framework */; };
 		8A309EE2183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
@@ -72,6 +75,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				8A2EA3DF18CA2FD10071642C /* SSGBMFontData.h in CopyFiles */,
+				8A2EA3DE18CA2EC10071642C /* SSGBMFontModel.h in CopyFiles */,
 				8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */,
 				8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */,
 				8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */,
@@ -109,6 +114,8 @@
 		8A2EA3D218CA143F0071642C /* SSGBMFontCharData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBMFontCharData.m; sourceTree = "<group>"; };
 		8A2EA3D418CA16100071642C /* SSGBMFontData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGBMFontData.h; sourceTree = "<group>"; };
 		8A2EA3D518CA16100071642C /* SSGBMFontData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBMFontData.m; sourceTree = "<group>"; };
+		8A2EA3D718CA1AC90071642C /* SSGBMFontModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGBMFontModel.h; sourceTree = "<group>"; };
+		8A2EA3D818CA1AC90071642C /* SSGBMFontModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBMFontModel.m; sourceTree = "<group>"; };
 		8A309ECF183D0334002F08DE /* libSSGOGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSGOGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A309ED2183D0334002F08DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A309ED6183D0334002F08DE /* SSGOGL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSGOGL-Prefix.pch"; sourceTree = "<group>"; };
@@ -191,6 +198,8 @@
 				8A2EA3D518CA16100071642C /* SSGBMFontData.m */,
 				8A2EA3D118CA143F0071642C /* SSGBMFontCharData.h */,
 				8A2EA3D218CA143F0071642C /* SSGBMFontCharData.m */,
+				8A2EA3D718CA1AC90071642C /* SSGBMFontModel.h */,
+				8A2EA3D818CA1AC90071642C /* SSGBMFontModel.m */,
 			);
 			name = BMFont;
 			sourceTree = "<group>";
@@ -449,6 +458,7 @@
 				8A309FB3183D3191002F08DE /* SSGDefaultShaderSettings.m in Sources */,
 				8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */,
 				8ADA49D218803D88005E8207 /* SSGPrs.m in Sources */,
+				8A2EA3D918CA1AC90071642C /* SSGBMFontModel.m in Sources */,
 				8A309FB0183D2D8A002F08DE /* SSGColoredPSShaderSettings.m in Sources */,
 				8A309FB7183D35C2002F08DE /* SSG2DZConverter.m in Sources */,
 				8A12131F183FEA4800FE204D /* SSGDrawableTexture.m in Sources */,

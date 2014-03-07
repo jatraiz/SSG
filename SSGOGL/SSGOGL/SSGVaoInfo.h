@@ -10,6 +10,6 @@
 #import <GLKit/GLKit.h>
 
 @interface SSGVaoInfo : NSObject
-@property (nonatomic, readonly) GLuint vaoIndex, vboIndex, nVerts;
+@property (nonatomic, assign) GLuint vaoIndex, vboIndex, nVerts;
 -(instancetype) initWithVaoIndex:(GLuint)vaoIndex vboIndex:(GLuint)vboIndex andNVerts:(GLuint)nVerts;
 @end

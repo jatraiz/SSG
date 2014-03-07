@@ -28,6 +28,8 @@
 		8A2EA3CB18CA09530071642C /* rzlRing1.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3C718CA09530071642C /* rzlRing1.model */; };
 		8A2EA3CC18CA09530071642C /* rzlRing2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3C818CA09530071642C /* rzlRing2.model */; };
 		8A2EA3CD18CA09530071642C /* rzlRing3.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3C918CA09530071642C /* rzlRing3.model */; };
+		8A2EA3DC18CA2DE80071642C /* blueHev.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3DA18CA2DE80071642C /* blueHev.fnt */; };
+		8A2EA3E118CA3E8D0071642C /* blueHev2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E018CA3E8D0071642C /* blueHev2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		8A2EA3C718CA09530071642C /* rzlRing1.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzlRing1.model; sourceTree = "<group>"; };
 		8A2EA3C818CA09530071642C /* rzlRing2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzlRing2.model; sourceTree = "<group>"; };
 		8A2EA3C918CA09530071642C /* rzlRing3.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzlRing3.model; sourceTree = "<group>"; };
+		8A2EA3DA18CA2DE80071642C /* blueHev.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blueHev.fnt; sourceTree = "<group>"; };
+		8A2EA3E018CA3E8D0071642C /* blueHev2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueHev2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 		8A2EA3CE18CA09580071642C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8A2EA3E018CA3E8D0071642C /* blueHev2.png */,
+				8A2EA3DA18CA2DE80071642C /* blueHev.fnt */,
 				8A2EA3C418CA09460071642C /* raizLabsRed.png */,
 				8A2EA3C618CA09530071642C /* rzlR.model */,
 				8A2EA3C718CA09530071642C /* rzlRing1.model */,
@@ -271,9 +277,11 @@
 				8A2EA3C218CA09220071642C /* ModelDefault.vsh in Resources */,
 				8A2EA3CB18CA09530071642C /* rzlRing1.model in Resources */,
 				8A2EA3C318CA09220071642C /* ModelDefault.fsh in Resources */,
+				8A2EA3E118CA3E8D0071642C /* blueHev2.png in Resources */,
 				8A2EA3CA18CA09530071642C /* rzlR.model in Resources */,
 				8A2EA39518CA04FC0071642C /* InfoPlist.strings in Resources */,
 				8A2EA39D18CA04FC0071642C /* Images.xcassets in Resources */,
+				8A2EA3DC18CA2DE80071642C /* blueHev.fnt in Resources */,
 				8A2EA3CC18CA09530071642C /* rzlRing2.model in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
