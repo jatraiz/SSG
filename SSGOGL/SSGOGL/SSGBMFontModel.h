@@ -8,8 +8,10 @@
 
 #import "SSGModel.h"
 @class SSGBMFontData;
+@class SSGBitmapFontShaderSettings;
 
 @interface SSGBMFontModel : SSGModel
+@property (nonatomic, strong) SSGBitmapFontShaderSettings *shaderSettings;
 @property (nonatomic, strong) SSGBMFontData *fontData;
 @property (nonatomic, assign) GLfloat maxWidth;
 @property (nonatomic, assign, readonly) GLfloat lastLineY;

@@ -36,6 +36,7 @@
     [super viewDidLoad];
     self.glmgr = [[SSGOpenGLManager alloc] initWithContextRef:self.context andView:(GLKView*)self.view];
     [self.glmgr loadDefaultShaderAndSettings];
+    [self.glmgr loadBitmapFontShaderAndSettings];
     self.mainClearColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f);
     [self.glmgr setClearColor:self.mainClearColor];
     self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(5.0f), fabsf(self.view.bounds.size.height / self.view.bounds.size.width), 0.1f, 100.0f);
@@ -45,7 +46,7 @@
     GLKView *glkView = (GLKView*)self.view;
     glkView.drawableMultisample = GLKViewDrawableMultisample4X;
     
-    self.mainZ = -5.0f;
+    self.mainZ = -90.0f;
     
     SSGModel *logo1 = [[SSGModel alloc] initWithModelFileName:@"rzlR"];
     SSGModel *logo2 = [[SSGModel alloc] initWithModelFileName:@"rzlRing1"];
@@ -71,19 +72,19 @@
         m.prs.px = 6.25f;
         m.prs.py = 3.25f;
         m.prs.sxyz = 0.4f;
-        m.alpha = 0.5f;
-     //   [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.5f) Duration:120.0f IsAbsolute:YES Delay:0.5f]];
+        m.alpha = 0.0f;
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.5f) Duration:60.0f IsAbsolute:YES Delay:0.5f]];
     }
     
     self.fontModel = [[SSGBMFontModel alloc] initWithName:@"blueHev" BMFontData:[[SSGBMFontData alloc] initWithFontFile:@"blueHev"]];
-    [self.fontModel setTexture0Id:[SSGAssetManager loadTexture:@"raizLabsRed" ofType:@"png" shouldLoadWithMipMapping:NO]];
+    [self.fontModel setTexture0Id:[SSGAssetManager loadTexture:@"blueHev2" ofType:@"png" shouldLoadWithMipMapping:YES]];
     [self.fontModel setProjection:self.glmgr.projectionMatrix];
-    [self.fontModel setDefaultShaderSettings:self.glmgr.defaultShaderSettings];
+     self.fontModel.shaderSettings =  self.glmgr.bitmapFontShaderSettings;
     [self.fontModel setupWithCharMax:50];
     self.fontModel.centerHorizontal = YES;
     self.fontModel.centerVertical = YES;
     [self.fontModel updateWithText:@"Hello World"];
-    self.fontModel.prs.pz = self.mainZ;
+    self.fontModel.prs.pz = -10.0f;
     self.fontModel.prs.sxyz = 1.0f;
     self.fontModel.alpha = 1.0f;
     self.fontModel.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
@@ -92,11 +93,11 @@
 
 - (void)update
 {
-  /*  for(SSGModel *m in self.rzLogo)
+    for(SSGModel *m in self.rzLogo)
     {
         [m updateWithTime:self.timeSinceLastUpdate];
     }
-   */
+   
     [self.fontModel updateWithTime:self.timeSinceLastUpdate];
 }
 
@@ -104,11 +105,13 @@
 {
     [_glmgr setClearColor:_mainClearColor];
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-  /*  for(SSGModel *m in self.rzLogo)
+        [self.glmgr enableDepthTest];
+   for(SSGModel *m in self.rzLogo)
     {
         [m draw];
     }
-   */
+   
+    [self.glmgr disableDepthTest];
     [self.fontModel draw];
 }
 

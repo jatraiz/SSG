@@ -13,7 +13,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SSGShaderManager : NSObject
-+(unsigned int) loadModelDefaultShader;
-+(unsigned int) loadColoredPointSpriteShader;
-+(void) useProgram:(unsigned int)programId;
++ (unsigned int)loadModelDefaultShader;
++ (unsigned int)loadColoredPointSpriteShader;
++ (unsigned int)loadBitmapFontShader;
++ (void)useProgram:(unsigned int)programId;
 @end

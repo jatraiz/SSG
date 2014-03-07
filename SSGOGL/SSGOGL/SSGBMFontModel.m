@@ -11,6 +11,8 @@
 #import "SSGBMFontData.h"
 #import "SSGBMFontCharData.h"
 #import "SSGVaoInfo.h"
+#import "SSGShaderManager.h"
+#import "SSGBitmapFontShaderSettings.h"
 
 #define kBufferOffset(i) ((char*)NULL + (i))
 #define kCharMax 1000
@@ -258,6 +260,22 @@
         [self adjustDataXY:xAdj :yAdj];
     }
     [self setData:dataArr];
+}
+
+- (void)draw
+{
+    if(self.isHidden)
+    {
+        return;
+    }
+    
+    [SSGShaderManager useProgram:self.shaderSettings.programId];
+    [self.shaderSettings setAlpha:self.alpha];
+    [self.shaderSettings setModelViewProjectionMatrix:self.modelViewProjection];
+    
+    glBindVertexArrayOES(self.vaoInfo.vaoIndex);
+    glBindTexture(GL_TEXTURE_2D, self.texture0Id);
+    glDrawArrays(GL_TRIANGLES, 0, self.vaoInfo.nVerts);
 }
 
 @end

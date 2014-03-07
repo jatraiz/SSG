@@ -9,6 +9,7 @@
 #import "SSGOpenGLManager.h"
 #import "SSGShaderManager.h"
 #import "SSGDefaultShaderSettings.h"
+#import "SSGBitmapFontShaderSettings.h"
 
 
 static BOOL depthTestEnabled;
@@ -53,6 +54,13 @@ static GLKVector4 lastClearColor;
     GLuint programId = [SSGShaderManager loadModelDefaultShader];
     self.defaultShaderSettings = [[SSGDefaultShaderSettings alloc] initWithProgramId:programId];
 }
+
+-(void)loadBitmapFontShaderAndSettings
+{
+    GLuint programId = [SSGShaderManager loadBitmapFontShader];
+    self.bitmapFontShaderSettings = [[SSGBitmapFontShaderSettings alloc] initWithProgramId:programId];
+}
+
 
 //Assumes that depth testing is only changed via a manager class
 -(void)enableDepthTest

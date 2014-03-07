@@ -18,6 +18,9 @@
 		8A2EA3D918CA1AC90071642C /* SSGBMFontModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D818CA1AC90071642C /* SSGBMFontModel.m */; };
 		8A2EA3DE18CA2EC10071642C /* SSGBMFontModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2EA3D718CA1AC90071642C /* SSGBMFontModel.h */; };
 		8A2EA3DF18CA2FD10071642C /* SSGBMFontData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2EA3D418CA16100071642C /* SSGBMFontData.h */; };
+		8A2EA3E418CA49050071642C /* BitmapFont.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E218CA49050071642C /* BitmapFont.fsh */; };
+		8A2EA3E518CA49050071642C /* BitmapFont.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E318CA49050071642C /* BitmapFont.vsh */; };
+		8A2EA3E818CA4AC10071642C /* SSGBitmapFontShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E718CA4AC10071642C /* SSGBitmapFontShaderSettings.m */; };
 		8A309ED3183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
 		8A309EE1183D0334002F08DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309EE0183D0334002F08DE /* XCTest.framework */; };
 		8A309EE2183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
@@ -116,6 +119,10 @@
 		8A2EA3D518CA16100071642C /* SSGBMFontData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBMFontData.m; sourceTree = "<group>"; };
 		8A2EA3D718CA1AC90071642C /* SSGBMFontModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGBMFontModel.h; sourceTree = "<group>"; };
 		8A2EA3D818CA1AC90071642C /* SSGBMFontModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBMFontModel.m; sourceTree = "<group>"; };
+		8A2EA3E218CA49050071642C /* BitmapFont.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BitmapFont.fsh; sourceTree = "<group>"; };
+		8A2EA3E318CA49050071642C /* BitmapFont.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BitmapFont.vsh; sourceTree = "<group>"; };
+		8A2EA3E618CA4AC10071642C /* SSGBitmapFontShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGBitmapFontShaderSettings.h; sourceTree = "<group>"; };
+		8A2EA3E718CA4AC10071642C /* SSGBitmapFontShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBitmapFontShaderSettings.m; sourceTree = "<group>"; };
 		8A309ECF183D0334002F08DE /* libSSGOGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSGOGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A309ED2183D0334002F08DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A309ED6183D0334002F08DE /* SSGOGL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSGOGL-Prefix.pch"; sourceTree = "<group>"; };
@@ -318,6 +325,8 @@
 				8A309FAF183D2D8A002F08DE /* SSGColoredPSShaderSettings.m */,
 				8A309FB1183D3191002F08DE /* SSGDefaultShaderSettings.h */,
 				8A309FB2183D3191002F08DE /* SSGDefaultShaderSettings.m */,
+				8A2EA3E618CA4AC10071642C /* SSGBitmapFontShaderSettings.h */,
+				8A2EA3E718CA4AC10071642C /* SSGBitmapFontShaderSettings.m */,
 			);
 			name = "Shader Management";
 			sourceTree = "<group>";
@@ -325,6 +334,8 @@
 		8A309F9E183D2363002F08DE /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				8A2EA3E218CA49050071642C /* BitmapFont.fsh */,
+				8A2EA3E318CA49050071642C /* BitmapFont.vsh */,
 				8A309F9F183D2375002F08DE /* ColorPointSprite.vsh */,
 				8A309FA0183D2375002F08DE /* ColorPointSprite.fsh */,
 				8A309FA4183D2387002F08DE /* ModelDefault.vsh */,
@@ -450,11 +461,14 @@
 				8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */,
 				8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */,
 				8A2EA3D618CA16100071642C /* SSGBMFontData.m in Sources */,
+				8A2EA3E418CA49050071642C /* BitmapFont.fsh in Sources */,
 				8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */,
 				8A309FAD183D26A5002F08DE /* SSGShaderManager.m in Sources */,
 				8A309FBA183D4A84002F08DE /* SSGVaoInfo.m in Sources */,
 				8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */,
+				8A2EA3E818CA4AC10071642C /* SSGBitmapFontShaderSettings.m in Sources */,
 				8A309F44183D089E002F08DE /* SSGAssetManager.m in Sources */,
+				8A2EA3E518CA49050071642C /* BitmapFont.vsh in Sources */,
 				8A309FB3183D3191002F08DE /* SSGDefaultShaderSettings.m in Sources */,
 				8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */,
 				8ADA49D218803D88005E8207 /* SSGPrs.m in Sources */,
