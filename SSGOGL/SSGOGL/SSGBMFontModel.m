@@ -76,6 +76,11 @@
     return NO;
 }
 
+- (NSString*)getCurrentText
+{
+    return self.text;
+}
+
 - (void)setData:(GLfloat *)data
 {
     glBindBuffer(GL_ARRAY_BUFFER, self.vaoInfo.vboIndex);
@@ -260,6 +265,18 @@
         [self adjustDataXY:xAdj :yAdj];
     }
     [self setData:dataArr];
+}
+
+- (void)clearText
+{
+    self.text = @"";
+    if(self.assignedCharMax != 0)
+    {
+        for(int i = 0; i < (self.assignedCharMax - 1) * 30 + 5; i++)
+        {
+            dataArr[i] = 0.0f;
+        }
+    }
 }
 
 - (void)draw

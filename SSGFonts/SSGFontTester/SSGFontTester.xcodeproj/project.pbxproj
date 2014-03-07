@@ -34,6 +34,8 @@
 		8A2EA3EC18CA4EDF0071642C /* BitmapFont.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3EA18CA4EDF0071642C /* BitmapFont.vsh */; };
 		8A2EA3ED18CA4EED0071642C /* BitmapFont.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E918CA4EDF0071642C /* BitmapFont.fsh */; };
 		8A2EA3EE18CA4EED0071642C /* BitmapFont.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3EA18CA4EDF0071642C /* BitmapFont.vsh */; };
+		8A2EA3F118CA606F0071642C /* fireText.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3EF18CA606F0071642C /* fireText.png */; };
+		8A2EA3F218CA606F0071642C /* fireText.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3F018CA606F0071642C /* fireText.fnt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		8A2EA3E018CA3E8D0071642C /* blueHev2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueHev2.png; sourceTree = "<group>"; };
 		8A2EA3E918CA4EDF0071642C /* BitmapFont.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BitmapFont.fsh; sourceTree = "<group>"; };
 		8A2EA3EA18CA4EDF0071642C /* BitmapFont.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BitmapFont.vsh; sourceTree = "<group>"; };
+		8A2EA3EF18CA606F0071642C /* fireText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireText.png; sourceTree = "<group>"; };
+		8A2EA3F018CA606F0071642C /* fireText.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fireText.fnt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 		8A2EA3CE18CA09580071642C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8A2EA3EF18CA606F0071642C /* fireText.png */,
+				8A2EA3F018CA606F0071642C /* fireText.fnt */,
 				8A2EA3E018CA3E8D0071642C /* blueHev2.png */,
 				8A2EA3DA18CA2DE80071642C /* blueHev.fnt */,
 				8A2EA3C418CA09460071642C /* raizLabsRed.png */,
@@ -281,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2EA3ED18CA4EED0071642C /* BitmapFont.fsh in Resources */,
+				8A2EA3F218CA606F0071642C /* fireText.fnt in Resources */,
 				8A2EA3EE18CA4EED0071642C /* BitmapFont.vsh in Resources */,
 				8A2EA3C518CA09460071642C /* raizLabsRed.png in Resources */,
 				8A2EA3CD18CA09530071642C /* rzlRing3.model in Resources */,
+				8A2EA3F118CA606F0071642C /* fireText.png in Resources */,
 				8A2EA3C218CA09220071642C /* ModelDefault.vsh in Resources */,
 				8A2EA3CB18CA09530071642C /* rzlRing1.model in Resources */,
 				8A2EA3C318CA09220071642C /* ModelDefault.fsh in Resources */,

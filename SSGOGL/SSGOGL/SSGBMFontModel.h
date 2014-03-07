@@ -25,5 +25,7 @@
 - (void)setupWithString:(NSString*)str;
 - (void)setupWithCharMax:(GLint)cMax;
 - (void)updateWithText:(NSString*)str;
+- (void)clearText;
+- (NSString*)getCurrentText;
 
 @end

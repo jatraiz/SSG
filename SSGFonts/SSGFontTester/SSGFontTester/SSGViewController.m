@@ -20,13 +20,14 @@
 #import <SSGOGL/SSGBMFontData.h>
 
 
-@interface SSGViewController ()
+@interface SSGViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) SSGOpenGLManager *glmgr;
 @property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, assign) GLKVector4 mainClearColor;
 @property (nonatomic, assign) GLfloat mainZ;
 @property (nonatomic, strong) NSArray *rzLogo;
 @property (nonatomic, strong) SSGBMFontModel *fontModel;
+@property (nonatomic, strong) UITextField *textField;
 @end
 
 @implementation SSGViewController
@@ -76,20 +77,55 @@
         [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.5f) Duration:60.0f IsAbsolute:YES Delay:0.5f]];
     }
     
-    self.fontModel = [[SSGBMFontModel alloc] initWithName:@"blueHev" BMFontData:[[SSGBMFontData alloc] initWithFontFile:@"blueHev"]];
-    [self.fontModel setTexture0Id:[SSGAssetManager loadTexture:@"blueHev2" ofType:@"png" shouldLoadWithMipMapping:YES]];
+    self.fontModel = [[SSGBMFontModel alloc] initWithName:@"fireText" BMFontData:[[SSGBMFontData alloc] initWithFontFile:@"fireText"]];
+    [self.fontModel setTexture0Id:[SSGAssetManager loadTexture:@"fireText" ofType:@"png" shouldLoadWithMipMapping:YES]];
     [self.fontModel setProjection:self.glmgr.projectionMatrix];
      self.fontModel.shaderSettings =  self.glmgr.bitmapFontShaderSettings;
     [self.fontModel setupWithCharMax:50];
     self.fontModel.centerHorizontal = YES;
-    self.fontModel.centerVertical = YES;
-    [self.fontModel updateWithText:@"Hello World"];
+    self.fontModel.centerVertical = NO;
     self.fontModel.prs.pz = -10.0f;
-    self.fontModel.prs.sxyz = 1.0f;
+    self.fontModel.prs.py = -0.25f;
+    self.fontModel.prs.sxyz = 2.0f;
     self.fontModel.alpha = 1.0f;
     self.fontModel.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     self.fontModel.shadowMax = 0.4f;
+    
+    self.textField = [UITextField new];
+    self.textField.hidden = YES;
+    self.textField.delegate = self;
+    [self.view addSubview:self.textField];
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    GLfloat fontYAdj = 0.1f;
+    
+    if(self.textField.isFirstResponder)
+    {
+        [self.textField resignFirstResponder];
+        [self.fontModel.prs moveToVector:GLKVector3Make(0.0f, -fontYAdj, 0.0f) Duration:0.2f Delay:0.0f IsAbsolute:NO];
+    }
+    else
+    {
+        [self.fontModel.prs moveToVector:GLKVector3Make(0.0f, fontYAdj, 0.0f) Duration:0.2f Delay:0.0f IsAbsolute:NO];
+        [self.textField becomeFirstResponder];
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if([string isEqualToString: @""] && [[self.fontModel getCurrentText] length] <= 1)
+    {
+        [self.fontModel clearText];
+    }
+    else
+    {
+        [self.fontModel updateWithText:[NSString stringWithFormat:@"%@%@",textField.text,string]];
+    }
+    return YES;
+}
+
 
 - (void)update
 {
