@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A07A7BB18DCA210004512CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7BA18DCA210004512CF /* Foundation.framework */; };
+		8A07A7BD18DCA210004512CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7BC18DCA210004512CF /* CoreGraphics.framework */; };
+		8A07A7BF18DCA210004512CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7BE18DCA210004512CF /* UIKit.framework */; };
+		8A07A7C518DCA210004512CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7C318DCA210004512CF /* InfoPlist.strings */; };
+		8A07A7C718DCA210004512CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A07A7C618DCA210004512CF /* main.m */; };
+		8A07A7CB18DCA210004512CF /* RZLogoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A07A7CA18DCA210004512CF /* RZLogoAppDelegate.m */; };
+		8A07A7CD18DCA210004512CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7CC18DCA210004512CF /* Images.xcassets */; };
+		8A07A7D418DCA210004512CF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7D318DCA210004512CF /* XCTest.framework */; };
+		8A07A7D518DCA210004512CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7BA18DCA210004512CF /* Foundation.framework */; };
+		8A07A7D618DCA210004512CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7BE18DCA210004512CF /* UIKit.framework */; };
+		8A07A7DE18DCA210004512CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7DC18DCA210004512CF /* InfoPlist.strings */; };
+		8A07A7E018DCA210004512CF /* RZLogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A07A7DF18DCA210004512CF /* RZLogoTests.m */; };
+		8A07A7EA18DCA23A004512CF /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07A7E918DCA23A004512CF /* libSSGOGL.a */; };
+		8A07A7ED18DCA255004512CF /* RZLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A07A7EC18DCA255004512CF /* RZLogoViewController.m */; };
+		8A07A7EF18DCA268004512CF /* raizLabsRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7EE18DCA268004512CF /* raizLabsRed.png */; };
+		8A07A7F518DCA296004512CF /* rzR.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7F118DCA296004512CF /* rzR.model */; };
+		8A07A7FC18DCA2F7004512CF /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7FA18DCA2F7004512CF /* ModelDefault.vsh */; };
+		8A07A7FD18DCA2F7004512CF /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7FB18DCA2F7004512CF /* ModelDefault.fsh */; };
+		8A07A80118DCAA07004512CF /* rzRing1.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7FE18DCAA07004512CF /* rzRing1.model */; };
+		8A07A80218DCAA07004512CF /* rzRing2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7FF18DCAA07004512CF /* rzRing2.model */; };
+		8A07A80318DCAA07004512CF /* rzRing3.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A80018DCAA07004512CF /* rzRing3.model */; };
+		8A07A80718DCAAD8004512CF /* ExampleUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A07A80518DCAAD8004512CF /* ExampleUIViewController.m */; };
+		8A07A80818DCAAD8004512CF /* ExampleUIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A80618DCAAD8004512CF /* ExampleUIViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A07A7D718DCA210004512CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A07A7AF18DCA210004512CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A07A7B618DCA210004512CF;
+			remoteInfo = RZLogo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A07A7B718DCA210004512CF /* RZLogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZLogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A07A7BA18DCA210004512CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A07A7BC18DCA210004512CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A07A7BE18DCA210004512CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A07A7C218DCA210004512CF /* RZLogo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZLogo-Info.plist"; sourceTree = "<group>"; };
+		8A07A7C418DCA210004512CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A07A7C618DCA210004512CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A07A7C818DCA210004512CF /* RZLogo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZLogo-Prefix.pch"; sourceTree = "<group>"; };
+		8A07A7C918DCA210004512CF /* RZLogoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZLogoAppDelegate.h; sourceTree = "<group>"; };
+		8A07A7CA18DCA210004512CF /* RZLogoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZLogoAppDelegate.m; sourceTree = "<group>"; };
+		8A07A7CC18DCA210004512CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A07A7D218DCA210004512CF /* RZLogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RZLogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A07A7D318DCA210004512CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A07A7DB18DCA210004512CF /* RZLogoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZLogoTests-Info.plist"; sourceTree = "<group>"; };
+		8A07A7DD18DCA210004512CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A07A7DF18DCA210004512CF /* RZLogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZLogoTests.m; sourceTree = "<group>"; };
+		8A07A7E918DCA23A004512CF /* libSSGOGL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSSGOGL.a; path = "../../../../../Library/Developer/Xcode/DerivedData/RZLogo-fkjxsvtzrhsoihdzishjfheyltkt/Build/Products/Debug-iphoneos/libSSGOGL.a"; sourceTree = "<group>"; };
+		8A07A7EB18DCA255004512CF /* RZLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZLogoViewController.h; sourceTree = SOURCE_ROOT; };
+		8A07A7EC18DCA255004512CF /* RZLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZLogoViewController.m; sourceTree = SOURCE_ROOT; };
+		8A07A7EE18DCA268004512CF /* raizLabsRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raizLabsRed.png; sourceTree = "<group>"; };
+		8A07A7F118DCA296004512CF /* rzR.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzR.model; sourceTree = "<group>"; };
+		8A07A7FA18DCA2F7004512CF /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A07A7FB18DCA2F7004512CF /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+		8A07A7FE18DCAA07004512CF /* rzRing1.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzRing1.model; sourceTree = "<group>"; };
+		8A07A7FF18DCAA07004512CF /* rzRing2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzRing2.model; sourceTree = "<group>"; };
+		8A07A80018DCAA07004512CF /* rzRing3.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzRing3.model; sourceTree = "<group>"; };
+		8A07A80418DCAAD8004512CF /* ExampleUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleUIViewController.h; sourceTree = "<group>"; };
+		8A07A80518DCAAD8004512CF /* ExampleUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleUIViewController.m; sourceTree = "<group>"; };
+		8A07A80618DCAAD8004512CF /* ExampleUIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleUIViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A07A7B418DCA210004512CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A07A7EA18DCA23A004512CF /* libSSGOGL.a in Frameworks */,
+				8A07A7BD18DCA210004512CF /* CoreGraphics.framework in Frameworks */,
+				8A07A7BF18DCA210004512CF /* UIKit.framework in Frameworks */,
+				8A07A7BB18DCA210004512CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A07A7CF18DCA210004512CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A07A7D418DCA210004512CF /* XCTest.framework in Frameworks */,
+				8A07A7D618DCA210004512CF /* UIKit.framework in Frameworks */,
+				8A07A7D518DCA210004512CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A07A7AE18DCA210004512CF = {
+			isa = PBXGroup;
+			children = (
+				8A07A7C018DCA210004512CF /* RZLogo */,
+				8A07A7D918DCA210004512CF /* RZLogoTests */,
+				8A07A7B918DCA210004512CF /* Frameworks */,
+				8A07A7B818DCA210004512CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A07A7B818DCA210004512CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7B718DCA210004512CF /* RZLogo.app */,
+				8A07A7D218DCA210004512CF /* RZLogoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A07A7B918DCA210004512CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7E918DCA23A004512CF /* libSSGOGL.a */,
+				8A07A7BA18DCA210004512CF /* Foundation.framework */,
+				8A07A7BC18DCA210004512CF /* CoreGraphics.framework */,
+				8A07A7BE18DCA210004512CF /* UIKit.framework */,
+				8A07A7D318DCA210004512CF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A07A7C018DCA210004512CF /* RZLogo */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7C918DCA210004512CF /* RZLogoAppDelegate.h */,
+				8A07A7CA18DCA210004512CF /* RZLogoAppDelegate.m */,
+				8A07A7EB18DCA255004512CF /* RZLogoViewController.h */,
+				8A07A7EC18DCA255004512CF /* RZLogoViewController.m */,
+				8A07A80418DCAAD8004512CF /* ExampleUIViewController.h */,
+				8A07A80518DCAAD8004512CF /* ExampleUIViewController.m */,
+				8A07A80618DCAAD8004512CF /* ExampleUIViewController.xib */,
+				8A07A7F018DCA26C004512CF /* Assets */,
+				8A07A7F918DCA2E1004512CF /* Shaders */,
+				8A07A7C118DCA210004512CF /* Supporting Files */,
+			);
+			path = RZLogo;
+			sourceTree = "<group>";
+		};
+		8A07A7C118DCA210004512CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7C218DCA210004512CF /* RZLogo-Info.plist */,
+				8A07A7C318DCA210004512CF /* InfoPlist.strings */,
+				8A07A7C618DCA210004512CF /* main.m */,
+				8A07A7C818DCA210004512CF /* RZLogo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A07A7D918DCA210004512CF /* RZLogoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7DF18DCA210004512CF /* RZLogoTests.m */,
+				8A07A7DA18DCA210004512CF /* Supporting Files */,
+			);
+			path = RZLogoTests;
+			sourceTree = "<group>";
+		};
+		8A07A7DA18DCA210004512CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7DB18DCA210004512CF /* RZLogoTests-Info.plist */,
+				8A07A7DC18DCA210004512CF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A07A7F018DCA26C004512CF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7F118DCA296004512CF /* rzR.model */,
+				8A07A7FE18DCAA07004512CF /* rzRing1.model */,
+				8A07A7FF18DCAA07004512CF /* rzRing2.model */,
+				8A07A80018DCAA07004512CF /* rzRing3.model */,
+				8A07A7EE18DCA268004512CF /* raizLabsRed.png */,
+				8A07A7CC18DCA210004512CF /* Images.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		8A07A7F918DCA2E1004512CF /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8A07A7FA18DCA2F7004512CF /* ModelDefault.vsh */,
+				8A07A7FB18DCA2F7004512CF /* ModelDefault.fsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A07A7B618DCA210004512CF /* RZLogo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A07A7E318DCA210004512CF /* Build configuration list for PBXNativeTarget "RZLogo" */;
+			buildPhases = (
+				8A07A7B318DCA210004512CF /* Sources */,
+				8A07A7B418DCA210004512CF /* Frameworks */,
+				8A07A7B518DCA210004512CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RZLogo;
+			productName = RZLogo;
+			productReference = 8A07A7B718DCA210004512CF /* RZLogo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A07A7D118DCA210004512CF /* RZLogoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A07A7E618DCA210004512CF /* Build configuration list for PBXNativeTarget "RZLogoTests" */;
+			buildPhases = (
+				8A07A7CE18DCA210004512CF /* Sources */,
+				8A07A7CF18DCA210004512CF /* Frameworks */,
+				8A07A7D018DCA210004512CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A07A7D818DCA210004512CF /* PBXTargetDependency */,
+			);
+			name = RZLogoTests;
+			productName = RZLogoTests;
+			productReference = 8A07A7D218DCA210004512CF /* RZLogoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A07A7AF18DCA210004512CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RZLogo;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Stricker";
+				TargetAttributes = {
+					8A07A7D118DCA210004512CF = {
+						TestTargetID = 8A07A7B618DCA210004512CF;
+					};
+				};
+			};
+			buildConfigurationList = 8A07A7B218DCA210004512CF /* Build configuration list for PBXProject "RZLogo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A07A7AE18DCA210004512CF;
+			productRefGroup = 8A07A7B818DCA210004512CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A07A7B618DCA210004512CF /* RZLogo */,
+				8A07A7D118DCA210004512CF /* RZLogoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A07A7B518DCA210004512CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A07A80118DCAA07004512CF /* rzRing1.model in Resources */,
+				8A07A7FD18DCA2F7004512CF /* ModelDefault.fsh in Resources */,
+				8A07A80218DCAA07004512CF /* rzRing2.model in Resources */,
+				8A07A80318DCAA07004512CF /* rzRing3.model in Resources */,
+				8A07A7C518DCA210004512CF /* InfoPlist.strings in Resources */,
+				8A07A80818DCAAD8004512CF /* ExampleUIViewController.xib in Resources */,
+				8A07A7CD18DCA210004512CF /* Images.xcassets in Resources */,
+				8A07A7F518DCA296004512CF /* rzR.model in Resources */,
+				8A07A7FC18DCA2F7004512CF /* ModelDefault.vsh in Resources */,
+				8A07A7EF18DCA268004512CF /* raizLabsRed.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A07A7D018DCA210004512CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A07A7DE18DCA210004512CF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A07A7B318DCA210004512CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A07A7C718DCA210004512CF /* main.m in Sources */,
+				8A07A80718DCAAD8004512CF /* ExampleUIViewController.m in Sources */,
+				8A07A7ED18DCA255004512CF /* RZLogoViewController.m in Sources */,
+				8A07A7CB18DCA210004512CF /* RZLogoAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A07A7CE18DCA210004512CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A07A7E018DCA210004512CF /* RZLogoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A07A7D818DCA210004512CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A07A7B618DCA210004512CF /* RZLogo */;
+			targetProxy = 8A07A7D718DCA210004512CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A07A7C318DCA210004512CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A07A7C418DCA210004512CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A07A7DC18DCA210004512CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A07A7DD18DCA210004512CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A07A7E118DCA210004512CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A07A7E218DCA210004512CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A07A7E418DCA210004512CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZLogo/RZLogo-Prefix.pch";
+				INFOPLIST_FILE = "RZLogo/RZLogo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RZLogo-fkjxsvtzrhsoihdzishjfheyltkt/Build/Products/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A07A7E518DCA210004512CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZLogo/RZLogo-Prefix.pch";
+				INFOPLIST_FILE = "RZLogo/RZLogo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RZLogo-fkjxsvtzrhsoihdzishjfheyltkt/Build/Products/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A07A7E718DCA210004512CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RZLogo.app/RZLogo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZLogo/RZLogo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RZLogoTests/RZLogoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A07A7E818DCA210004512CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RZLogo.app/RZLogo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZLogo/RZLogo-Prefix.pch";
+				INFOPLIST_FILE = "RZLogoTests/RZLogoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A07A7B218DCA210004512CF /* Build configuration list for PBXProject "RZLogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A07A7E118DCA210004512CF /* Debug */,
+				8A07A7E218DCA210004512CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A07A7E318DCA210004512CF /* Build configuration list for PBXNativeTarget "RZLogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A07A7E418DCA210004512CF /* Debug */,
+				8A07A7E518DCA210004512CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8A07A7E618DCA210004512CF /* Build configuration list for PBXNativeTarget "RZLogoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A07A7E718DCA210004512CF /* Debug */,
+				8A07A7E818DCA210004512CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A07A7AF18DCA210004512CF /* Project object */;
+}
