@@ -9,5 +9,7 @@
 #import <GLKit/GLKit.h>
 
 @interface RZLogoViewController : GLKViewController
+- (void)update;
+
 
 @end
