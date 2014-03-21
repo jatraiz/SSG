@@ -12,12 +12,26 @@
 typedef NS_ENUM(NSInteger, SSGCommandEnum)
 {
     kSSGCommand_alpha,
-    kSSGCommand_visible
+    kSSGCommand_visible,
+    kSSGCommand_font_alternatingSplit
 };
 
 static __inline__ GLKVector4 command1float(float x)
 {
     GLKVector4 v = { x, 0.0f, 0.0f, 0.0f};
+    return v;
+}
+
+static __inline__ GLKVector4 command2float(float x, float y)
+{
+    GLKVector4 v = { x, y, 0.0f, 0.0f};
+    return v;
+}
+
+
+static __inline__ GLKVector4 command3float(float x, float y, float z)
+{
+    GLKVector4 v = {x, y, z,0.0f};
     return v;
 }
 

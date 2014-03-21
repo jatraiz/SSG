@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A309ECE183D0334002F08DE"
-               BuildableName = "libSSGOGL.a"
-               BlueprintName = "SSGOGL"
-               ReferencedContainer = "container:SSGOGL.xcodeproj">
+               BlueprintIdentifier = "8A2EA38618CA04FC0071642C"
+               BuildableName = "SSGFontTester.app"
+               BlueprintName = "SSGFontTester"
+               ReferencedContainer = "container:SSGFontTester.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,13 +32,22 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A309EDE183D0334002F08DE"
-               BuildableName = "SSGOGLTests.xctest"
-               BlueprintName = "SSGOGLTests"
-               ReferencedContainer = "container:SSGOGL.xcodeproj">
+               BlueprintIdentifier = "8A2EA3A118CA04FC0071642C"
+               BuildableName = "SSGFontTesterTests.xctest"
+               BlueprintName = "SSGFontTesterTests"
+               ReferencedContainer = "container:SSGFontTester.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8A2EA38618CA04FC0071642C"
+            BuildableName = "SSGFontTester.app"
+            BlueprintName = "SSGFontTester"
+            ReferencedContainer = "container:SSGFontTester.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,7 +57,17 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enableOpenGLFrameCaptureMode = "1"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8A2EA38618CA04FC0071642C"
+            BuildableName = "SSGFontTester.app"
+            BlueprintName = "SSGFontTester"
+            ReferencedContainer = "container:SSGFontTester.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -58,6 +77,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8A2EA38618CA04FC0071642C"
+            BuildableName = "SSGFontTester.app"
+            BlueprintName = "SSGFontTester"
+            ReferencedContainer = "container:SSGFontTester.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

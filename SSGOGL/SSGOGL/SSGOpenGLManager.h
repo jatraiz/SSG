@@ -11,16 +11,19 @@
 
 @class SSGDefaultShaderSettings;
 @class SSGColoredPSShaderSettings;
+@class SSGBitmapFontShaderSettings;
 @class SSG2DZConverter;
 
 @interface SSGOpenGLManager : NSObject
-@property (nonatomic) SSGDefaultShaderSettings *defaultShaderSettings;
-@property (nonatomic) SSGColoredPSShaderSettings *coloredPSShaderSettings;
-@property (nonatomic) SSG2DZConverter *zConverter;
-@property (nonatomic) GLKMatrix4 projectionMatrix;
+@property (nonatomic, strong) SSGDefaultShaderSettings *defaultShaderSettings;
+@property (nonatomic, strong) SSGColoredPSShaderSettings *coloredPSShaderSettings;
+@property (nonatomic, strong) SSGBitmapFontShaderSettings *bitmapFontShaderSettings;
+@property (nonatomic, strong) SSG2DZConverter *zConverter;
+@property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 
 -(instancetype)initWithContextRef:(EAGLContext*)context andView:(GLKView*)view;
 -(void)loadDefaultShaderAndSettings;
+-(void)loadBitmapFontShaderAndSettings;
 -(void)enableDepthTest;
 -(void)disableDepthTest;
 -(void)setClearColor:(GLKVector4)clearColor;

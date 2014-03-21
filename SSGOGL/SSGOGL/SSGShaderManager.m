@@ -40,6 +40,11 @@ static unsigned int lastProgramUsed; //keeps track of last program used to minim
     return [self loadProgram:@"ColorPointSprite" :@"ColorPointSprite",1,0,"a_position"];
 }
 
++ (unsigned int) loadBitmapFontShader
+{
+    return [self loadProgram:@"BitmapFont" :@"BitmapFont",2,0,"a_position",1,"a_texCoord"];
+}
+
 +(GLuint) loadProgram:(NSString *)vertShaderName :(NSString *)fragShaderName, ...
 {
     
