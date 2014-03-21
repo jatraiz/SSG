@@ -21,8 +21,6 @@
 @property (nonatomic, assign) GLboolean applyLineHeightAdjWhenWrapping;
 
 - (instancetype)initWithName:(NSString*)name BMFontData:(SSGBMFontData*)bmfd;
-- (void)setupWithChar:(char)c;
-- (void)setupWithString:(NSString*)str;
 - (void)setupWithCharMax:(GLint)cMax;
 - (void)updateWithText:(NSString*)str;
 - (void)clearText;

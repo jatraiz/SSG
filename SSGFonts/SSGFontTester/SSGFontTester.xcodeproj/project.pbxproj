@@ -30,8 +30,6 @@
 		8A2EA3CD18CA09530071642C /* rzlRing3.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3C918CA09530071642C /* rzlRing3.model */; };
 		8A2EA3DC18CA2DE80071642C /* blueHev.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3DA18CA2DE80071642C /* blueHev.fnt */; };
 		8A2EA3E118CA3E8D0071642C /* blueHev2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E018CA3E8D0071642C /* blueHev2.png */; };
-		8A2EA3EB18CA4EDF0071642C /* BitmapFont.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E918CA4EDF0071642C /* BitmapFont.fsh */; };
-		8A2EA3EC18CA4EDF0071642C /* BitmapFont.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3EA18CA4EDF0071642C /* BitmapFont.vsh */; };
 		8A2EA3ED18CA4EED0071642C /* BitmapFont.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E918CA4EDF0071642C /* BitmapFont.fsh */; };
 		8A2EA3EE18CA4EED0071642C /* BitmapFont.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3EA18CA4EDF0071642C /* BitmapFont.vsh */; };
 		8A2EA3F118CA606F0071642C /* fireText.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2EA3EF18CA606F0071642C /* fireText.png */; };
@@ -65,7 +63,7 @@
 		8A2EA3AB18CA04FC0071642C /* SSGFontTesterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSGFontTesterTests-Info.plist"; sourceTree = "<group>"; };
 		8A2EA3AD18CA04FC0071642C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A2EA3AF18CA04FC0071642C /* SSGFontTesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSGFontTesterTests.m; sourceTree = "<group>"; };
-		8A2EA3B918CA052E0071642C /* libSSGOGL.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libSSGOGL.a; path = "../../SSGOGL/build/Debug-iphoneos/libSSGOGL.a"; sourceTree = "<group>"; };
+		8A2EA3B918CA052E0071642C /* libSSGOGL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSSGOGL.a; path = "../../SSGOGL/build/Debug-iphoneos/libSSGOGL.a"; sourceTree = "<group>"; };
 		8A2EA3BB18CA05D40071642C /* SSGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGViewController.h; sourceTree = "<group>"; };
 		8A2EA3BC18CA05D40071642C /* SSGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGViewController.m; sourceTree = "<group>"; };
 		8A2EA3BE18CA090E0071642C /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
@@ -255,7 +253,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SSG;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "John Stricker";
 				TargetAttributes = {
 					8A2EA3A118CA04FC0071642C = {
@@ -320,9 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2EA39B18CA04FC0071642C /* SSGAppDelegate.m in Sources */,
-				8A2EA3EB18CA4EDF0071642C /* BitmapFont.fsh in Sources */,
 				8A2EA3BD18CA05D40071642C /* SSGViewController.m in Sources */,
-				8A2EA3EC18CA4EDF0071642C /* BitmapFont.vsh in Sources */,
 				8A2EA39718CA04FC0071642C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +365,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -409,7 +404,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -468,7 +462,6 @@
 		8A2EA3B718CA04FC0071642C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SSGFontTester.app/SSGFontTester";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -491,7 +484,6 @@
 		8A2EA3B818CA04FC0071642C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SSGFontTester.app/SSGFontTester";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -526,6 +518,7 @@
 				8A2EA3B518CA04FC0071642C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A2EA3B618CA04FC0071642C /* Build configuration list for PBXNativeTarget "SSGFontTesterTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +527,7 @@
 				8A2EA3B818CA04FC0071642C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

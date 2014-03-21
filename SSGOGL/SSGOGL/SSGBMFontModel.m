@@ -29,7 +29,6 @@
 @property (nonatomic, assign) GLint currentIndex;
 
 - (void)setData:(GLfloat*)data;
-- (void)adjustDataX:(GLfloat)x Y:(GLfloat)y;
 - (GLboolean)nextWordShouldWrapAtIndex:(int)currentIndex CurrentXpos:(GLfloat)xPos;
 
 @end
@@ -61,7 +60,7 @@
         if(c != ' ' && c != kLineBreakChar)
         {
             cd = [self.fontData charDataFor:c];
-            xPos = xPos = cd.xOffset + cd.width;
+            xPos = cd.xOffset + cd.width;
             if(xPos > self.maxWidth)
             {
                 return YES;
@@ -158,7 +157,7 @@
         }
     }
     
-    self.charCount = [str length];
+    self.charCount = (GLint)[str length];
     self.currentIndex = self.charCount;
     if(self.charCount > self.assignedCharMax)
     {
