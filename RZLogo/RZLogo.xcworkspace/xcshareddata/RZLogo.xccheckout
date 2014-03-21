@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>25156DA5-AAA7-4D27-97BE-C4A74789FBFA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RZLogo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2F8E0F48-6A17-483B-A475-C6873EC9222F</key>
+		<string>https://github.com/jatraiz/SSG.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RZLogo/RZLogo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2F8E0F48-6A17-483B-A475-C6873EC9222F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jatraiz/SSG.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2F8E0F48-6A17-483B-A475-C6873EC9222F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2F8E0F48-6A17-483B-A475-C6873EC9222F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SSG</string>
+		</dict>
+	</array>
+</dict>
+</plist>
