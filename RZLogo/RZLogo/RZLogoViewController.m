@@ -38,7 +38,7 @@
     [self.glmgr loadDefaultShaderAndSettings];
     
     //main background color of the window (including transparency)
-    [self.glmgr setClearColor:GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f)];
+    [self.glmgr setClearColor:GLKVector4Make(0.0f, 0.0f, 0.0f, 0.0f)];
     
     //setting up perspective, with the logo you probably don't want too much of a field of view effect, so a 5 degree field of view is used
     self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(5.0f), fabsf(self.view.bounds.size.height / self.view.bounds.size.width), 0.1f, 100.0f);
@@ -49,7 +49,7 @@
     ((GLKView*)self.view).drawableMultisample = GLKViewDrawableMultisample4X;
     
     //Z location for logo in 3D space
-    self.mainZ = -50.0f;
+    self.mainZ = -10.0f;
     
     //loading models
     SSGModel *logo1 = [[SSGModel alloc] initWithModelFileName:@"rzR"];
@@ -74,15 +74,15 @@
         //diffuse lighting color
         m.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
         //parameter for how prominent shadows are for the single light source default shader (0 to 0.5, larger values = more shadows)
-        m.shadowMax = 0.4f;
+        m.shadowMax = 0.9f;
         
         m.prs.pz = self.mainZ;
         //setting the scale values for the model
-        m.prs.sxyz = 0.4f;
+        m.prs.sxyz = 0.25f;
         //alpha (transparency) value
         m.alpha = 0.0f;
         //best to fade in a model on load as there is a bit of stutter in GLKView when it first loads
-        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(1.0f) Duration:0.2f IsAbsolute:YES Delay:0.0f]];
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.8f) Duration:0.2f IsAbsolute:YES Delay:0.0f]];
     }
     
 }

@@ -28,6 +28,8 @@
 		8A07A80118DCAA07004512CF /* rzRing1.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7FE18DCAA07004512CF /* rzRing1.model */; };
 		8A07A80218DCAA07004512CF /* rzRing2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A7FF18DCAA07004512CF /* rzRing2.model */; };
 		8A07A80318DCAA07004512CF /* rzRing3.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A80018DCAA07004512CF /* rzRing3.model */; };
+		8A07A80718DCAAD8004512CF /* ExampleUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A07A80518DCAAD8004512CF /* ExampleUIViewController.m */; };
+		8A07A80818DCAAD8004512CF /* ExampleUIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A07A80618DCAAD8004512CF /* ExampleUIViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		8A07A7FE18DCAA07004512CF /* rzRing1.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzRing1.model; sourceTree = "<group>"; };
 		8A07A7FF18DCAA07004512CF /* rzRing2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzRing2.model; sourceTree = "<group>"; };
 		8A07A80018DCAA07004512CF /* rzRing3.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = rzRing3.model; sourceTree = "<group>"; };
+		8A07A80418DCAAD8004512CF /* ExampleUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleUIViewController.h; sourceTree = "<group>"; };
+		8A07A80518DCAAD8004512CF /* ExampleUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleUIViewController.m; sourceTree = "<group>"; };
+		8A07A80618DCAAD8004512CF /* ExampleUIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleUIViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +137,9 @@
 				8A07A7CA18DCA210004512CF /* RZLogoAppDelegate.m */,
 				8A07A7EB18DCA255004512CF /* RZLogoViewController.h */,
 				8A07A7EC18DCA255004512CF /* RZLogoViewController.m */,
+				8A07A80418DCAAD8004512CF /* ExampleUIViewController.h */,
+				8A07A80518DCAAD8004512CF /* ExampleUIViewController.m */,
+				8A07A80618DCAAD8004512CF /* ExampleUIViewController.xib */,
 				8A07A7F018DCA26C004512CF /* Assets */,
 				8A07A7F918DCA2E1004512CF /* Shaders */,
 				8A07A7C118DCA210004512CF /* Supporting Files */,
@@ -271,6 +279,7 @@
 				8A07A80218DCAA07004512CF /* rzRing2.model in Resources */,
 				8A07A80318DCAA07004512CF /* rzRing3.model in Resources */,
 				8A07A7C518DCA210004512CF /* InfoPlist.strings in Resources */,
+				8A07A80818DCAAD8004512CF /* ExampleUIViewController.xib in Resources */,
 				8A07A7CD18DCA210004512CF /* Images.xcassets in Resources */,
 				8A07A7F518DCA296004512CF /* rzR.model in Resources */,
 				8A07A7FC18DCA2F7004512CF /* ModelDefault.vsh in Resources */,
@@ -294,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A07A7C718DCA210004512CF /* main.m in Sources */,
+				8A07A80718DCAAD8004512CF /* ExampleUIViewController.m in Sources */,
 				8A07A7ED18DCA255004512CF /* RZLogoViewController.m in Sources */,
 				8A07A7CB18DCA210004512CF /* RZLogoAppDelegate.m in Sources */,
 			);

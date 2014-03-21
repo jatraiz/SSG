@@ -7,7 +7,7 @@
 //
 
 #import "RZLogoAppDelegate.h"
-#import "RZLogoViewController.h"
+#import "ExampleUIViewController.h"
 
 @implementation RZLogoAppDelegate
 
@@ -15,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [RZLogoViewController new];
+    self.window.rootViewController = [ExampleUIViewController new];
     [self.window makeKeyAndVisible];
     return YES;
 }
