@@ -61,10 +61,12 @@
     self.rzLogo = @[logo1,logo2,logo3,logo4];
     
     //setting the constant rotation values for the rings
-    GLfloat sm = 7.0f; //speed modifier
-    [logo2.prs setRotationConstantToVector:GLKVector3Make(0.0f, 1.0f*sm, 0.0f)];
-    [logo3.prs setRotationConstantToVector:GLKVector3Make(0.75f*sm, 0.0f, 0.0f)];
-    [logo4.prs setRotationConstantToVector:GLKVector3Make(-0.5f*sm, -0.5f*sm, 0.0f)];
+    GLfloat sm = 1.0f; //speed modifier
+    GLfloat rotationDelay = 15.0f;
+    
+    [logo2 addCommand:[SSGCommand commandWithEnum:kSSGCommand_constantRotation Target:command3float(0.0f, 1.0f*sm, 0.0f) Duration:0 IsAbsolute:NO Delay:rotationDelay]];
+    [logo3 addCommand:[SSGCommand commandWithEnum:kSSGCommand_constantRotation Target:command3float(0.75*sm, 0.0f, 0.0f) Duration:0 IsAbsolute:NO Delay:rotationDelay]];
+    [logo4 addCommand:[SSGCommand commandWithEnum:kSSGCommand_constantRotation Target:command3float(-0.5f*sm, -0.5f*sm, 0.0f) Duration:0 IsAbsolute:NO Delay:rotationDelay]];
 
     for(SSGModel *m in self.rzLogo)
     {
@@ -72,9 +74,9 @@
         [m setTexture0Id:[SSGAssetManager loadTexture:@"raizLabsRed" ofType:@"png" shouldLoadWithMipMapping:NO]];
         [m setDefaultShaderSettings:self.glmgr.defaultShaderSettings];
         //diffuse lighting color
-        m.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
+        m.diffuseColor = GLKVector4Make(1.0f, 0.0f, 0.0f, 1.0f);
         //parameter for how prominent shadows are for the single light source default shader (0 to 0.5, larger values = more shadows)
-        m.shadowMax = 0.9f;
+        m.shadowMax = 0.3f;
         
         m.prs.pz = self.mainZ;
         //setting the scale values for the model
@@ -82,7 +84,7 @@
         //alpha (transparency) value
         m.alpha = 0.0f;
         //best to fade in a model on load as there is a bit of stutter in GLKView when it first loads
-        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.8f) Duration:0.2f IsAbsolute:YES Delay:0.0f]];
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.3f) Duration:2.0f IsAbsolute:YES Delay:5.0f]];
     }
 }
 

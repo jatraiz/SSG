@@ -512,6 +512,7 @@
 				8A07A7E518DCA210004512CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A07A7E618DCA210004512CF /* Build configuration list for PBXNativeTarget "RZLogoTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +521,7 @@
 				8A07A7E818DCA210004512CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
