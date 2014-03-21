@@ -84,7 +84,6 @@
         //best to fade in a model on load as there is a bit of stutter in GLKView when it first loads
         [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.8f) Duration:0.2f IsAbsolute:YES Delay:0.0f]];
     }
-    
 }
 
 - (void)update

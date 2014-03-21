@@ -31,7 +31,9 @@
     self.logoView = [[RZLogoViewController alloc] init];
     [self.view addSubview:self.logoView.view];
     [self.logoView.view setOpaque:NO];
-    self.logoView.view.frame = CGRectMake(self.view.frame.size.width / 2.0f - 50, self.view.frame.size.height / 2.0f - 50.0f, 100, 100);
+    
+    //the view's frame should be twice as wide as it is tall
+    self.logoView.view.frame = CGRectMake(self.view.frame.size.width / 2.0f - 100, self.view.frame.size.height / 2.0f - 50.0f, 200, 100);
 }
 
 - (void)didReceiveMemoryWarning
