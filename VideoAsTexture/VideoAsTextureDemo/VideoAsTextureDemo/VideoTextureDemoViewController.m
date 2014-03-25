@@ -14,14 +14,25 @@
 #import <SSGOGL/SSGWorldTransformation.h>
 #import <SSGOGL/SSGPrs.h>
 #import <SSGOGL/SSGCommand.h>
+#import <AVFoundation/AVFoundation.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface VideoTextureDemoViewController ()
-
+@interface VideoTextureDemoViewController () <AVPlayerItemOutputPullDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate>
+//openGL properties
 @property (nonatomic, strong) SSGOpenGLManager *glmgr;
 @property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, assign) GLfloat mainZ;
 @property (nonatomic, strong) SSGModel *quad;
+@property (nonatomic, assign) BOOL viewControllerAppeared;
+//AV properties
+@property UIPopoverController *videoSelectionPopover;
+@property (nonatomic, strong) AVPlayer *player;
+@property (nonatomic, strong) dispatch_queue_t videoOutputQueue;
+@property (nonatomic, strong) AVPlayerItemVideoOutput *videoOutput;
+@property (nonatomic, assign) CMTime timePlaying;
 
+- (void)loadMovieFromCameraRoll;
+- (void)setupPlaybackForURL:(NSURL *)url;
 
 @end
 
@@ -57,12 +68,111 @@
     self.quad.prs.pz = self.mainZ;
     self.quad.shadowMax = 0.9f;
     
+    [self.quad.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 2.0f)];
+    
+    // Setting up the player
+    self.player = [[AVPlayer alloc] init];
+    NSDictionary *pixBuffAttributes = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)};
+	self.videoOutput = [[AVPlayerItemVideoOutput alloc] initWithPixelBufferAttributes:pixBuffAttributes];
+	self.videoOutputQueue = dispatch_queue_create("myVideoOutputQueue", DISPATCH_QUEUE_SERIAL);
+	[[self videoOutput] setDelegate:self queue:self.videoOutputQueue];
+
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if(!self.viewControllerAppeared)
+    {
+        [self loadMovieFromCameraRoll];
+        self.viewControllerAppeared = YES;
+    }
+}
+
+- (void)loadMovieFromCameraRoll
+{
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+    pickerController.delegate = self;
+    pickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    pickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    pickerController.mediaTypes = @[(NSString*)kUTTypeMovie];
+    [self presentViewController:pickerController animated:YES completion:nil];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    [self setupPlaybackForURL:info[UIImagePickerControllerReferenceURL]];
+}
+
+
+- (void)setupPlaybackForURL:(NSURL *)url
+{
+    [[self.player currentItem] removeOutput:self.videoOutput];
+    
+    AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
+    AVAsset *asset = [item asset];
+    
+ 	[asset loadValuesAsynchronouslyForKeys:@[@"tracks"] completionHandler:^{
+        
+		if ([asset statusOfValueForKey:@"tracks" error:nil] == AVKeyValueStatusLoaded) {
+			NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+			if ([tracks count] > 0) {
+				// Choose the first video track.
+				AVAssetTrack *videoTrack = [tracks objectAtIndex:0];
+				[videoTrack loadValuesAsynchronouslyForKeys:@[@"preferredTransform"] completionHandler:^{
+					
+					if ([videoTrack statusOfValueForKey:@"preferredTransform" error:nil] == AVKeyValueStatusLoaded) {
+						//CGAffineTransform preferredTransform = [videoTrack preferredTransform];
+						
+						/*
+                         The orientation of the camera while recording affects the orientation of the images received from an AVPlayerItemVideoOutput. Here we compute a rotation that is used to correctly orientate the video.
+                         */
+						//self.playerView.preferredRotation = -1 * atan2(preferredTransform.b, preferredTransform.a);
+						
+						//[self addDidPlayToEndTimeNotificationForPlayerItem:item];
+						
+						dispatch_async(dispatch_get_main_queue(), ^{
+							[item addOutput:self.videoOutput];
+							[self.player replaceCurrentItemWithPlayerItem:item];
+							[self.videoOutput requestNotificationOfMediaDataChangeWithAdvanceInterval:0.03f];
+							[self.player play];
+                            self.timePlaying = CMTimeMakeWithSeconds(0, 10000000);
+						});
+						
+					}
+					
+				}];
+			}
+		}
+		
+	}];
+}
+
+- (void)updateTexture:(CVPixelBufferRef)pixelBufferRef
+{
+    
+}
 
 - (void)update
 {
     [self.quad updateWithTime:self.timeSinceLastUpdate];
+    
+    CMTime outputItemTime = self.timePlaying;
+    outputItemTime.value +=  CMTimeMakeWithSeconds(self.timeSinceLastUpdate, 10000000).value;
+    
+    [[self videoOutput] itemTimeForHostTime:outputItemTime.value];
+  //  NSLog(@"outputTime: %lli",outputItemTime.value);
+    if ([[self videoOutput] hasNewPixelBufferForItemTime :outputItemTime]){
+     //   NSLog(@"pixel bufffer!");
+        CVPixelBufferRef pixelBuffer = NULL;
+        pixelBuffer = [[self videoOutput] copyPixelBufferForItemTime:outputItemTime itemTimeForDisplay:NULL];
+        CFRelease(pixelBuffer);
+        
+    }
+    
+    self.timePlaying = outputItemTime;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect

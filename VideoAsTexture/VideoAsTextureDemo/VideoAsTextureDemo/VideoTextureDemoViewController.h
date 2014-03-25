@@ -8,6 +8,5 @@
 
 #import <GLKit/GLKit.h>
 
-@interface VideoTextureDemoViewController : GLKViewController
-
+@interface VideoTextureDemoViewController : GLKViewController 
 @end
