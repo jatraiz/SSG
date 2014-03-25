@@ -30,6 +30,9 @@
 @property (nonatomic, strong) dispatch_queue_t videoOutputQueue;
 @property (nonatomic, strong) AVPlayerItemVideoOutput *videoOutput;
 @property (nonatomic, assign) CMTime timePlaying;
+@property (nonatomic, assign) CVOpenGLESTextureCacheRef textureCacheRef;
+@property (nonatomic, assign) CVOpenGLESTextureRef videoTexture;
+
 
 - (void)loadMovieFromCameraRoll;
 - (void)setupPlaybackForURL:(NSURL *)url;
@@ -72,11 +75,15 @@
     
     // Setting up the player
     self.player = [[AVPlayer alloc] init];
-    NSDictionary *pixBuffAttributes = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)};
+    NSDictionary *pixBuffAttributes = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
 	self.videoOutput = [[AVPlayerItemVideoOutput alloc] initWithPixelBufferAttributes:pixBuffAttributes];
 	self.videoOutputQueue = dispatch_queue_create("myVideoOutputQueue", DISPATCH_QUEUE_SERIAL);
 	[[self videoOutput] setDelegate:self queue:self.videoOutputQueue];
-
+    
+    CVReturn error = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL,((GLKView*)self.view).context, NULL, &_textureCacheRef);
+    if(error != noErr){
+        NSLog(@"ERROR setting up CVOpenGLESTextureCache %d", error);
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -150,9 +157,47 @@
 	}];
 }
 
-- (void)updateTexture:(CVPixelBufferRef)pixelBufferRef
+- (void)cleanUpTexture
 {
+    if(self.videoTexture){
+        CFRelease(self.videoTexture);
+        self.videoTexture = NULL;
+    }
+}
+
+- (void)updateTexture:(CVPixelBufferRef)pixelBuffer
+{
+    int frameWidth = (int)CVPixelBufferGetWidth(pixelBuffer);
+    int frameHeight = (int)CVPixelBufferGetHeight(pixelBuffer);
     
+    [self cleanUpTexture];
+    CVReturn error =  CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
+                                                                   self.textureCacheRef,
+                                                                   pixelBuffer,
+                                                                   NULL,
+                                                                   GL_TEXTURE_2D,
+                                                                   GL_RGBA,
+                                                                   frameWidth / 2,
+                                                                   frameHeight / 2,
+                                                                   GL_BGRA,
+                                                                   GL_UNSIGNED_BYTE,
+                                                                  0,
+                                                                   &_videoTexture);
+    
+    if(error){
+        NSLog(@"Error creating GLTextures: %d",error);
+    }
+    self.quad.texture0Id =  CVOpenGLESTextureGetName(self.videoTexture);
+    
+    glBindTexture(GL_TEXTURE_2D, self.quad.texture0Id);
+    
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
+    //makes sure the buffer is released when done w/it
+    CFRelease(pixelBuffer);
 }
 
 - (void)update
@@ -168,7 +213,7 @@
      //   NSLog(@"pixel bufffer!");
         CVPixelBufferRef pixelBuffer = NULL;
         pixelBuffer = [[self videoOutput] copyPixelBufferForItemTime:outputItemTime itemTimeForDisplay:NULL];
-        CFRelease(pixelBuffer);
+        [self updateTexture:pixelBuffer];
         
     }
     
