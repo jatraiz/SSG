@@ -11,7 +11,6 @@
 		8A121322183FF2F500FE204D /* SSGDrawableTexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A12131D183FEA4800FE204D /* SSGDrawableTexture.h */; };
 		8A2A2215185BA6CA0074FCFC /* SSGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A2210185BA6CA0074FCFC /* SSGModel.m */; };
 		8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A2212185BA6CA0074FCFC /* SSGPosition.m */; };
-		8A2A2218185BA76C0074FCFC /* SSGPosition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2A2211185BA6CA0074FCFC /* SSGPosition.h */; };
 		8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */; };
 		8A2EA3D318CA143F0071642C /* SSGBMFontCharData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D218CA143F0071642C /* SSGBMFontCharData.m */; };
 		8A2EA3D618CA16100071642C /* SSGBMFontData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D518CA16100071642C /* SSGBMFontData.m */; };
@@ -41,7 +40,6 @@
 		8A6335FF185BA90800815F6C /* SSGModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2A220F185BA6CA0074FCFC /* SSGModel.h */; };
 		8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A633604185BBAD100815F6C /* SSGWorldTransformation.m */; };
 		8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B03561860B60200C25978 /* SSGOrientation.m */; };
-		8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A9B03551860B60200C25978 /* SSGOrientation.h */; };
 		8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A633603185BBAD100815F6C /* SSGWorldTransformation.h */; };
 		8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2742518B7ABD6009E0908 /* SSGCommand.m */; };
 		8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AA2742418B7ABD6009E0908 /* SSGCommand.h */; };
@@ -81,9 +79,7 @@
 				8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */,
 				8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */,
 				8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */,
-				8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */,
 				8A6335FF185BA90800815F6C /* SSGModel.h in CopyFiles */,
-				8A2A2218185BA76C0074FCFC /* SSGPosition.h in CopyFiles */,
 				8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */,
 				8A121322183FF2F500FE204D /* SSGDrawableTexture.h in CopyFiles */,
 				8AFBA5C7183EAC13002027F2 /* SSG2DZConverter.h in CopyFiles */,

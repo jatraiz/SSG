@@ -34,6 +34,7 @@
     {
         _vaoInfo = [SSGAssetManager loadVaoInfo:modelFileName];
         _alpha = 1.0f;
+        _diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     }
     _commands = [[NSMutableArray alloc] init];
     _finishedCommands = [[NSMutableArray alloc] init];

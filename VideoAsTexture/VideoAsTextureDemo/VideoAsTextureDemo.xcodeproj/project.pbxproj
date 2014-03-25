@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A03B8E818E1F0BD003E3AE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B8E718E1F0BD003E3AE6 /* Foundation.framework */; };
+		8A03B8EA18E1F0BD003E3AE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B8E918E1F0BD003E3AE6 /* CoreGraphics.framework */; };
+		8A03B8EC18E1F0BD003E3AE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B8EB18E1F0BD003E3AE6 /* UIKit.framework */; };
+		8A03B8F218E1F0BD003E3AE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B8F018E1F0BD003E3AE6 /* InfoPlist.strings */; };
+		8A03B8F418E1F0BD003E3AE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03B8F318E1F0BD003E3AE6 /* main.m */; };
+		8A03B8F818E1F0BD003E3AE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03B8F718E1F0BD003E3AE6 /* AppDelegate.m */; };
+		8A03B8FA18E1F0BD003E3AE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B8F918E1F0BD003E3AE6 /* Images.xcassets */; };
+		8A03B90118E1F0BD003E3AE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B90018E1F0BD003E3AE6 /* XCTest.framework */; };
+		8A03B90218E1F0BD003E3AE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B8E718E1F0BD003E3AE6 /* Foundation.framework */; };
+		8A03B90318E1F0BD003E3AE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B8EB18E1F0BD003E3AE6 /* UIKit.framework */; };
+		8A03B90B18E1F0BD003E3AE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B90918E1F0BD003E3AE6 /* InfoPlist.strings */; };
+		8A03B90D18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03B90C18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.m */; };
+		8A03B91718E1F0DA003E3AE6 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B91618E1F0DA003E3AE6 /* libSSGOGL.a */; };
+		8A03B91A18E1F21A003E3AE6 /* VideoTextureDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03B91918E1F21A003E3AE6 /* VideoTextureDemoViewController.m */; };
+		8A03B91F18E1F55C003E3AE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B91E18E1F55C003E3AE6 /* OpenGLES.framework */; };
+		8A03B92218E1F625003E3AE6 /* quad.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92118E1F625003E3AE6 /* quad.model */; };
+		8A03B92418E1F69F003E3AE6 /* gridTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92318E1F69F003E3AE6 /* gridTexture.png */; };
+		8A03B92718E1F82E003E3AE6 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92518E1F82E003E3AE6 /* ModelDefault.vsh */; };
+		8A03B92818E1F82E003E3AE6 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92618E1F82E003E3AE6 /* ModelDefault.fsh */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A03B90418E1F0BD003E3AE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A03B8DC18E1F0BD003E3AE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A03B8E318E1F0BD003E3AE6;
+			remoteInfo = VideoAsTextureDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A03B8E418E1F0BD003E3AE6 /* VideoAsTextureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoAsTextureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A03B8E718E1F0BD003E3AE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A03B8E918E1F0BD003E3AE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A03B8EB18E1F0BD003E3AE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A03B8EF18E1F0BD003E3AE6 /* VideoAsTextureDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoAsTextureDemo-Info.plist"; sourceTree = "<group>"; };
+		8A03B8F118E1F0BD003E3AE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A03B8F318E1F0BD003E3AE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A03B8F518E1F0BD003E3AE6 /* VideoAsTextureDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoAsTextureDemo-Prefix.pch"; sourceTree = "<group>"; };
+		8A03B8F618E1F0BD003E3AE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8A03B8F718E1F0BD003E3AE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8A03B8F918E1F0BD003E3AE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = VideoAsTextureDemo/Images.xcassets; sourceTree = "<group>"; };
+		8A03B8FF18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoAsTextureDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A03B90018E1F0BD003E3AE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A03B90818E1F0BD003E3AE6 /* VideoAsTextureDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoAsTextureDemoTests-Info.plist"; sourceTree = "<group>"; };
+		8A03B90A18E1F0BD003E3AE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A03B90C18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAsTextureDemoTests.m; sourceTree = "<group>"; };
+		8A03B91618E1F0DA003E3AE6 /* libSSGOGL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSSGOGL.a; path = "../../SSGOGL/build/Debug-iphoneos/libSSGOGL.a"; sourceTree = "<group>"; };
+		8A03B91818E1F21A003E3AE6 /* VideoTextureDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTextureDemoViewController.h; sourceTree = "<group>"; };
+		8A03B91918E1F21A003E3AE6 /* VideoTextureDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTextureDemoViewController.m; sourceTree = "<group>"; };
+		8A03B91E18E1F55C003E3AE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A03B92118E1F625003E3AE6 /* quad.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.model; sourceTree = "<group>"; };
+		8A03B92318E1F69F003E3AE6 /* gridTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridTexture.png; sourceTree = "<group>"; };
+		8A03B92518E1F82E003E3AE6 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A03B92618E1F82E003E3AE6 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A03B8E118E1F0BD003E3AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03B91F18E1F55C003E3AE6 /* OpenGLES.framework in Frameworks */,
+				8A03B91718E1F0DA003E3AE6 /* libSSGOGL.a in Frameworks */,
+				8A03B8EA18E1F0BD003E3AE6 /* CoreGraphics.framework in Frameworks */,
+				8A03B8EC18E1F0BD003E3AE6 /* UIKit.framework in Frameworks */,
+				8A03B8E818E1F0BD003E3AE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A03B8FC18E1F0BD003E3AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03B90118E1F0BD003E3AE6 /* XCTest.framework in Frameworks */,
+				8A03B90318E1F0BD003E3AE6 /* UIKit.framework in Frameworks */,
+				8A03B90218E1F0BD003E3AE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A03B8DB18E1F0BD003E3AE6 = {
+			isa = PBXGroup;
+			children = (
+				8A03B8ED18E1F0BD003E3AE6 /* VideoAsTextureDemo */,
+				8A03B90618E1F0BD003E3AE6 /* VideoAsTextureDemoTests */,
+				8A03B8E618E1F0BD003E3AE6 /* Frameworks */,
+				8A03B8E518E1F0BD003E3AE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A03B8E518E1F0BD003E3AE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B8E418E1F0BD003E3AE6 /* VideoAsTextureDemo.app */,
+				8A03B8FF18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A03B8E618E1F0BD003E3AE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B91E18E1F55C003E3AE6 /* OpenGLES.framework */,
+				8A03B91618E1F0DA003E3AE6 /* libSSGOGL.a */,
+				8A03B8E718E1F0BD003E3AE6 /* Foundation.framework */,
+				8A03B8E918E1F0BD003E3AE6 /* CoreGraphics.framework */,
+				8A03B8EB18E1F0BD003E3AE6 /* UIKit.framework */,
+				8A03B90018E1F0BD003E3AE6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A03B8ED18E1F0BD003E3AE6 /* VideoAsTextureDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B8F618E1F0BD003E3AE6 /* AppDelegate.h */,
+				8A03B8F718E1F0BD003E3AE6 /* AppDelegate.m */,
+				8A03B91818E1F21A003E3AE6 /* VideoTextureDemoViewController.h */,
+				8A03B91918E1F21A003E3AE6 /* VideoTextureDemoViewController.m */,
+				8A03B92018E1F592003E3AE6 /* Assets */,
+				8A03B8EE18E1F0BD003E3AE6 /* Supporting Files */,
+			);
+			path = VideoAsTextureDemo;
+			sourceTree = "<group>";
+		};
+		8A03B8EE18E1F0BD003E3AE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B8EF18E1F0BD003E3AE6 /* VideoAsTextureDemo-Info.plist */,
+				8A03B8F018E1F0BD003E3AE6 /* InfoPlist.strings */,
+				8A03B8F318E1F0BD003E3AE6 /* main.m */,
+				8A03B8F518E1F0BD003E3AE6 /* VideoAsTextureDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A03B90618E1F0BD003E3AE6 /* VideoAsTextureDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B90C18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.m */,
+				8A03B90718E1F0BD003E3AE6 /* Supporting Files */,
+			);
+			path = VideoAsTextureDemoTests;
+			sourceTree = "<group>";
+		};
+		8A03B90718E1F0BD003E3AE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B90818E1F0BD003E3AE6 /* VideoAsTextureDemoTests-Info.plist */,
+				8A03B90918E1F0BD003E3AE6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A03B92018E1F592003E3AE6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B92518E1F82E003E3AE6 /* ModelDefault.vsh */,
+				8A03B92618E1F82E003E3AE6 /* ModelDefault.fsh */,
+				8A03B92118E1F625003E3AE6 /* quad.model */,
+				8A03B92318E1F69F003E3AE6 /* gridTexture.png */,
+				8A03B8F918E1F0BD003E3AE6 /* Images.xcassets */,
+			);
+			name = Assets;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A03B8E318E1F0BD003E3AE6 /* VideoAsTextureDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A03B91018E1F0BD003E3AE6 /* Build configuration list for PBXNativeTarget "VideoAsTextureDemo" */;
+			buildPhases = (
+				8A03B8E018E1F0BD003E3AE6 /* Sources */,
+				8A03B8E118E1F0BD003E3AE6 /* Frameworks */,
+				8A03B8E218E1F0BD003E3AE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoAsTextureDemo;
+			productName = VideoAsTextureDemo;
+			productReference = 8A03B8E418E1F0BD003E3AE6 /* VideoAsTextureDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A03B8FE18E1F0BD003E3AE6 /* VideoAsTextureDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A03B91318E1F0BD003E3AE6 /* Build configuration list for PBXNativeTarget "VideoAsTextureDemoTests" */;
+			buildPhases = (
+				8A03B8FB18E1F0BD003E3AE6 /* Sources */,
+				8A03B8FC18E1F0BD003E3AE6 /* Frameworks */,
+				8A03B8FD18E1F0BD003E3AE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A03B90518E1F0BD003E3AE6 /* PBXTargetDependency */,
+			);
+			name = VideoAsTextureDemoTests;
+			productName = VideoAsTextureDemoTests;
+			productReference = 8A03B8FF18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A03B8DC18E1F0BD003E3AE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Stricker";
+				TargetAttributes = {
+					8A03B8FE18E1F0BD003E3AE6 = {
+						TestTargetID = 8A03B8E318E1F0BD003E3AE6;
+					};
+				};
+			};
+			buildConfigurationList = 8A03B8DF18E1F0BD003E3AE6 /* Build configuration list for PBXProject "VideoAsTextureDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A03B8DB18E1F0BD003E3AE6;
+			productRefGroup = 8A03B8E518E1F0BD003E3AE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A03B8E318E1F0BD003E3AE6 /* VideoAsTextureDemo */,
+				8A03B8FE18E1F0BD003E3AE6 /* VideoAsTextureDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A03B8E218E1F0BD003E3AE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03B92218E1F625003E3AE6 /* quad.model in Resources */,
+				8A03B92418E1F69F003E3AE6 /* gridTexture.png in Resources */,
+				8A03B92718E1F82E003E3AE6 /* ModelDefault.vsh in Resources */,
+				8A03B92818E1F82E003E3AE6 /* ModelDefault.fsh in Resources */,
+				8A03B8F218E1F0BD003E3AE6 /* InfoPlist.strings in Resources */,
+				8A03B8FA18E1F0BD003E3AE6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A03B8FD18E1F0BD003E3AE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03B90B18E1F0BD003E3AE6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A03B8E018E1F0BD003E3AE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03B8F818E1F0BD003E3AE6 /* AppDelegate.m in Sources */,
+				8A03B91A18E1F21A003E3AE6 /* VideoTextureDemoViewController.m in Sources */,
+				8A03B8F418E1F0BD003E3AE6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A03B8FB18E1F0BD003E3AE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03B90D18E1F0BD003E3AE6 /* VideoAsTextureDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A03B90518E1F0BD003E3AE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A03B8E318E1F0BD003E3AE6 /* VideoAsTextureDemo */;
+			targetProxy = 8A03B90418E1F0BD003E3AE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A03B8F018E1F0BD003E3AE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A03B8F118E1F0BD003E3AE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A03B90918E1F0BD003E3AE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A03B90A18E1F0BD003E3AE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A03B90E18E1F0BD003E3AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A03B90F18E1F0BD003E3AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A03B91118E1F0BD003E3AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAsTextureDemo/VideoAsTextureDemo-Prefix.pch";
+				INFOPLIST_FILE = "VideoAsTextureDemo/VideoAsTextureDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/johnstricker/Developer/Sway/SSG/SSGOGL/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A03B91218E1F0BD003E3AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAsTextureDemo/VideoAsTextureDemo-Prefix.pch";
+				INFOPLIST_FILE = "VideoAsTextureDemo/VideoAsTextureDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/johnstricker/Developer/Sway/SSG/SSGOGL/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A03B91418E1F0BD003E3AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VideoAsTextureDemo.app/VideoAsTextureDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAsTextureDemo/VideoAsTextureDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VideoAsTextureDemoTests/VideoAsTextureDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A03B91518E1F0BD003E3AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VideoAsTextureDemo.app/VideoAsTextureDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VideoAsTextureDemo/VideoAsTextureDemo-Prefix.pch";
+				INFOPLIST_FILE = "VideoAsTextureDemoTests/VideoAsTextureDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A03B8DF18E1F0BD003E3AE6 /* Build configuration list for PBXProject "VideoAsTextureDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A03B90E18E1F0BD003E3AE6 /* Debug */,
+				8A03B90F18E1F0BD003E3AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A03B91018E1F0BD003E3AE6 /* Build configuration list for PBXNativeTarget "VideoAsTextureDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A03B91118E1F0BD003E3AE6 /* Debug */,
+				8A03B91218E1F0BD003E3AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A03B91318E1F0BD003E3AE6 /* Build configuration list for PBXNativeTarget "VideoAsTextureDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A03B91418E1F0BD003E3AE6 /* Debug */,
+				8A03B91518E1F0BD003E3AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A03B8DC18E1F0BD003E3AE6 /* Project object */;
+}
