@@ -24,6 +24,7 @@
 @property (nonatomic, assign) GLfloat mainZ;
 @property (nonatomic, strong) NSMutableArray *quads;
 @property (nonatomic, assign) BOOL videoSelectionShown;
+@property (nonatomic, assign) BOOL videoLoaded;
 @property (nonatomic, assign) BOOL videoAnimationShown;
 //AV properties
 @property UIPopoverController *videoSelectionPopover;
@@ -117,7 +118,7 @@
     if(!self.videoSelectionShown){
         [self loadMovieFromCameraRoll];
         self.videoSelectionShown = YES;
-    } else if(!self.videoAnimationShown)
+    } else if(!self.videoAnimationShown && self.videoLoaded)
     {
         int columncount = 0;
         int nColumns = 3;
@@ -210,6 +211,7 @@
 							[self.videoOutput requestNotificationOfMediaDataChangeWithAdvanceInterval:0.03f];
 							[self.player play];
                             self.timePlaying = CMTimeMakeWithSeconds(0, 10000000);
+                            self.videoLoaded = YES;
 						});
 						
 					}
