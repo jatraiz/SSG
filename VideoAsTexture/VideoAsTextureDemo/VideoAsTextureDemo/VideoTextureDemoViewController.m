@@ -22,8 +22,9 @@
 @property (nonatomic, strong) SSGOpenGLManager *glmgr;
 @property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, assign) GLfloat mainZ;
-@property (nonatomic, strong) SSGModel *quad;
-@property (nonatomic, assign) BOOL viewControllerAppeared;
+@property (nonatomic, strong) NSMutableArray *quads;
+@property (nonatomic, assign) BOOL videoSelectionShown;
+@property (nonatomic, assign) BOOL videoAnimationShown;
 //AV properties
 @property UIPopoverController *videoSelectionPopover;
 @property (nonatomic, strong) AVPlayer *player;
@@ -54,7 +55,7 @@
     [self.glmgr setClearColor:GLKVector4Make(0.0f, 0.0f, 0.0f, 0.0f)];
     
     //setting up perspective, with the logo you probably don't want too much of a field of view effect, so a 5 degree field of view is used
-    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(5.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 100.0f);
+    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(50.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 100.0f);
     self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.width ScreenWidth:self.view.bounds.size.height Fov:GLKMathDegreesToRadians(45.0f)];
     
     //settings for max smoothness in animation & display
@@ -62,16 +63,41 @@
     ((GLKView*)self.view).drawableMultisample = GLKViewDrawableMultisample4X;
     
     //Z location for logo in 3D space
-    self.mainZ = -50.0f;
+    self.mainZ = -7.0f;
     
-    self.quad = [[SSGModel alloc] initWithModelFileName:@"quad"];
-    [self.quad setTexture0Id:[SSGAssetManager loadTexture:@"gridTexture" ofType:@"png" shouldLoadWithMipMapping:YES]];
-    self.quad.projection = self.glmgr.projectionMatrix;
-    self.quad.defaultShaderSettings = self.glmgr.defaultShaderSettings;
-    self.quad.prs.pz = self.mainZ;
-    self.quad.shadowMax = 0.9f;
+    int nQuads = 12;
+    int nColumns = 3;
+    GLfloat leftX = -1.25f;
+    GLfloat xSpacing = 1.25f;
+    GLfloat ySpacing = -1.5f;
+    GLfloat yStart = 2.25f;
     
-    [self.quad.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 2.0f)];
+    int columnCount = 0;
+    int rowCount = 0;
+    
+    self.quads = [[NSMutableArray alloc] init];
+    for(int i = 0; i < nQuads; ++i)
+    {
+        SSGModel *quad;
+        
+        quad = [[SSGModel alloc] initWithModelFileName:@"quadCropped"];
+        [quad setTexture0Id:[SSGAssetManager loadTexture:@"gridTexture" ofType:@"png" shouldLoadWithMipMapping:YES]];
+        quad.projection = self.glmgr.projectionMatrix;
+        quad.defaultShaderSettings = self.glmgr.defaultShaderSettings;
+        quad.shadowMax = 0.9f;
+        quad.prs.pz = self.mainZ;
+        quad.prs.px = leftX + (xSpacing * columnCount);
+        quad.prs.py = yStart + (ySpacing * rowCount);
+        quad.prs.sxyz = 0.5f;
+        
+        [self.quads addObject:quad];
+        
+        ++columnCount;
+        if(columnCount == nColumns){
+            columnCount = 0;
+            ++rowCount;
+        }
+    }
     
     // Setting up the player
     self.player = [[AVPlayer alloc] init];
@@ -86,12 +112,50 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if(!self.viewControllerAppeared)
-    {
+    if(!self.videoSelectionShown){
         [self loadMovieFromCameraRoll];
-        self.viewControllerAppeared = YES;
+        self.videoSelectionShown = YES;
+    } else if(!self.videoAnimationShown)
+    {
+        int columncount = 0;
+        int nColumns = 3;
+        int currentRow = 0;
+        GLfloat delay = 0.0f;
+        GLfloat zSpacing = 1.0f;
+        GLfloat ySpacing = 0.5f;
+        GLfloat duration = 10.0f;
+        
+        for(int i = 0; i < [self.quads count]; ++i)
+        {
+            SSGModel *m = (SSGModel*)self.quads[i];
+            
+            GLfloat newZ = 0.0f;
+            GLfloat newY = 0.0f;
+            if(currentRow == 0){
+                newZ = zSpacing * -2;
+                newY = ySpacing * -3;
+            }
+            else if(currentRow == 1){
+                newZ = zSpacing * -1;
+                newY = ySpacing * -1;
+            }
+            else if(currentRow == 2){
+                newY = ySpacing;
+            }
+            else if(currentRow == 3){
+                newZ = zSpacing * 1;
+                newY = ySpacing * 3;
+            }
+            
+            [m.prs moveToVector:GLKVector3Make(0.0f, newY, newZ) Duration:duration Delay:delay IsAbsolute:NO];
+            
+            if(++columncount == nColumns){
+                ++currentRow;
+                columncount = 0;
+            }
+        }
     }
 }
 
@@ -153,7 +217,6 @@
 				}];
 			}
 		}
-		
 	}];
 }
 
@@ -187,10 +250,13 @@
     if(error){
         NSLog(@"Error creating GLTextures: %d",error);
     }
-    self.quad.texture0Id =  CVOpenGLESTextureGetName(self.videoTexture);
     
-    glBindTexture(GL_TEXTURE_2D, self.quad.texture0Id);
+    for(SSGModel *m in self.quads)
+    {
+        m.texture0Id =  CVOpenGLESTextureGetName(self.videoTexture);
+    }
     
+    glBindTexture(GL_TEXTURE_2D, ((SSGModel*)self.quads[0]).texture0Id);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -202,8 +268,10 @@
 
 - (void)update
 {
-    [self.quad updateWithTime:self.timeSinceLastUpdate];
-    
+    for(SSGModel *m in self.quads)
+    {
+        [m updateWithTime:self.timeSinceLastUpdate];
+    }
     CMTime outputItemTime = self.timePlaying;
     outputItemTime.value +=  CMTimeMakeWithSeconds(self.timeSinceLastUpdate, 10000000).value;
     
@@ -222,8 +290,11 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-      glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    [self.quad draw];
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    for(SSGModel *m in self.quads)
+    {
+        [m draw];
+    }
 }
 
 @end

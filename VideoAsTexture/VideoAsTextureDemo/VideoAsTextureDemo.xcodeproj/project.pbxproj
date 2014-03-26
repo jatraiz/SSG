@@ -22,12 +22,12 @@
 		8A03B91718E1F0DA003E3AE6 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B91618E1F0DA003E3AE6 /* libSSGOGL.a */; };
 		8A03B91A18E1F21A003E3AE6 /* VideoTextureDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A03B91918E1F21A003E3AE6 /* VideoTextureDemoViewController.m */; };
 		8A03B91F18E1F55C003E3AE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B91E18E1F55C003E3AE6 /* OpenGLES.framework */; };
-		8A03B92218E1F625003E3AE6 /* quad.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92118E1F625003E3AE6 /* quad.model */; };
 		8A03B92418E1F69F003E3AE6 /* gridTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92318E1F69F003E3AE6 /* gridTexture.png */; };
 		8A03B92718E1F82E003E3AE6 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92518E1F82E003E3AE6 /* ModelDefault.vsh */; };
 		8A03B92818E1F82E003E3AE6 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A03B92618E1F82E003E3AE6 /* ModelDefault.fsh */; };
 		8A03B92A18E1FDDB003E3AE6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B92918E1FDDB003E3AE6 /* AVFoundation.framework */; };
 		8A03B92C18E1FF07003E3AE6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A03B92B18E1FF07003E3AE6 /* MobileCoreServices.framework */; };
+		8A2838E518E2FEB2007BF37E /* quadCropped.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A2838E418E2FEB2007BF37E /* quadCropped.model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +61,12 @@
 		8A03B91818E1F21A003E3AE6 /* VideoTextureDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTextureDemoViewController.h; sourceTree = "<group>"; };
 		8A03B91918E1F21A003E3AE6 /* VideoTextureDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTextureDemoViewController.m; sourceTree = "<group>"; };
 		8A03B91E18E1F55C003E3AE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		8A03B92118E1F625003E3AE6 /* quad.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.model; sourceTree = "<group>"; };
 		8A03B92318E1F69F003E3AE6 /* gridTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gridTexture.png; sourceTree = "<group>"; };
 		8A03B92518E1F82E003E3AE6 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
 		8A03B92618E1F82E003E3AE6 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
 		8A03B92918E1FDDB003E3AE6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8A03B92B18E1FF07003E3AE6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8A2838E418E2FEB2007BF37E /* quadCropped.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quadCropped.model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 			children = (
 				8A03B92518E1F82E003E3AE6 /* ModelDefault.vsh */,
 				8A03B92618E1F82E003E3AE6 /* ModelDefault.fsh */,
-				8A03B92118E1F625003E3AE6 /* quad.model */,
+				8A2838E418E2FEB2007BF37E /* quadCropped.model */,
 				8A03B92318E1F69F003E3AE6 /* gridTexture.png */,
 				8A03B8F918E1F0BD003E3AE6 /* Images.xcassets */,
 			);
@@ -261,7 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A03B92218E1F625003E3AE6 /* quad.model in Resources */,
+				8A2838E518E2FEB2007BF37E /* quadCropped.model in Resources */,
 				8A03B92418E1F69F003E3AE6 /* gridTexture.png in Resources */,
 				8A03B92718E1F82E003E3AE6 /* ModelDefault.vsh in Resources */,
 				8A03B92818E1F82E003E3AE6 /* ModelDefault.fsh in Resources */,

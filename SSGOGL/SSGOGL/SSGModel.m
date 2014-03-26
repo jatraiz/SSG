@@ -171,6 +171,11 @@
             }
             command.isFinished = YES;
             break;
+            
+        case kSSGCommand_setConstantRotation:
+            [self.prs setRotationConstantToVector:GLKVector3Make(command.target.x, command.target.y, command.target.z)];
+            command.isFinished = YES;
+            break;
         default:
             break;
     }
