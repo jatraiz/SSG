@@ -10,8 +10,6 @@
 #import <SSGOGL/SSGOpenGLManager.h>
 #import <SSGOGL/SSG2DZConverter.h>
 #import <SSGOGL/SSGModel.h>
-#import <SSGOGL/SSGPosition.h>
-#import <SSGOGL/SSGOrientation.h>
 #import <SSGOGL/SSGAssetManager.h>
 #import <SSGOGL/SSGWorldTransformation.h>
 #import <SSGOGL/SSGPrs.h>

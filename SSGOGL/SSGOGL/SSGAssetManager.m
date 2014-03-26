@@ -47,7 +47,7 @@ static NSMutableDictionary *loadedVaos;
     }
     
     GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
-   
+
     if(error != nil)
     {
         NSLog(@"ERROR LOADING TEXTURE: %@: %@",path,[error debugDescription]);

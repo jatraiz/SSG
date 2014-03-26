@@ -10,8 +10,6 @@
 		8A12131F183FEA4800FE204D /* SSGDrawableTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A12131E183FEA4800FE204D /* SSGDrawableTexture.m */; };
 		8A121322183FF2F500FE204D /* SSGDrawableTexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A12131D183FEA4800FE204D /* SSGDrawableTexture.h */; };
 		8A2A2215185BA6CA0074FCFC /* SSGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A2210185BA6CA0074FCFC /* SSGModel.m */; };
-		8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2A2212185BA6CA0074FCFC /* SSGPosition.m */; };
-		8A2A2218185BA76C0074FCFC /* SSGPosition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2A2211185BA6CA0074FCFC /* SSGPosition.h */; };
 		8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */; };
 		8A2EA3D318CA143F0071642C /* SSGBMFontCharData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D218CA143F0071642C /* SSGBMFontCharData.m */; };
 		8A2EA3D618CA16100071642C /* SSGBMFontData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3D518CA16100071642C /* SSGBMFontData.m */; };
@@ -39,10 +37,6 @@
 		8A309FB7183D35C2002F08DE /* SSG2DZConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FB6183D35C2002F08DE /* SSG2DZConverter.m */; };
 		8A309FBA183D4A84002F08DE /* SSGVaoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A309FB9183D4A84002F08DE /* SSGVaoInfo.m */; };
 		8A6335FF185BA90800815F6C /* SSGModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2A220F185BA6CA0074FCFC /* SSGModel.h */; };
-		8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A633604185BBAD100815F6C /* SSGWorldTransformation.m */; };
-		8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B03561860B60200C25978 /* SSGOrientation.m */; };
-		8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A9B03551860B60200C25978 /* SSGOrientation.h */; };
-		8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A633603185BBAD100815F6C /* SSGWorldTransformation.h */; };
 		8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2742518B7ABD6009E0908 /* SSGCommand.m */; };
 		8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AA2742418B7ABD6009E0908 /* SSGCommand.h */; };
 		8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */; };
@@ -80,10 +74,7 @@
 				8A2EA3DE18CA2EC10071642C /* SSGBMFontModel.h in CopyFiles */,
 				8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */,
 				8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */,
-				8A9B03591860D0D300C25978 /* SSGWorldTransformation.h in CopyFiles */,
-				8A9B03581860B9CB00C25978 /* SSGOrientation.h in CopyFiles */,
 				8A6335FF185BA90800815F6C /* SSGModel.h in CopyFiles */,
-				8A2A2218185BA76C0074FCFC /* SSGPosition.h in CopyFiles */,
 				8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */,
 				8A121322183FF2F500FE204D /* SSGDrawableTexture.h in CopyFiles */,
 				8AFBA5C7183EAC13002027F2 /* SSG2DZConverter.h in CopyFiles */,
@@ -107,8 +98,6 @@
 		8A12131E183FEA4800FE204D /* SSGDrawableTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGDrawableTexture.m; sourceTree = "<group>"; };
 		8A2A220F185BA6CA0074FCFC /* SSGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGModel.h; sourceTree = "<group>"; };
 		8A2A2210185BA6CA0074FCFC /* SSGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGModel.m; sourceTree = "<group>"; };
-		8A2A2211185BA6CA0074FCFC /* SSGPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGPosition.h; sourceTree = "<group>"; };
-		8A2A2212185BA6CA0074FCFC /* SSGPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGPosition.m; sourceTree = "<group>"; };
 		8A2CEA0718804D0000FA4561 /* SSGMoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGMoveCommand.h; sourceTree = "<group>"; };
 		8A2CEA0818804D0000FA4561 /* SSGMoveCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGMoveCommand.m; sourceTree = "<group>"; };
 		8A2EA3D118CA143F0071642C /* SSGBMFontCharData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGBMFontCharData.h; sourceTree = "<group>"; };
@@ -149,10 +138,6 @@
 		8A309FB6183D35C2002F08DE /* SSG2DZConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSG2DZConverter.m; sourceTree = "<group>"; };
 		8A309FB8183D4A84002F08DE /* SSGVaoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGVaoInfo.h; sourceTree = "<group>"; };
 		8A309FB9183D4A84002F08DE /* SSGVaoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGVaoInfo.m; sourceTree = "<group>"; };
-		8A633603185BBAD100815F6C /* SSGWorldTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGWorldTransformation.h; sourceTree = "<group>"; };
-		8A633604185BBAD100815F6C /* SSGWorldTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGWorldTransformation.m; sourceTree = "<group>"; };
-		8A9B03551860B60200C25978 /* SSGOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOrientation.h; sourceTree = "<group>"; };
-		8A9B03561860B60200C25978 /* SSGOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGOrientation.m; sourceTree = "<group>"; };
 		8AA2742418B7ABD6009E0908 /* SSGCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGCommand.h; sourceTree = "<group>"; };
 		8AA2742518B7ABD6009E0908 /* SSGCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGCommand.m; sourceTree = "<group>"; };
 		8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOpenGLManager.h; sourceTree = "<group>"; };
@@ -291,12 +276,6 @@
 				8A309F4F183D0AFB002F08DE /* SSGModelData.c */,
 				8A2A220F185BA6CA0074FCFC /* SSGModel.h */,
 				8A2A2210185BA6CA0074FCFC /* SSGModel.m */,
-				8A633603185BBAD100815F6C /* SSGWorldTransformation.h */,
-				8A633604185BBAD100815F6C /* SSGWorldTransformation.m */,
-				8A2A2211185BA6CA0074FCFC /* SSGPosition.h */,
-				8A2A2212185BA6CA0074FCFC /* SSGPosition.m */,
-				8A9B03551860B60200C25978 /* SSGOrientation.h */,
-				8A9B03561860B60200C25978 /* SSGOrientation.m */,
 				8ADA49D018803D88005E8207 /* SSGPrs.h */,
 				8ADA49D118803D88005E8207 /* SSGPrs.m */,
 				8A2CEA0718804D0000FA4561 /* SSGMoveCommand.h */,
@@ -459,14 +438,11 @@
 				8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */,
 				8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */,
 				8A2EA3D618CA16100071642C /* SSGBMFontData.m in Sources */,
-				8A633605185BBAD100815F6C /* SSGWorldTransformation.m in Sources */,
 				8A309FAD183D26A5002F08DE /* SSGShaderManager.m in Sources */,
 				8A309FBA183D4A84002F08DE /* SSGVaoInfo.m in Sources */,
-				8A9B03571860B60200C25978 /* SSGOrientation.m in Sources */,
 				8A2EA3E818CA4AC10071642C /* SSGBitmapFontShaderSettings.m in Sources */,
 				8A309F44183D089E002F08DE /* SSGAssetManager.m in Sources */,
 				8A309FB3183D3191002F08DE /* SSGDefaultShaderSettings.m in Sources */,
-				8A2A2216185BA6CA0074FCFC /* SSGPosition.m in Sources */,
 				8ADA49D218803D88005E8207 /* SSGPrs.m in Sources */,
 				8A2EA3D918CA1AC90071642C /* SSGBMFontModel.m in Sources */,
 				8A309FB0183D2D8A002F08DE /* SSGColoredPSShaderSettings.m in Sources */,
