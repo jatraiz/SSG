@@ -26,6 +26,7 @@
 		8A28392E18E31935007BF37E /* iphone5GridTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A28392C18E31935007BF37E /* iphone5GridTexture.png */; };
 		8A28392F18E31935007BF37E /* quadCropped.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A28392D18E31935007BF37E /* quadCropped.model */; };
 		8A28393118E31B37007BF37E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A28393018E31B37007BF37E /* OpenGLES.framework */; };
+		8ADF093618E32D710029AB17 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADF093518E32D710029AB17 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		8A28392C18E31935007BF37E /* iphone5GridTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone5GridTexture.png; sourceTree = "<group>"; };
 		8A28392D18E31935007BF37E /* quadCropped.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quadCropped.model; sourceTree = "<group>"; };
 		8A28393018E31B37007BF37E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8ADF093518E32D710029AB17 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ADF093618E32D710029AB17 /* AVFoundation.framework in Frameworks */,
 				8A28393118E31B37007BF37E /* OpenGLES.framework in Frameworks */,
 				8A28392218E31726007BF37E /* libSSGOGL.a in Frameworks */,
 				8A2838F518E31706007BF37E /* CoreGraphics.framework in Frameworks */,
@@ -113,6 +116,7 @@
 		8A2838F118E31706007BF37E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8ADF093518E32D710029AB17 /* AVFoundation.framework */,
 				8A28393018E31B37007BF37E /* OpenGLES.framework */,
 				8A28392118E31726007BF37E /* libSSGOGL.a */,
 				8A2838F218E31706007BF37E /* Foundation.framework */,
@@ -485,6 +489,7 @@
 				8A28391D18E31706007BF37E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A28391E18E31706007BF37E /* Build configuration list for PBXNativeTarget "StreamingVideoAsTextureTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +498,7 @@
 				8A28392018E31706007BF37E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

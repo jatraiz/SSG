@@ -11,7 +11,6 @@
 #import <SSGOGL/SSG2DZConverter.h>
 #import <SSGOGL/SSGModel.h>
 #import <SSGOGL/SSGAssetManager.h>
-#import <SSGOGL/SSGWorldTransformation.h>
 #import <SSGOGL/SSGPrs.h>
 #import <SSGOGL/SSGCommand.h>
 #import <AVFoundation/AVFoundation.h>
