@@ -24,7 +24,6 @@
 		8A28392818E31764007BF37E /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A28392618E31764007BF37E /* ModelDefault.fsh */; };
 		8A28392B18E31896007BF37E /* StreamingDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28392A18E31896007BF37E /* StreamingDemoViewController.m */; };
 		8A28392E18E31935007BF37E /* iphone5GridTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A28392C18E31935007BF37E /* iphone5GridTexture.png */; };
-		8A28392F18E31935007BF37E /* quadCropped.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A28392D18E31935007BF37E /* quadCropped.model */; };
 		8A28393118E31B37007BF37E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A28393018E31B37007BF37E /* OpenGLES.framework */; };
 		8ADF093618E32D710029AB17 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADF093518E32D710029AB17 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -62,9 +61,9 @@
 		8A28392918E31896007BF37E /* StreamingDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingDemoViewController.h; sourceTree = "<group>"; };
 		8A28392A18E31896007BF37E /* StreamingDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingDemoViewController.m; sourceTree = "<group>"; };
 		8A28392C18E31935007BF37E /* iphone5GridTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone5GridTexture.png; sourceTree = "<group>"; };
-		8A28392D18E31935007BF37E /* quadCropped.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quadCropped.model; sourceTree = "<group>"; };
 		8A28393018E31B37007BF37E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8ADF093518E32D710029AB17 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8ADF093918E35F2C0029AB17 /* quad16x9.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad16x9.model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +171,8 @@
 		8A28392418E3174F007BF37E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8ADF093918E35F2C0029AB17 /* quad16x9.model */,
 				8A28392C18E31935007BF37E /* iphone5GridTexture.png */,
-				8A28392D18E31935007BF37E /* quadCropped.model */,
 				8A28392518E31764007BF37E /* ModelDefault.vsh */,
 				8A28392618E31764007BF37E /* ModelDefault.fsh */,
 				8A28390418E31706007BF37E /* Images.xcassets */,
@@ -256,7 +255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A28392F18E31935007BF37E /* quadCropped.model in Resources */,
 				8A2838FD18E31706007BF37E /* InfoPlist.strings in Resources */,
 				8A28392E18E31935007BF37E /* iphone5GridTexture.png in Resources */,
 				8A28392818E31764007BF37E /* ModelDefault.fsh in Resources */,

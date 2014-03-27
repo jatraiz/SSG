@@ -16,7 +16,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface VideoTextureDemoViewController () <AVPlayerItemOutputPullDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate>
+@interface VideoTextureDemoViewController () <AVPlayerItemOutputPullDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate>
 //openGL properties
 @property (nonatomic, strong) SSGOpenGLManager *glmgr;
 @property (nonatomic, strong) EAGLContext *context;
@@ -25,6 +25,7 @@
 @property (nonatomic, assign) BOOL videoSelectionShown;
 @property (nonatomic, assign) BOOL videoLoaded;
 @property (nonatomic, assign) BOOL videoAnimationShown;
+@property (nonatomic, assign) CGFloat lastScale;
 //AV properties
 @property UIPopoverController *videoSelectionPopover;
 @property (nonatomic, strong) AVPlayer *player;
@@ -37,6 +38,7 @@
 
 - (void)loadMovieFromCameraRoll;
 - (void)setupPlaybackForURL:(NSURL *)url;
+
 
 @end
 
@@ -110,6 +112,7 @@
     if(error != noErr){
         NSLog(@"ERROR setting up CVOpenGLESTextureCache %d", error);
     }
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -241,8 +244,8 @@
                                                                    NULL,
                                                                    GL_TEXTURE_2D,
                                                                    GL_RGBA,
-                                                                   frameWidth / 2,
-                                                                   frameHeight / 2,
+                                                                   frameWidth,
+                                                                   frameHeight,
                                                                    GL_BGRA,
                                                                    GL_UNSIGNED_BYTE,
                                                                   0,

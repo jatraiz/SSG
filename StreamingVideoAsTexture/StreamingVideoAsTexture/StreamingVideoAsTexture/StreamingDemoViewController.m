@@ -15,7 +15,6 @@
 #import <SSGOGL/SSGCommand.h>
 #import <AVFoundation/AVFoundation.h>
 
-
 static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemStatusObserverContext;
 
 
@@ -32,17 +31,17 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
 @property (nonatomic, assign) CMTime timePlaying;
 @property (nonatomic, assign) CVOpenGLESTextureCacheRef textureCacheRef;
 @property (nonatomic, assign) CVOpenGLESTextureRef videoTexture;
-
+@property (nonatomic, assign) BOOL playerStarted;
 
 #define kTracksKey        @"tracks"
 #define kStatusKey        @"status"
 #define kRateKey          @"rate"
 #define kPlayableKey      @"playable"
 #define kTimedMetadataKey @"currentItem.timedMetadata"
-// for the advanced: @"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"
+//#define kMovieUrlString   @"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"
 #define kMovieUrlString   @"http://devimages.apple.com/samplecode/adDemo/ad.m3u8"
-
-
+//#define kMovieUrlString   @"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8"
+//#define kMovieUrlString @"http://wac.3119.gravlab.com/003119/lotus/video/new_ideas.mp4"
 - (void)loadMovie;
 - (void)prepareToPlayAsset:(AVAsset*)asset withKeys:(NSArray*)requestedKeys;
 
@@ -71,21 +70,16 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
     
     //Z location for logo in 3D space
     self.mainZ = -7.0f;
-    self.testModel = [[SSGModel alloc] initWithModelFileName:@"quadCropped"];
+    self.testModel = [[SSGModel alloc] initWithModelFileName:@"quad16x9"];
     [self.testModel setTexture0Id:[SSGAssetManager loadTexture:@"iphone5GridTexture" ofType:@"png" shouldLoadWithMipMapping:NO]];
     self.testModel.shadowMax = 0.9f;
     self.testModel.projection = self.glmgr.projectionMatrix;
     self.testModel.defaultShaderSettings = self.glmgr.defaultShaderSettings;
     self.testModel.prs.pz = self.mainZ;
-    
+    self.testModel.prs.rz = M_PI;
     [self loadMovie];
     
-    NSDictionary *pixBuffAttributes = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
-	self.videoOutput = [[AVPlayerItemVideoOutput alloc] initWithPixelBufferAttributes:pixBuffAttributes];
-	self.videoOutputQueue = dispatch_queue_create("myVideoOutputQueue", DISPATCH_QUEUE_SERIAL);
-	[[self videoOutput] setDelegate:self queue:self.videoOutputQueue];
-    
-    CVReturn error = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL,((GLKView*)self.view).context, NULL, &_textureCacheRef);
+     CVReturn error = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL,((GLKView*)self.view).context, NULL, &_textureCacheRef);
     if(error != noErr){
         NSLog(@"ERROR setting up CVOpenGLESTextureCache %d", error);
     }
@@ -93,6 +87,8 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
 
 - (void)loadMovie
 {
+    NSLog(@"load movie");
+    
     NSURL *movieUrl = [NSURL URLWithString:kMovieUrlString];
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:movieUrl options:nil];
     NSArray *requestedKeys = @[kTracksKey,kPlayableKey];
@@ -118,6 +114,8 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
 
 - (void)prepareToPlayAsset:(AVAsset *)asset withKeys:(NSArray *)requestedKeys
 {
+    NSLog(@"prepare to play asset");
+    
     /* Make sure that the value of each key has loaded successfully. */
 	for (NSString *thisKey in requestedKeys)
 	{
@@ -161,7 +159,26 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
 
 - (void)startPlaying
 {
+    NSLog(@"start playing");
     
+    NSDictionary *pixBuffAttributes = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
+	self.videoOutput = [[AVPlayerItemVideoOutput alloc] initWithPixelBufferAttributes:pixBuffAttributes];
+	self.videoOutputQueue = dispatch_queue_create("myVideoOutputQueue", DISPATCH_QUEUE_SERIAL);
+	[[self videoOutput] setDelegate:self queue:self.videoOutputQueue];
+   
+    CVReturn error = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL,((GLKView*)self.view).context, NULL, &_textureCacheRef);
+    if(error != noErr){
+        NSLog(@"ERROR setting up CVOpenGLESTextureCache %d", error);
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.playerItem addOutput:self.videoOutput];
+        [self.videoOutput requestNotificationOfMediaDataChangeWithAdvanceInterval:0.03f];
+        [self.player play];
+        self.timePlaying = CMTimeMakeWithSeconds(0, 10000000);
+    });
+    
+
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -171,7 +188,11 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
         AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         switch (status) {
             case AVPlayerStatusReadyToPlay:
-                [self startPlaying];
+                if(!self.playerStarted)
+                {
+                    [self startPlaying];
+                    self.playerStarted = YES;
+                }
                 break;
                 
             default:
@@ -186,15 +207,75 @@ static void *kStreamingPlayerItemStatusObserverContext = &kStreamingPlayerItemSt
     return;
 }
 
+- (void)cleanUpTexture
+{
+    if(self.videoTexture){
+        CFRelease(self.videoTexture);
+        self.videoTexture = NULL;
+    }
+}
+
+- (void)updateTexture:(CVPixelBufferRef)pixelBuffer
+{
+    int frameWidth = (int)CVPixelBufferGetWidth(pixelBuffer);
+    int frameHeight = (int)CVPixelBufferGetHeight(pixelBuffer);
+    
+    [self cleanUpTexture];
+    
+    CVReturn error =  CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
+                                                                   self.textureCacheRef,
+                                                                   pixelBuffer,
+                                                                   NULL,
+                                                                   GL_TEXTURE_2D,
+                                                                   GL_RGBA,
+                                                                   frameWidth,
+                                                                   frameHeight,
+                                                                   GL_BGRA,
+                                                                   GL_UNSIGNED_BYTE,
+                                                                   0,
+                                                                   &_videoTexture);
+    
+    if(error){
+        NSLog(@"Error creating GLTextures: %d",error);
+    }
+    
+    self.testModel.texture0Id = CVOpenGLESTextureGetName(self.videoTexture);
+
+    glBindTexture(GL_TEXTURE_2D, self.testModel.texture0Id);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
+    //makes sure the buffer is released when done w/it
+    CFRelease(pixelBuffer);
+}
+
 - (void)update
 {
     [self.testModel updateWithTime:self.timeSinceLastUpdate];
+    
+    CMTime outputItemTime = self.timePlaying;
+    outputItemTime.value += CMTimeMakeWithSeconds(self.timeSinceLastUpdate, 10000000).value;
+    
+    [[self videoOutput] itemTimeForHostTime:outputItemTime.value];
+    if([[self videoOutput] hasNewPixelBufferForItemTime:outputItemTime])
+    {
+        [self updateTexture:[[self videoOutput] copyPixelBufferForItemTime:outputItemTime itemTimeForDisplay:NULL]];
+    }
+    self.timePlaying = outputItemTime;
+    
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     [self.testModel draw];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.testModel.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 1.0f)];
 }
 
 @end
