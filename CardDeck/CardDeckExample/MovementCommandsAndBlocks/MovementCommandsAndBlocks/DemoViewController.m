@@ -42,18 +42,17 @@ static const GLfloat mainZ = -50.0f;
     //settings for max smoothness in animation & display
     self.preferredFramesPerSecond = 60;
     ((GLKView*)self.view).drawableMultisample = GLKViewDrawableMultisample4X;
-    
     self.model = [[SSGModel alloc] initWithModelFileName:@"oddShape"];
     [self.model setTexture0Id: [SSGAssetManager loadTexture:@"brSwirl" ofType:@"png" shouldLoadWithMipMapping:YES]];
     self.model.projection = self.glmgr.projectionMatrix;
     self.model.defaultShaderSettings = self.glmgr.defaultShaderSettings;
     self.model.prs.pz = mainZ;
+    
+    
     [self.model.prs setRotationConstantToVector:GLKVector3Make(0.3f, -0.3f, 0.2f)];
     
     [self.model addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(0.5f, 2.0f, 0.0f) Duration:2.0f IsAbsolute:NO Delay:1.0f]];
     [self.model addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(-1.0f, -4.0f, 0.0f) Duration:2.0f IsAbsolute:NO Delay:3.0f]];
-    
-    
 }
 
 - (void)update
