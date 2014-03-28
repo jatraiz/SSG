@@ -133,6 +133,7 @@
     
     switch (command.commandEnum)
     {
+        // ALPHA //
         case kSSGCommand_alpha:
             if(command.duration == 0.0f)
             {
@@ -165,6 +166,8 @@
                 }
             }
             break;
+        
+        // VISIBILITY //
         case kSSGCommand_visible:
             if(command.target.x == 0.0f)
             {
@@ -177,10 +180,45 @@
             command.isFinished = YES;
             break;
             
+        // CONSTANT ROTATION //
         case kSSGCommand_setConstantRotation:
             [self.prs setRotationConstantToVector:GLKVector3Make(command.target.x, command.target.y, command.target.z)];
             command.isFinished = YES;
             break;
+            
+        // MOVE TO //
+        case kSSGCommand_moveTo:
+            if(!command.isStarted)
+            {
+                command.isStarted = YES;
+                
+                if(!command.isAbsolute)
+                {
+                    command.step = GLKVector4Make(command.target.x / command.duration, command.target.y / command.duration, command.target.z / command.duration, 0.0f);
+                    command.target = GLKVector4Make(command.target.x - self.prs.px, command.target.y - self.prs.py, command.target.z - self.prs.pz, 0.0f);
+                }
+                else
+                {
+                    command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
+                }
+            }
+            
+            command.duration -= time;
+            
+            if(command.duration <= 0.0f)
+            {
+                self.prs.position = GLKVector3Make(command.target.x, command.target.y, command.target.z);
+                command.isFinished = YES;
+            }
+            else
+            {
+                self.prs.position = GLKVector3Make(self.prs.px + command.step.x * time, self.prs.py + command.step.y * time, self.prs.pz + command.step.z * time);
+            }
+            
+            
+            break;
+            
+            
         default:
             break;
     }

@@ -14,7 +14,8 @@ typedef NS_ENUM(NSInteger, SSGCommandEnum)
     kSSGCommand_alpha,
     kSSGCommand_visible,
     kSSGCommand_font_alternatingSplit,
-    kSSGCommand_setConstantRotation
+    kSSGCommand_setConstantRotation,
+    kSSGCommand_moveTo
 };
 
 static __inline__ GLKVector4 command1Bool(BOOL boolValue)
