@@ -86,6 +86,11 @@
     [self.commands addObject:command];
 }
 
+- (void)clearAllCommands
+{
+    [self.commands removeAllObjects];
+}
+
 - (void)updateWithTime:(GLfloat)time
 {
     [self.prs updateWithTime:time];

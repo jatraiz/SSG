@@ -42,6 +42,7 @@
 - (void)setDimensions2dX:(GLfloat)x andY:(GLfloat)y;
 - (BOOL)isTransformedPointWithinModel2d:(CGPoint)point;
 - (void)addCommand:(SSGCommand*)command;
+- (void)clearAllCommands;
 - (void)updateWithTime:(GLfloat)time;
 - (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time;
 - (void)updateModelViewProjection;

@@ -34,7 +34,7 @@ static const GLfloat kXspreadStartPos = -2.25f;
 static const GLfloat kYspreadStartPos = 5.0f;
 static const GLfloat kXSpacing = 2.25f;
 static const GLfloat kYSpacing = 2.5f;
-static const GLfloat kZspacing = 0.5f;
+static const GLfloat kZspacing = 0.25f;
 static const GLfloat kStackedZTop = -10.0f;
 static const GLfloat kPreDealZRotation = 1.0f;
 static GLKVector3 kLowerRightStartingVector;
@@ -106,6 +106,8 @@ static GLKVector3 kLowerRightStartingVector;
     {
         SSGModel *m = self.cards[i];
         [m.prs removeAllCommands];
+        [m clearAllCommands];
+        
         m.alpha = 1.0f;
         m.prs.position = kLowerRightStartingVector;
         m.prs.rz = kPreDealZRotation;
@@ -146,6 +148,7 @@ static GLKVector3 kLowerRightStartingVector;
         
         SSGModel *m = self.cards[i];
         [m.prs removeAllCommands];
+        [m clearAllCommands];
         m.isHidden = NO;
         
         GLfloat targetX = 0.0f;
@@ -177,7 +180,76 @@ static GLKVector3 kLowerRightStartingVector;
 
 - (void)sortCards
 {
+    int count = (int)[self.cards count];
+    int shuffleNumber = 5;
     
+    for(int i = 0; i < shuffleNumber; ++i)
+    {
+        for(int j = 0; j < count; ++j)
+        {
+            int nElements = count - i;
+            int n = arc4random_uniform(nElements)+i;
+            [self.cards exchangeObjectAtIndex:i withObjectAtIndex:n];
+        }
+    }
+    
+    if(self.cardsStacked)
+    {
+        [self sortStackedCards];
+    }
+    else
+    {
+        [self sortDealtCards];
+    }
+}
+
+- (void)sortDealtCards
+{
+    self.cardsStacked = NO;
+    
+    GLfloat runningDelay = 0.0f;
+    GLfloat delayIncrement = 0.0f;
+    GLfloat durationOfThrow = 0.2f;
+    GLfloat xPos = kXspreadStartPos;
+    GLfloat yPos = kYspreadStartPos;
+    int rowCount = 0;
+    int columnCount = 0;
+    
+    for(int i = 0; i < kNcards; ++i)
+    {
+        SSGModel *m = self.cards[i];
+        [m.prs removeAllCommands];
+        [m clearAllCommands];
+        
+        m.alpha = 1.0f;
+      //  m.prs.position = kLowerRightStartingVector;
+      //  m.prs.rz = kPreDealZRotation;
+        
+        m.isHidden = NO;
+        
+        
+        [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
+    //    [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
+        
+        
+        ++columnCount;
+        if(columnCount == kNcolumns)
+        {
+            columnCount = 0;
+            ++rowCount;
+        }
+        
+        xPos = kXspreadStartPos + (columnCount * kXSpacing);
+        yPos = kYspreadStartPos - (rowCount * kYSpacing);
+        
+        runningDelay += delayIncrement;
+    }
+
+}
+
+- (void)sortStackedCards
+{
+    [self stackCards];
 }
 
 - (void)update
@@ -210,5 +282,6 @@ static GLKVector3 kLowerRightStartingVector;
 
 - (void)buttonViewSortPressed
 {
+    [self sortCards];
 }
 @end
