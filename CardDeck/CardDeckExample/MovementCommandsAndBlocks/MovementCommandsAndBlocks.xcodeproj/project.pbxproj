@@ -19,6 +19,14 @@
 		8A87C4E318E60C8B00E59E77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A87C4CB18E60C8B00E59E77 /* UIKit.framework */; };
 		8A87C4EB18E60C8B00E59E77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A87C4E918E60C8B00E59E77 /* InfoPlist.strings */; };
 		8A87C4ED18E60C8B00E59E77 /* MovementCommandsAndBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A87C4EC18E60C8B00E59E77 /* MovementCommandsAndBlocksTests.m */; };
+		8A87C4FA18E60CDC00E59E77 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A87C4F918E60CDC00E59E77 /* libSSGOGL.a */; };
+		8A87C4FC18E60CED00E59E77 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A87C4FB18E60CED00E59E77 /* OpenGLES.framework */; };
+		8A87C4FE18E60CFB00E59E77 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A87C4FD18E60CFB00E59E77 /* GLKit.framework */; };
+		8A87C50218E60DA900E59E77 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A87C50018E60DA900E59E77 /* ModelDefault.vsh */; };
+		8A87C50318E60DA900E59E77 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A87C50118E60DA900E59E77 /* ModelDefault.fsh */; };
+		8A87C50618E611BE00E59E77 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A87C50518E611BE00E59E77 /* DemoViewController.m */; };
+		8A87C50818E6159F00E59E77 /* brSwirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A87C50718E6159F00E59E77 /* brSwirl.png */; };
+		8A87C50A18E615AA00E59E77 /* oddShape.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A87C50918E615AA00E59E77 /* oddShape.model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +56,15 @@
 		8A87C4E818E60C8B00E59E77 /* MovementCommandsAndBlocksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovementCommandsAndBlocksTests-Info.plist"; sourceTree = "<group>"; };
 		8A87C4EA18E60C8B00E59E77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A87C4EC18E60C8B00E59E77 /* MovementCommandsAndBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovementCommandsAndBlocksTests.m; sourceTree = "<group>"; };
+		8A87C4F918E60CDC00E59E77 /* libSSGOGL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSSGOGL.a; path = "../../../SSGOGL/build/Debug-iphoneos/libSSGOGL.a"; sourceTree = "<group>"; };
+		8A87C4FB18E60CED00E59E77 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A87C4FD18E60CFB00E59E77 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8A87C50018E60DA900E59E77 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A87C50118E60DA900E59E77 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+		8A87C50418E611BE00E59E77 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		8A87C50518E611BE00E59E77 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		8A87C50718E6159F00E59E77 /* brSwirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brSwirl.png; sourceTree = "<group>"; };
+		8A87C50918E615AA00E59E77 /* oddShape.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = oddShape.model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A87C4FE18E60CFB00E59E77 /* GLKit.framework in Frameworks */,
+				8A87C4FC18E60CED00E59E77 /* OpenGLES.framework in Frameworks */,
+				8A87C4FA18E60CDC00E59E77 /* libSSGOGL.a in Frameworks */,
 				8A87C4CA18E60C8B00E59E77 /* CoreGraphics.framework in Frameworks */,
 				8A87C4CC18E60C8B00E59E77 /* UIKit.framework in Frameworks */,
 				8A87C4C818E60C8B00E59E77 /* Foundation.framework in Frameworks */,
@@ -96,6 +116,9 @@
 		8A87C4C618E60C8B00E59E77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A87C4FD18E60CFB00E59E77 /* GLKit.framework */,
+				8A87C4FB18E60CED00E59E77 /* OpenGLES.framework */,
+				8A87C4F918E60CDC00E59E77 /* libSSGOGL.a */,
 				8A87C4C718E60C8B00E59E77 /* Foundation.framework */,
 				8A87C4C918E60C8B00E59E77 /* CoreGraphics.framework */,
 				8A87C4CB18E60C8B00E59E77 /* UIKit.framework */,
@@ -107,9 +130,12 @@
 		8A87C4CD18E60C8B00E59E77 /* MovementCommandsAndBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				8A87C4FF18E60D8900E59E77 /* Assets */,
 				8A87C4D618E60C8B00E59E77 /* AppDelegate.h */,
 				8A87C4D718E60C8B00E59E77 /* AppDelegate.m */,
 				8A87C4D918E60C8B00E59E77 /* Images.xcassets */,
+				8A87C50418E611BE00E59E77 /* DemoViewController.h */,
+				8A87C50518E611BE00E59E77 /* DemoViewController.m */,
 				8A87C4CE18E60C8B00E59E77 /* Supporting Files */,
 			);
 			path = MovementCommandsAndBlocks;
@@ -142,6 +168,17 @@
 				8A87C4E918E60C8B00E59E77 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A87C4FF18E60D8900E59E77 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A87C50918E615AA00E59E77 /* oddShape.model */,
+				8A87C50718E6159F00E59E77 /* brSwirl.png */,
+				8A87C50018E60DA900E59E77 /* ModelDefault.vsh */,
+				8A87C50118E60DA900E59E77 /* ModelDefault.fsh */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A87C4D218E60C8B00E59E77 /* InfoPlist.strings in Resources */,
+				8A87C50A18E615AA00E59E77 /* oddShape.model in Resources */,
+				8A87C50318E60DA900E59E77 /* ModelDefault.fsh in Resources */,
 				8A87C4DA18E60C8B00E59E77 /* Images.xcassets in Resources */,
+				8A87C50818E6159F00E59E77 /* brSwirl.png in Resources */,
+				8A87C50218E60DA900E59E77 /* ModelDefault.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A87C50618E611BE00E59E77 /* DemoViewController.m in Sources */,
 				8A87C4D818E60C8B00E59E77 /* AppDelegate.m in Sources */,
 				8A87C4D418E60C8B00E59E77 /* main.m in Sources */,
 			);
@@ -362,6 +404,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovementCommandsAndBlocks/MovementCommandsAndBlocks-Prefix.pch";
 				INFOPLIST_FILE = "MovementCommandsAndBlocks/MovementCommandsAndBlocks-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/johnstricker/Developer/Sway/SSG/SSGOGL/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -375,6 +421,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovementCommandsAndBlocks/MovementCommandsAndBlocks-Prefix.pch";
 				INFOPLIST_FILE = "MovementCommandsAndBlocks/MovementCommandsAndBlocks-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/johnstricker/Developer/Sway/SSG/SSGOGL/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
