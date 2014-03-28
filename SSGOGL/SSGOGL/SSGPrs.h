@@ -14,6 +14,9 @@
 @property (nonatomic,readonly) GLKVector3 rotation;
 @property (nonatomic,readonly) GLKQuaternion rotationQuaternion;
 @property (nonatomic) GLKVector3 scale;
+
+- (void)removeAllCommands;
+
 -(GLfloat)px;
 -(GLfloat)py;
 -(GLfloat)pz;
