@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A94859818E5A141005E0981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A94859718E5A141005E0981 /* Foundation.framework */; };
+		8A94859A18E5A141005E0981 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A94859918E5A141005E0981 /* CoreGraphics.framework */; };
+		8A94859C18E5A141005E0981 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A94859B18E5A141005E0981 /* UIKit.framework */; };
+		8A9485A218E5A141005E0981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485A018E5A141005E0981 /* InfoPlist.strings */; };
+		8A9485A418E5A141005E0981 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9485A318E5A141005E0981 /* main.m */; };
+		8A9485A818E5A141005E0981 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9485A718E5A141005E0981 /* AppDelegate.m */; };
+		8A9485AA18E5A141005E0981 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485A918E5A141005E0981 /* Images.xcassets */; };
+		8A9485B118E5A141005E0981 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9485B018E5A141005E0981 /* XCTest.framework */; };
+		8A9485B218E5A141005E0981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A94859718E5A141005E0981 /* Foundation.framework */; };
+		8A9485B318E5A141005E0981 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A94859B18E5A141005E0981 /* UIKit.framework */; };
+		8A9485BB18E5A141005E0981 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485B918E5A141005E0981 /* InfoPlist.strings */; };
+		8A9485BD18E5A141005E0981 /* CardDeckExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9485BC18E5A141005E0981 /* CardDeckExampleTests.m */; };
+		8A9485D318E5A198005E0981 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9485D018E5A18D005E0981 /* libSSGOGL.a */; };
+		8A9485D518E5A1C5005E0981 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9485D418E5A1C5005E0981 /* GLKit.framework */; };
+		8A9485D718E5A1CC005E0981 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9485D618E5A1CC005E0981 /* OpenGLES.framework */; };
+		8A9485DA18E5A1F7005E0981 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485D818E5A1F7005E0981 /* ModelDefault.vsh */; };
+		8A9485DB18E5A1F7005E0981 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485D918E5A1F7005E0981 /* ModelDefault.fsh */; };
+		8A9485E818E5A2C5005E0981 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485DC18E5A2C5005E0981 /* image1.png */; };
+		8A9485E918E5A2C5005E0981 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485DD18E5A2C5005E0981 /* image2.png */; };
+		8A9485EA18E5A2C5005E0981 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485DE18E5A2C5005E0981 /* image3.png */; };
+		8A9485EB18E5A2C5005E0981 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485DF18E5A2C5005E0981 /* image4.png */; };
+		8A9485EC18E5A2C5005E0981 /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E018E5A2C5005E0981 /* image5.png */; };
+		8A9485ED18E5A2C5005E0981 /* image6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E118E5A2C5005E0981 /* image6.png */; };
+		8A9485EE18E5A2C5005E0981 /* image7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E218E5A2C5005E0981 /* image7.png */; };
+		8A9485EF18E5A2C5005E0981 /* image8.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E318E5A2C5005E0981 /* image8.png */; };
+		8A9485F018E5A2C5005E0981 /* image9.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E418E5A2C5005E0981 /* image9.png */; };
+		8A9485F118E5A2C5005E0981 /* image10.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E518E5A2C5005E0981 /* image10.png */; };
+		8A9485F218E5A2C5005E0981 /* image11.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E618E5A2C5005E0981 /* image11.png */; };
+		8A9485F318E5A2C5005E0981 /* image12.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485E718E5A2C5005E0981 /* image12.png */; };
+		8A9485F618E5A3AA005E0981 /* CardDeckExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9485F518E5A3AA005E0981 /* CardDeckExampleViewController.m */; };
+		8A9485FF18E5B14B005E0981 /* squareCard.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A9485FE18E5B141005E0981 /* squareCard.model */; };
+		8A94860E18E5B72B005E0981 /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A94860C18E5B72B005E0981 /* ButtonViewController.m */; };
+		8A94860F18E5B72B005E0981 /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A94860D18E5B72B005E0981 /* ButtonViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A9485B418E5A141005E0981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A94858C18E5A141005E0981 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A94859318E5A141005E0981;
+			remoteInfo = CardDeckExample;
+		};
+		8A9485CF18E5A18D005E0981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A9485CA18E5A18D005E0981 /* SSGOGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A309ECF183D0334002F08DE;
+			remoteInfo = SSGOGL;
+		};
+		8A9485D118E5A18D005E0981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A9485CA18E5A18D005E0981 /* SSGOGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A309EDF183D0334002F08DE;
+			remoteInfo = SSGOGLTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A94859418E5A141005E0981 /* CardDeckExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardDeckExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A94859718E5A141005E0981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A94859918E5A141005E0981 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A94859B18E5A141005E0981 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A94859F18E5A141005E0981 /* CardDeckExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardDeckExample-Info.plist"; sourceTree = "<group>"; };
+		8A9485A118E5A141005E0981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A9485A318E5A141005E0981 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A9485A518E5A141005E0981 /* CardDeckExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardDeckExample-Prefix.pch"; sourceTree = "<group>"; };
+		8A9485A618E5A141005E0981 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8A9485A718E5A141005E0981 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8A9485A918E5A141005E0981 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A9485AF18E5A141005E0981 /* CardDeckExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardDeckExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9485B018E5A141005E0981 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A9485B818E5A141005E0981 /* CardDeckExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardDeckExampleTests-Info.plist"; sourceTree = "<group>"; };
+		8A9485BA18E5A141005E0981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A9485BC18E5A141005E0981 /* CardDeckExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDeckExampleTests.m; sourceTree = "<group>"; };
+		8A9485CA18E5A18D005E0981 /* SSGOGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSGOGL.xcodeproj; path = ../../SSGOGL/SSGOGL.xcodeproj; sourceTree = "<group>"; };
+		8A9485D418E5A1C5005E0981 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8A9485D618E5A1CC005E0981 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A9485D818E5A1F7005E0981 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A9485D918E5A1F7005E0981 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+		8A9485DC18E5A2C5005E0981 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		8A9485DD18E5A2C5005E0981 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		8A9485DE18E5A2C5005E0981 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		8A9485DF18E5A2C5005E0981 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
+		8A9485E018E5A2C5005E0981 /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image5.png; sourceTree = "<group>"; };
+		8A9485E118E5A2C5005E0981 /* image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image6.png; sourceTree = "<group>"; };
+		8A9485E218E5A2C5005E0981 /* image7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image7.png; sourceTree = "<group>"; };
+		8A9485E318E5A2C5005E0981 /* image8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image8.png; sourceTree = "<group>"; };
+		8A9485E418E5A2C5005E0981 /* image9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image9.png; sourceTree = "<group>"; };
+		8A9485E518E5A2C5005E0981 /* image10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image10.png; sourceTree = "<group>"; };
+		8A9485E618E5A2C5005E0981 /* image11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image11.png; sourceTree = "<group>"; };
+		8A9485E718E5A2C5005E0981 /* image12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image12.png; sourceTree = "<group>"; };
+		8A9485F418E5A3AA005E0981 /* CardDeckExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardDeckExampleViewController.h; path = ../CardDeckExampleViewController.h; sourceTree = "<group>"; };
+		8A9485F518E5A3AA005E0981 /* CardDeckExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardDeckExampleViewController.m; path = ../CardDeckExampleViewController.m; sourceTree = "<group>"; };
+		8A9485FE18E5B141005E0981 /* squareCard.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = squareCard.model; sourceTree = "<group>"; };
+		8A94860B18E5B72B005E0981 /* ButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonViewController.h; path = ../ButtonViewController.h; sourceTree = "<group>"; };
+		8A94860C18E5B72B005E0981 /* ButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonViewController.m; path = ../ButtonViewController.m; sourceTree = "<group>"; };
+		8A94860D18E5B72B005E0981 /* ButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonViewController.xib; path = ../ButtonViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A94859118E5A141005E0981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9485D718E5A1CC005E0981 /* OpenGLES.framework in Frameworks */,
+				8A9485D518E5A1C5005E0981 /* GLKit.framework in Frameworks */,
+				8A9485D318E5A198005E0981 /* libSSGOGL.a in Frameworks */,
+				8A94859A18E5A141005E0981 /* CoreGraphics.framework in Frameworks */,
+				8A94859C18E5A141005E0981 /* UIKit.framework in Frameworks */,
+				8A94859818E5A141005E0981 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9485AC18E5A141005E0981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9485B118E5A141005E0981 /* XCTest.framework in Frameworks */,
+				8A9485B318E5A141005E0981 /* UIKit.framework in Frameworks */,
+				8A9485B218E5A141005E0981 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A94858B18E5A141005E0981 = {
+			isa = PBXGroup;
+			children = (
+				8A94859D18E5A141005E0981 /* CardDeckExample */,
+				8A9485B618E5A141005E0981 /* CardDeckExampleTests */,
+				8A94859618E5A141005E0981 /* Frameworks */,
+				8A94859518E5A141005E0981 /* Products */,
+				8A9485CA18E5A18D005E0981 /* SSGOGL.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		8A94859518E5A141005E0981 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A94859418E5A141005E0981 /* CardDeckExample.app */,
+				8A9485AF18E5A141005E0981 /* CardDeckExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A94859618E5A141005E0981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A9485D618E5A1CC005E0981 /* OpenGLES.framework */,
+				8A9485D418E5A1C5005E0981 /* GLKit.framework */,
+				8A94859718E5A141005E0981 /* Foundation.framework */,
+				8A94859918E5A141005E0981 /* CoreGraphics.framework */,
+				8A94859B18E5A141005E0981 /* UIKit.framework */,
+				8A9485B018E5A141005E0981 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A94859D18E5A141005E0981 /* CardDeckExample */ = {
+			isa = PBXGroup;
+			children = (
+				8A9485C918E5A157005E0981 /* Assets */,
+				8A9485A618E5A141005E0981 /* AppDelegate.h */,
+				8A9485A718E5A141005E0981 /* AppDelegate.m */,
+				8A9485F418E5A3AA005E0981 /* CardDeckExampleViewController.h */,
+				8A9485F518E5A3AA005E0981 /* CardDeckExampleViewController.m */,
+				8A94860B18E5B72B005E0981 /* ButtonViewController.h */,
+				8A94860C18E5B72B005E0981 /* ButtonViewController.m */,
+				8A94860D18E5B72B005E0981 /* ButtonViewController.xib */,
+				8A94859E18E5A141005E0981 /* Supporting Files */,
+			);
+			path = CardDeckExample;
+			sourceTree = "<group>";
+		};
+		8A94859E18E5A141005E0981 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A94859F18E5A141005E0981 /* CardDeckExample-Info.plist */,
+				8A9485A018E5A141005E0981 /* InfoPlist.strings */,
+				8A9485A318E5A141005E0981 /* main.m */,
+				8A9485A518E5A141005E0981 /* CardDeckExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A9485B618E5A141005E0981 /* CardDeckExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A9485BC18E5A141005E0981 /* CardDeckExampleTests.m */,
+				8A9485B718E5A141005E0981 /* Supporting Files */,
+			);
+			path = CardDeckExampleTests;
+			sourceTree = "<group>";
+		};
+		8A9485B718E5A141005E0981 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A9485B818E5A141005E0981 /* CardDeckExampleTests-Info.plist */,
+				8A9485B918E5A141005E0981 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A9485C918E5A157005E0981 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A9485FE18E5B141005E0981 /* squareCard.model */,
+				8A9485DC18E5A2C5005E0981 /* image1.png */,
+				8A9485DD18E5A2C5005E0981 /* image2.png */,
+				8A9485DE18E5A2C5005E0981 /* image3.png */,
+				8A9485DF18E5A2C5005E0981 /* image4.png */,
+				8A9485E018E5A2C5005E0981 /* image5.png */,
+				8A9485E118E5A2C5005E0981 /* image6.png */,
+				8A9485E218E5A2C5005E0981 /* image7.png */,
+				8A9485E318E5A2C5005E0981 /* image8.png */,
+				8A9485E418E5A2C5005E0981 /* image9.png */,
+				8A9485E518E5A2C5005E0981 /* image10.png */,
+				8A9485E618E5A2C5005E0981 /* image11.png */,
+				8A9485E718E5A2C5005E0981 /* image12.png */,
+				8A9485D818E5A1F7005E0981 /* ModelDefault.vsh */,
+				8A9485D918E5A1F7005E0981 /* ModelDefault.fsh */,
+				8A9485A918E5A141005E0981 /* Images.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		8A9485CB18E5A18D005E0981 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A9485D018E5A18D005E0981 /* libSSGOGL.a */,
+				8A9485D218E5A18D005E0981 /* SSGOGLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A94859318E5A141005E0981 /* CardDeckExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A9485C018E5A141005E0981 /* Build configuration list for PBXNativeTarget "CardDeckExample" */;
+			buildPhases = (
+				8A94859018E5A141005E0981 /* Sources */,
+				8A94859118E5A141005E0981 /* Frameworks */,
+				8A94859218E5A141005E0981 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardDeckExample;
+			productName = CardDeckExample;
+			productReference = 8A94859418E5A141005E0981 /* CardDeckExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A9485AE18E5A141005E0981 /* CardDeckExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A9485C318E5A141005E0981 /* Build configuration list for PBXNativeTarget "CardDeckExampleTests" */;
+			buildPhases = (
+				8A9485AB18E5A141005E0981 /* Sources */,
+				8A9485AC18E5A141005E0981 /* Frameworks */,
+				8A9485AD18E5A141005E0981 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A9485B518E5A141005E0981 /* PBXTargetDependency */,
+			);
+			name = CardDeckExampleTests;
+			productName = CardDeckExampleTests;
+			productReference = 8A9485AF18E5A141005E0981 /* CardDeckExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A94858C18E5A141005E0981 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Stricker";
+				TargetAttributes = {
+					8A9485AE18E5A141005E0981 = {
+						TestTargetID = 8A94859318E5A141005E0981;
+					};
+				};
+			};
+			buildConfigurationList = 8A94858F18E5A141005E0981 /* Build configuration list for PBXProject "CardDeckExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A94858B18E5A141005E0981;
+			productRefGroup = 8A94859518E5A141005E0981 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A9485CB18E5A18D005E0981 /* Products */;
+					ProjectRef = 8A9485CA18E5A18D005E0981 /* SSGOGL.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8A94859318E5A141005E0981 /* CardDeckExample */,
+				8A9485AE18E5A141005E0981 /* CardDeckExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8A9485D018E5A18D005E0981 /* libSSGOGL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSSGOGL.a;
+			remoteRef = 8A9485CF18E5A18D005E0981 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A9485D218E5A18D005E0981 /* SSGOGLTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SSGOGLTests.xctest;
+			remoteRef = 8A9485D118E5A18D005E0981 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A94859218E5A141005E0981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9485FF18E5B14B005E0981 /* squareCard.model in Resources */,
+				8A9485F018E5A2C5005E0981 /* image9.png in Resources */,
+				8A9485A218E5A141005E0981 /* InfoPlist.strings in Resources */,
+				8A9485F218E5A2C5005E0981 /* image11.png in Resources */,
+				8A9485E818E5A2C5005E0981 /* image1.png in Resources */,
+				8A9485F318E5A2C5005E0981 /* image12.png in Resources */,
+				8A94860F18E5B72B005E0981 /* ButtonViewController.xib in Resources */,
+				8A9485E918E5A2C5005E0981 /* image2.png in Resources */,
+				8A9485DB18E5A1F7005E0981 /* ModelDefault.fsh in Resources */,
+				8A9485EB18E5A2C5005E0981 /* image4.png in Resources */,
+				8A9485F118E5A2C5005E0981 /* image10.png in Resources */,
+				8A9485EC18E5A2C5005E0981 /* image5.png in Resources */,
+				8A9485ED18E5A2C5005E0981 /* image6.png in Resources */,
+				8A9485AA18E5A141005E0981 /* Images.xcassets in Resources */,
+				8A9485EF18E5A2C5005E0981 /* image8.png in Resources */,
+				8A9485EE18E5A2C5005E0981 /* image7.png in Resources */,
+				8A9485EA18E5A2C5005E0981 /* image3.png in Resources */,
+				8A9485DA18E5A1F7005E0981 /* ModelDefault.vsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9485AD18E5A141005E0981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9485BB18E5A141005E0981 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A94859018E5A141005E0981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A94860E18E5B72B005E0981 /* ButtonViewController.m in Sources */,
+				8A9485A818E5A141005E0981 /* AppDelegate.m in Sources */,
+				8A9485F618E5A3AA005E0981 /* CardDeckExampleViewController.m in Sources */,
+				8A9485A418E5A141005E0981 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9485AB18E5A141005E0981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9485BD18E5A141005E0981 /* CardDeckExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A9485B518E5A141005E0981 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A94859318E5A141005E0981 /* CardDeckExample */;
+			targetProxy = 8A9485B418E5A141005E0981 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A9485A018E5A141005E0981 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A9485A118E5A141005E0981 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A9485B918E5A141005E0981 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A9485BA18E5A141005E0981 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A9485BE18E5A141005E0981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A9485BF18E5A141005E0981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A9485C118E5A141005E0981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardDeckExample/CardDeckExample-Prefix.pch";
+				INFOPLIST_FILE = "CardDeckExample/CardDeckExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A9485C218E5A141005E0981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardDeckExample/CardDeckExample-Prefix.pch";
+				INFOPLIST_FILE = "CardDeckExample/CardDeckExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A9485C418E5A141005E0981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CardDeckExample.app/CardDeckExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardDeckExample/CardDeckExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CardDeckExampleTests/CardDeckExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A9485C518E5A141005E0981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CardDeckExample.app/CardDeckExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardDeckExample/CardDeckExample-Prefix.pch";
+				INFOPLIST_FILE = "CardDeckExampleTests/CardDeckExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A94858F18E5A141005E0981 /* Build configuration list for PBXProject "CardDeckExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9485BE18E5A141005E0981 /* Debug */,
+				8A9485BF18E5A141005E0981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A9485C018E5A141005E0981 /* Build configuration list for PBXNativeTarget "CardDeckExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9485C118E5A141005E0981 /* Debug */,
+				8A9485C218E5A141005E0981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A9485C318E5A141005E0981 /* Build configuration list for PBXNativeTarget "CardDeckExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9485C418E5A141005E0981 /* Debug */,
+				8A9485C518E5A141005E0981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A94858C18E5A141005E0981 /* Project object */;
+}
