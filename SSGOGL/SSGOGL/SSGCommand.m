@@ -10,11 +10,12 @@
 #import <GLKit/GLKit.h>
 
 @implementation SSGCommand
-+ (instancetype)commandWithEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 
++ (instancetype)commandWithEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay
 {
     return [[SSGCommand alloc] initWithCommandEnum:command Target:target Duration:duration IsAbsolute:isAbsolute Delay:delay];
 }
+
 - (instancetype)initWithCommandEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay
 {
     self = [super init];
