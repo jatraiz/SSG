@@ -17,6 +17,17 @@ typedef NS_ENUM(NSInteger, SSGCommandEnum)
     kSSGCommand_setConstantRotation
 };
 
+static __inline__ GLKVector4 command1Bool(BOOL boolValue)
+{
+    GLfloat x = 0.0f;
+    if(boolValue)
+    {
+        x = 1.0f;
+    }
+    GLKVector4 v = {x, 0.0f, 0.0f, 0.0f};
+    return v;
+}
+
 static __inline__ GLKVector4 command1float(float x)
 {
     GLKVector4 v = { x, 0.0f, 0.0f, 0.0f};
