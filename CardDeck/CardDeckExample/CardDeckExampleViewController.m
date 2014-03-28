@@ -20,6 +20,7 @@
 @property (nonatomic, strong) SSGOpenGLManager *glmgr;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) ButtonViewController *buttonViewController;
+@property (nonatomic, assign) BOOL cardsStacked;
 @end
 
 @implementation CardDeckExampleViewController
@@ -33,7 +34,8 @@ static const GLfloat kXspreadStartPos = -2.25f;
 static const GLfloat kYspreadStartPos = 5.0f;
 static const GLfloat kXSpacing = 2.25f;
 static const GLfloat kYSpacing = 2.5f;
-static const GLfloat kZspacing = 1.0f;
+static const GLfloat kZspacing = 0.5f;
+static const GLfloat kStackedZTop = -10.0f;
 static const GLfloat kPreDealZRotation = 1.0f;
 static GLKVector3 kLowerRightStartingVector;
 
@@ -60,7 +62,6 @@ static GLKVector3 kLowerRightStartingVector;
     kLowerRightStartingVector = GLKVector3Make(10.0f, -10.0f, kMainZ);
     
     [self createCards];
-    [self dealCards];
     
     self.buttonViewController = [[ButtonViewController alloc] init];
     CGRect frame = self.buttonViewController.view.frame;
@@ -81,9 +82,9 @@ static GLKVector3 kLowerRightStartingVector;
         [m setProjection:self.glmgr.projectionMatrix];
         [m setDefaultShaderSettings:self.glmgr.defaultShaderSettings];
          m.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-        m.shadowMax = 0.1f;
+        m.shadowMax = 0.5f;
         m.prs.pz = kMainZ;
-        m.alpha = 1.0f;
+        m.isHidden = YES;
         
         [self.cards addObject:m];
     }
@@ -91,6 +92,8 @@ static GLKVector3 kLowerRightStartingVector;
 
 - (void)dealCards
 {
+    self.cardsStacked = NO;
+    
     GLfloat runningDelay = 0.0f;
     GLfloat delayIncrement = 0.2f;
     GLfloat durationOfThrow = 0.2f;
@@ -102,13 +105,17 @@ static GLKVector3 kLowerRightStartingVector;
     for(int i = 0; i < kNcards; ++i)
     {
         SSGModel *m = self.cards[i];
-        
+        [m.prs removeAllCommands];
         m.alpha = 1.0f;
         m.prs.position = kLowerRightStartingVector;
         m.prs.rz = kPreDealZRotation;
         
+        m.isHidden = NO;
+        
+        
         [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
         [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
+        
         
         ++columnCount;
         if(columnCount == kNcolumns)
@@ -122,6 +129,55 @@ static GLKVector3 kLowerRightStartingVector;
         
         runningDelay += delayIncrement;
     }
+}
+
+- (void)stackCards
+{
+    self.cardsStacked = YES;
+    
+    GLfloat zPos = kStackedZTop;
+    GLfloat duration = 0.25f;
+    GLfloat runningDelay = 0.0f;
+    GLfloat delayIncrement = 0.1f;
+    
+    for(int i = kNcards-1; i >= 0; --i)
+    {
+        zPos = kStackedZTop - (kZspacing * i);
+        
+        SSGModel *m = self.cards[i];
+        [m.prs removeAllCommands];
+        m.isHidden = NO;
+        
+        GLfloat targetX = 0.0f;
+        GLfloat targetY = 0.0f;
+        
+        if(i != 0)
+        {
+           targetX = ((GLfloat)(arc4random_uniform(99) + 1) - 50.0f) * 0.005;
+           targetY = ((GLfloat)(arc4random_uniform(99) + 1) - 50.0f) * 0.005;
+        }
+        
+        [m.prs moveToVector:GLKVector3Make(targetX, targetY, zPos) Duration:duration Delay:runningDelay IsAbsolute:YES];
+        
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.75f) Duration:duration * 0.5f IsAbsolute:YES Delay:runningDelay]];
+        
+        if(i == 0)
+        {
+            [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(1.0f) Duration:duration * 0.5f IsAbsolute:YES Delay:runningDelay + duration * 0.5f]];
+        }
+        
+        GLfloat randZ = ((GLfloat)(arc4random_uniform(99) + 1) - 50.0f) * 0.001;
+  
+        [m.prs rotateToVector:GLKVector3Make(0.0f, 0.0f, randZ) Duration:duration Delay:runningDelay IsAbsolute:YES];
+        
+        runningDelay += delayIncrement;
+    }
+    
+}
+
+- (void)sortCards
+{
+    
 }
 
 - (void)update
@@ -144,16 +200,15 @@ static GLKVector3 kLowerRightStartingVector;
 
 - (void)buttonViewDealPressed
 {
-    NSLog(@"deal");
+    [self dealCards];
 }
 
 - (void)buttonViewStackPressed
 {
-    NSLog(@"stack");
+    [self stackCards];
 }
 
 - (void)buttonViewSortPressed
 {
-    NSLog(@"sort");
 }
 @end

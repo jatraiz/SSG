@@ -37,6 +37,14 @@
     return self;
 }
 
+
+- (void)removeAllCommands
+{
+    [self.moveCommands removeAllObjects];
+    [self.rotationCommands removeAllObjects];
+    [self.scaleCommands removeAllObjects];
+}
+
 #pragma mark position methods
 -(GLfloat)px {return _position.x;}
 -(GLfloat)py {return _position.y;}
