@@ -14,7 +14,8 @@ typedef NS_ENUM(NSInteger, SSGCommandEnum)
     kSSGCommand_alpha,
     kSSGCommand_visible,
     kSSGCommand_font_alternatingSplit,
-    kSSGCommand_setConstantRotation
+    kSSGCommand_setConstantRotation,
+    kSSGCommand_moveTo
 };
 
 static __inline__ GLKVector4 command1Bool(BOOL boolValue)
@@ -49,15 +50,15 @@ static __inline__ GLKVector4 command3float(float x, float y, float z)
 
 @interface SSGCommand : NSObject
 
-@property (nonatomic) SSGCommandEnum commandEnum;
-@property (nonatomic) GLKVector4 target;
-@property (nonatomic) GLKVector4 step;
-@property (nonatomic) GLfloat duration;
-@property (nonatomic) GLfloat delay;
-@property (nonatomic) BOOL isAbsolute;
-@property (nonatomic) BOOL isStarted;
-@property (nonatomic) BOOL isFinished;
-@property (nonatomic) SSGCommand *commandOnFinish;
+@property (nonatomic, assign) SSGCommandEnum commandEnum;
+@property (nonatomic, assign) GLKVector4 target;
+@property (nonatomic, assign) GLKVector4 step;
+@property (nonatomic, assign) GLfloat duration;
+@property (nonatomic, assign) GLfloat delay;
+@property (nonatomic, assign) BOOL isAbsolute;
+@property (nonatomic, assign) BOOL isStarted;
+@property (nonatomic, assign) BOOL isFinished;
+@property (nonatomic, assign) SSGCommand *commandOnFinish;
 
 + (instancetype)commandWithEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 - (instancetype)initWithCommandEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
