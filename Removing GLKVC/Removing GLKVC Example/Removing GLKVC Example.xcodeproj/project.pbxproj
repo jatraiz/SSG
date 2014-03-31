@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A9E61C118E999F9009BA4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61C018E999F9009BA4C6 /* Foundation.framework */; };
+		8A9E61C318E999F9009BA4C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61C218E999F9009BA4C6 /* CoreGraphics.framework */; };
+		8A9E61C518E999F9009BA4C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61C418E999F9009BA4C6 /* UIKit.framework */; };
+		8A9E61CB18E999F9009BA4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E61C918E999F9009BA4C6 /* InfoPlist.strings */; };
+		8A9E61CD18E999F9009BA4C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E61CC18E999F9009BA4C6 /* main.m */; };
+		8A9E61D118E999F9009BA4C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E61D018E999F9009BA4C6 /* AppDelegate.m */; };
+		8A9E61D318E999F9009BA4C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E61D218E999F9009BA4C6 /* Images.xcassets */; };
+		8A9E61DA18E999F9009BA4C6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61D918E999F9009BA4C6 /* XCTest.framework */; };
+		8A9E61DB18E999F9009BA4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61C018E999F9009BA4C6 /* Foundation.framework */; };
+		8A9E61DC18E999F9009BA4C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61C418E999F9009BA4C6 /* UIKit.framework */; };
+		8A9E61E418E999F9009BA4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E61E218E999F9009BA4C6 /* InfoPlist.strings */; };
+		8A9E61E618E999F9009BA4C6 /* Removing_GLKVC_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E61E518E999F9009BA4C6 /* Removing_GLKVC_ExampleTests.m */; };
+		8A9E61F918E99A39009BA4C6 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61F818E99A39009BA4C6 /* libSSGOGL.a */; };
+		8A9E61FB18E99A3F009BA4C6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E61FA18E99A3F009BA4C6 /* QuartzCore.framework */; };
+		8A9E61FE18E99A7F009BA4C6 /* PlainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E61FD18E99A7F009BA4C6 /* PlainViewController.m */; };
+		8A9E620118E99A92009BA4C6 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E61FF18E99A92009BA4C6 /* ModelDefault.vsh */; };
+		8A9E620218E99A92009BA4C6 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E620018E99A92009BA4C6 /* ModelDefault.fsh */; };
+		8A9E620518E9A1AD009BA4C6 /* brSwirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E620418E9A1AD009BA4C6 /* brSwirl.png */; };
+		8A9E620718E9A1BB009BA4C6 /* oddShape.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E620618E9A1BB009BA4C6 /* oddShape.model */; };
+		8A9E620918E9A45D009BA4C6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E620818E9A45D009BA4C6 /* OpenGLES.framework */; };
+		8A9E620D18E9A8E2009BA4C6 /* ScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E620B18E9A8E2009BA4C6 /* ScrollTestViewController.m */; };
+		8A9E620E18E9A8E2009BA4C6 /* ScrollTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9E620C18E9A8E2009BA4C6 /* ScrollTestViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A9E61DD18E999F9009BA4C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A9E61B518E999F9009BA4C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A9E61BC18E999F9009BA4C6;
+			remoteInfo = "Removing GLKVC Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A9E61BD18E999F9009BA4C6 /* Removing GLKVC Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Removing GLKVC Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9E61C018E999F9009BA4C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A9E61C218E999F9009BA4C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A9E61C418E999F9009BA4C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A9E61C818E999F9009BA4C6 /* Removing GLKVC Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Removing GLKVC Example-Info.plist"; sourceTree = "<group>"; };
+		8A9E61CA18E999F9009BA4C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A9E61CC18E999F9009BA4C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A9E61CE18E999F9009BA4C6 /* Removing GLKVC Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Removing GLKVC Example-Prefix.pch"; sourceTree = "<group>"; };
+		8A9E61CF18E999F9009BA4C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8A9E61D018E999F9009BA4C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8A9E61D218E999F9009BA4C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A9E61D818E999F9009BA4C6 /* Removing GLKVC ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Removing GLKVC ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9E61D918E999F9009BA4C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A9E61E118E999F9009BA4C6 /* Removing GLKVC ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Removing GLKVC ExampleTests-Info.plist"; sourceTree = "<group>"; };
+		8A9E61E318E999F9009BA4C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A9E61E518E999F9009BA4C6 /* Removing_GLKVC_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Removing_GLKVC_ExampleTests.m; sourceTree = "<group>"; };
+		8A9E61F818E99A39009BA4C6 /* libSSGOGL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSSGOGL.a; path = "../../SSGOGL/build/Debug-iphoneos/libSSGOGL.a"; sourceTree = "<group>"; };
+		8A9E61FA18E99A3F009BA4C6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8A9E61FC18E99A7F009BA4C6 /* PlainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainViewController.h; sourceTree = "<group>"; };
+		8A9E61FD18E99A7F009BA4C6 /* PlainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainViewController.m; sourceTree = "<group>"; };
+		8A9E61FF18E99A92009BA4C6 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A9E620018E99A92009BA4C6 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+		8A9E620418E9A1AD009BA4C6 /* brSwirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brSwirl.png; sourceTree = "<group>"; };
+		8A9E620618E9A1BB009BA4C6 /* oddShape.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = oddShape.model; sourceTree = "<group>"; };
+		8A9E620818E9A45D009BA4C6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A9E620A18E9A8E2009BA4C6 /* ScrollTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollTestViewController.h; path = ../ScrollTestViewController.h; sourceTree = "<group>"; };
+		8A9E620B18E9A8E2009BA4C6 /* ScrollTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollTestViewController.m; path = ../ScrollTestViewController.m; sourceTree = "<group>"; };
+		8A9E620C18E9A8E2009BA4C6 /* ScrollTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScrollTestViewController.xib; path = ../ScrollTestViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A9E61BA18E999F9009BA4C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9E620918E9A45D009BA4C6 /* OpenGLES.framework in Frameworks */,
+				8A9E61FB18E99A3F009BA4C6 /* QuartzCore.framework in Frameworks */,
+				8A9E61F918E99A39009BA4C6 /* libSSGOGL.a in Frameworks */,
+				8A9E61C318E999F9009BA4C6 /* CoreGraphics.framework in Frameworks */,
+				8A9E61C518E999F9009BA4C6 /* UIKit.framework in Frameworks */,
+				8A9E61C118E999F9009BA4C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9E61D518E999F9009BA4C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9E61DA18E999F9009BA4C6 /* XCTest.framework in Frameworks */,
+				8A9E61DC18E999F9009BA4C6 /* UIKit.framework in Frameworks */,
+				8A9E61DB18E999F9009BA4C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A9E61B418E999F9009BA4C6 = {
+			isa = PBXGroup;
+			children = (
+				8A9E61C618E999F9009BA4C6 /* Removing GLKVC Example */,
+				8A9E61DF18E999F9009BA4C6 /* Removing GLKVC ExampleTests */,
+				8A9E61BF18E999F9009BA4C6 /* Frameworks */,
+				8A9E61BE18E999F9009BA4C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A9E61BE18E999F9009BA4C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E61BD18E999F9009BA4C6 /* Removing GLKVC Example.app */,
+				8A9E61D818E999F9009BA4C6 /* Removing GLKVC ExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A9E61BF18E999F9009BA4C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E620818E9A45D009BA4C6 /* OpenGLES.framework */,
+				8A9E61FA18E99A3F009BA4C6 /* QuartzCore.framework */,
+				8A9E61F818E99A39009BA4C6 /* libSSGOGL.a */,
+				8A9E61C018E999F9009BA4C6 /* Foundation.framework */,
+				8A9E61C218E999F9009BA4C6 /* CoreGraphics.framework */,
+				8A9E61C418E999F9009BA4C6 /* UIKit.framework */,
+				8A9E61D918E999F9009BA4C6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A9E61C618E999F9009BA4C6 /* Removing GLKVC Example */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E61CF18E999F9009BA4C6 /* AppDelegate.h */,
+				8A9E61D018E999F9009BA4C6 /* AppDelegate.m */,
+				8A9E61FC18E99A7F009BA4C6 /* PlainViewController.h */,
+				8A9E61FD18E99A7F009BA4C6 /* PlainViewController.m */,
+				8A9E620A18E9A8E2009BA4C6 /* ScrollTestViewController.h */,
+				8A9E620B18E9A8E2009BA4C6 /* ScrollTestViewController.m */,
+				8A9E620318E99A98009BA4C6 /* Assets */,
+				8A9E61C718E999F9009BA4C6 /* Supporting Files */,
+			);
+			path = "Removing GLKVC Example";
+			sourceTree = "<group>";
+		};
+		8A9E61C718E999F9009BA4C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E61C818E999F9009BA4C6 /* Removing GLKVC Example-Info.plist */,
+				8A9E61C918E999F9009BA4C6 /* InfoPlist.strings */,
+				8A9E61CC18E999F9009BA4C6 /* main.m */,
+				8A9E61CE18E999F9009BA4C6 /* Removing GLKVC Example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A9E61DF18E999F9009BA4C6 /* Removing GLKVC ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E61E518E999F9009BA4C6 /* Removing_GLKVC_ExampleTests.m */,
+				8A9E61E018E999F9009BA4C6 /* Supporting Files */,
+			);
+			path = "Removing GLKVC ExampleTests";
+			sourceTree = "<group>";
+		};
+		8A9E61E018E999F9009BA4C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E61E118E999F9009BA4C6 /* Removing GLKVC ExampleTests-Info.plist */,
+				8A9E61E218E999F9009BA4C6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A9E620318E99A98009BA4C6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A9E620C18E9A8E2009BA4C6 /* ScrollTestViewController.xib */,
+				8A9E620618E9A1BB009BA4C6 /* oddShape.model */,
+				8A9E620418E9A1AD009BA4C6 /* brSwirl.png */,
+				8A9E61D218E999F9009BA4C6 /* Images.xcassets */,
+				8A9E61FF18E99A92009BA4C6 /* ModelDefault.vsh */,
+				8A9E620018E99A92009BA4C6 /* ModelDefault.fsh */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A9E61BC18E999F9009BA4C6 /* Removing GLKVC Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A9E61E918E999F9009BA4C6 /* Build configuration list for PBXNativeTarget "Removing GLKVC Example" */;
+			buildPhases = (
+				8A9E61B918E999F9009BA4C6 /* Sources */,
+				8A9E61BA18E999F9009BA4C6 /* Frameworks */,
+				8A9E61BB18E999F9009BA4C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Removing GLKVC Example";
+			productName = "Removing GLKVC Example";
+			productReference = 8A9E61BD18E999F9009BA4C6 /* Removing GLKVC Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A9E61D718E999F9009BA4C6 /* Removing GLKVC ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A9E61EC18E999F9009BA4C6 /* Build configuration list for PBXNativeTarget "Removing GLKVC ExampleTests" */;
+			buildPhases = (
+				8A9E61D418E999F9009BA4C6 /* Sources */,
+				8A9E61D518E999F9009BA4C6 /* Frameworks */,
+				8A9E61D618E999F9009BA4C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A9E61DE18E999F9009BA4C6 /* PBXTargetDependency */,
+			);
+			name = "Removing GLKVC ExampleTests";
+			productName = "Removing GLKVC ExampleTests";
+			productReference = 8A9E61D818E999F9009BA4C6 /* Removing GLKVC ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A9E61B518E999F9009BA4C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Stricker";
+				TargetAttributes = {
+					8A9E61D718E999F9009BA4C6 = {
+						TestTargetID = 8A9E61BC18E999F9009BA4C6;
+					};
+				};
+			};
+			buildConfigurationList = 8A9E61B818E999F9009BA4C6 /* Build configuration list for PBXProject "Removing GLKVC Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A9E61B418E999F9009BA4C6;
+			productRefGroup = 8A9E61BE18E999F9009BA4C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A9E61BC18E999F9009BA4C6 /* Removing GLKVC Example */,
+				8A9E61D718E999F9009BA4C6 /* Removing GLKVC ExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A9E61BB18E999F9009BA4C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9E620E18E9A8E2009BA4C6 /* ScrollTestViewController.xib in Resources */,
+				8A9E61CB18E999F9009BA4C6 /* InfoPlist.strings in Resources */,
+				8A9E620718E9A1BB009BA4C6 /* oddShape.model in Resources */,
+				8A9E620218E99A92009BA4C6 /* ModelDefault.fsh in Resources */,
+				8A9E61D318E999F9009BA4C6 /* Images.xcassets in Resources */,
+				8A9E620518E9A1AD009BA4C6 /* brSwirl.png in Resources */,
+				8A9E620118E99A92009BA4C6 /* ModelDefault.vsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9E61D618E999F9009BA4C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9E61E418E999F9009BA4C6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A9E61B918E999F9009BA4C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9E61D118E999F9009BA4C6 /* AppDelegate.m in Sources */,
+				8A9E61FE18E99A7F009BA4C6 /* PlainViewController.m in Sources */,
+				8A9E61CD18E999F9009BA4C6 /* main.m in Sources */,
+				8A9E620D18E9A8E2009BA4C6 /* ScrollTestViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9E61D418E999F9009BA4C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9E61E618E999F9009BA4C6 /* Removing_GLKVC_ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A9E61DE18E999F9009BA4C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A9E61BC18E999F9009BA4C6 /* Removing GLKVC Example */;
+			targetProxy = 8A9E61DD18E999F9009BA4C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A9E61C918E999F9009BA4C6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A9E61CA18E999F9009BA4C6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A9E61E218E999F9009BA4C6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A9E61E318E999F9009BA4C6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A9E61E718E999F9009BA4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A9E61E818E999F9009BA4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A9E61EA18E999F9009BA4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Removing GLKVC Example/Removing GLKVC Example-Prefix.pch";
+				INFOPLIST_FILE = "Removing GLKVC Example/Removing GLKVC Example-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/johnstricker/Developer/Sway/SSG/SSGOGL/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A9E61EB18E999F9009BA4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Removing GLKVC Example/Removing GLKVC Example-Prefix.pch";
+				INFOPLIST_FILE = "Removing GLKVC Example/Removing GLKVC Example-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/johnstricker/Developer/Sway/SSG/SSGOGL/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A9E61ED18E999F9009BA4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Removing GLKVC Example.app/Removing GLKVC Example";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Removing GLKVC Example/Removing GLKVC Example-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Removing GLKVC ExampleTests/Removing GLKVC ExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A9E61EE18E999F9009BA4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Removing GLKVC Example.app/Removing GLKVC Example";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Removing GLKVC Example/Removing GLKVC Example-Prefix.pch";
+				INFOPLIST_FILE = "Removing GLKVC ExampleTests/Removing GLKVC ExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A9E61B818E999F9009BA4C6 /* Build configuration list for PBXProject "Removing GLKVC Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9E61E718E999F9009BA4C6 /* Debug */,
+				8A9E61E818E999F9009BA4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A9E61E918E999F9009BA4C6 /* Build configuration list for PBXNativeTarget "Removing GLKVC Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9E61EA18E999F9009BA4C6 /* Debug */,
+				8A9E61EB18E999F9009BA4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8A9E61EC18E999F9009BA4C6 /* Build configuration list for PBXNativeTarget "Removing GLKVC ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9E61ED18E999F9009BA4C6 /* Debug */,
+				8A9E61EE18E999F9009BA4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A9E61B518E999F9009BA4C6 /* Project object */;
+}

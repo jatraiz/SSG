@@ -14,7 +14,6 @@
 #import <SSGOGL/SSGPrs.h>
 #import <SSGOGL/SSGCommand.h>
 
-
 #define kNhuds 4
 #define kRingsAlphaMax 0.4f
 #define kSpheresAlphaMax 1.0f
