@@ -23,6 +23,7 @@
 @property (nonatomic, assign) BOOL cardsStacked;
 @property (nonatomic, strong) SSGModel *touchedModel;
 @property (nonatomic, assign) CGPoint selectedColumnAndRow;
+@property (nonatomic, assign) GLint selectedCardIndex;
 @end
 
 @implementation CardDeckExampleViewController
@@ -33,14 +34,18 @@ static const int kNrows = 4;
 static  GLfloat kDeltCardXPosArr[kNcolumns];
 static  GLfloat kDeltCardYPosArr[kNrows];
 
-static const GLfloat kMainZ = -30.0f;
-static const GLfloat kDeltPickedUpZ = -28.0f;
+static const GLfloat kMainZ = -150.0f;
+static const GLfloat kDeltPickedUpZAdj = 4.0f;
+static const GLfloat kPickUpZChangeDuration = 0.06f;
+static const GLfloat kDeltSnapDuration = 0.2f;
+static const GLfloat kDeltSnapDelayAdj = 0.1f;
+static const GLfloat kDeltDropSortTolerance = 1.0f;
 static const GLfloat kXspreadStartPos = -2.25f;
 static const GLfloat kYspreadStartPos = 5.0f;
 static const GLfloat kXSpacing = 2.25f;
 static const GLfloat kYSpacing = 2.5f;
 static const GLfloat kZspacing = 0.25f;
-static const GLfloat kStackedZTop = -10.0f;
+static const GLfloat kStackedZTop = -50.0f;
 static const GLfloat kPreDealZRotation = 1.0f;
 static GLKVector3 kLowerRightStartingVector;
 
@@ -57,8 +62,8 @@ static GLKVector3 kLowerRightStartingVector;
     [self.glmgr setClearColor:GLKVector4Make(0.8f, 0.8f, 0.8f, 1.0f)];
     
     //setting up perspective
-    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(25.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 100.0f);
-    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.height ScreenWidth:self.view.bounds.size.width Fov:GLKMathDegreesToRadians(25.0f)];
+    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(5.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 200.0f);
+    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.height ScreenWidth:self.view.bounds.size.width Fov:GLKMathDegreesToRadians(5.0f)];
     
     //settings for max smoothness in animation & display
     self.preferredFramesPerSecond = 60;
@@ -74,6 +79,7 @@ static GLKVector3 kLowerRightStartingVector;
     self.buttonViewController.view.frame = frame;
     self.buttonViewController.delgate = self;
     [self.view addSubview:self.buttonViewController.view];
+    self.view.multipleTouchEnabled = NO;
 }
 
 - (void)createCards
@@ -306,6 +312,63 @@ static GLKVector3 kLowerRightStartingVector;
     return point;
 }
 
+- (CGPoint)calculateXYOfModelWithIndex:(int)index
+{
+    int colNumber = index % kNcolumns;
+    int rowNumber = index / kNcolumns;
+    
+    NSLog(@"row: %i column = %i",rowNumber,colNumber);
+    
+    return CGPointMake(kDeltCardXPosArr[colNumber], kDeltCardYPosArr[rowNumber]);
+}
+
+- (void)handleDeltCardDrop
+{
+    BOOL cardIntersectsAnother = NO;
+    int intersectionIndex = 0;
+    
+    for(SSGModel *m in self.cards)
+    {
+        if(m != self.touchedModel)
+        {
+            GLfloat xDist = fabsf(self.touchedModel.prs.px - m.prs.px);
+            GLfloat yDist = fabsf(self.touchedModel.prs.py - m.prs.py);
+            if(xDist + yDist <= kDeltDropSortTolerance)
+            {
+                cardIntersectsAnother = YES;
+                intersectionIndex= [self.cards indexOfObject:m];
+                break;
+            }
+        }
+    }
+    
+    if(cardIntersectsAnother)
+    {
+        
+        [self.cards removeObject:self.touchedModel];
+        [self.cards insertObject:self.touchedModel atIndex:intersectionIndex];
+        
+        GLfloat runningDelay = 0.0f;
+        
+        for(int i = 0; i < kNcards; ++i)
+        {
+            SSGModel *m = self.cards[i];
+            CGPoint correctPos = [self calculateXYOfModelWithIndex:i];
+            if(m.prs.px != correctPos.x || m.prs.py != correctPos.y)
+            {
+                [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(correctPos.x, correctPos.y, kMainZ) Duration:kDeltSnapDuration IsAbsolute:YES Delay:runningDelay]];
+                runningDelay += kDeltSnapDelayAdj;
+            }
+        }
+    }
+    else
+    {
+        [self.touchedModel addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(kDeltCardXPosArr[(int)self.selectedColumnAndRow.x],kDeltCardYPosArr[(int)self.selectedColumnAndRow.y] , kMainZ) Duration:kDeltSnapDuration IsAbsolute:YES Delay:0.0f]];
+    }
+    
+    self.touchedModel = nil;
+}
+
 - (SSGModel*)getTouchedModelFromTouchPoint:(CGPoint)touchPoint
 {
     CGPoint transformedPoint = [self.glmgr.zConverter convertScreenPt:touchPoint ProjecteZ:kMainZ];
@@ -327,23 +390,39 @@ static GLKVector3 kLowerRightStartingVector;
     self.touchedModel = [self getTouchedModelFromTouchPoint:touchPoint];
     if(self.touchedModel)
     {
+        self.selectedCardIndex = [self.cards indexOfObject:self.touchedModel];
         self.selectedColumnAndRow = [self getRowAndColumnOfModel:self.touchedModel];
-  //      self.touchedModel addCommand:[SSGCommand commandWithEnum:kssg Target:<#(GLKVector4)#> Duration:<#(GLfloat)#> IsAbsolute:<#(BOOL)#> Delay:<#(GLfloat)#>]
+        [self.touchedModel addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(0.0f, 0.0f, kDeltPickedUpZAdj) Duration:kPickUpZChangeDuration IsAbsolute:NO Delay:0.0f]];
+
     }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    if(self.touchedModel)
+    {
+        UITouch *touch = [touches anyObject];
+        CGPoint currentPoint = [touch locationInView:self.view];
+        CGPoint transformedPoint = [self.glmgr.zConverter convertScreenPt:currentPoint ProjecteZ:self.touchedModel.prs.pz];
+        self.touchedModel.prs.px = transformedPoint.x;
+        self.touchedModel.prs.py = transformedPoint.y;
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    if(self.touchedModel)
+    {
+        [self handleDeltCardDrop];
+    }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if(self.touchedModel)
+    {
+        [self handleDeltCardDrop];
+    }
     
 }
 
