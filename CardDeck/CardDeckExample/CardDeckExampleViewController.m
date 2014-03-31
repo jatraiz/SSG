@@ -21,6 +21,8 @@
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) ButtonViewController *buttonViewController;
 @property (nonatomic, assign) BOOL cardsStacked;
+@property (nonatomic, strong) SSGModel *touchedModel;
+@property (nonatomic, assign) CGPoint selectedColumnAndRow;
 @end
 
 @implementation CardDeckExampleViewController
@@ -28,8 +30,11 @@
 static const int kNcards = 12;
 static const int kNcolumns = 3;
 static const int kNrows = 4;
+static  GLfloat kDeltCardXPosArr[kNcolumns];
+static  GLfloat kDeltCardYPosArr[kNrows];
 
 static const GLfloat kMainZ = -30.0f;
+static const GLfloat kDeltPickedUpZ = -28.0f;
 static const GLfloat kXspreadStartPos = -2.25f;
 static const GLfloat kYspreadStartPos = 5.0f;
 static const GLfloat kXSpacing = 2.25f;
@@ -53,7 +58,7 @@ static GLKVector3 kLowerRightStartingVector;
     
     //setting up perspective
     self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(25.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 100.0f);
-    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.width ScreenWidth:self.view.bounds.size.height Fov:GLKMathDegreesToRadians(25.0f)];
+    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.height ScreenWidth:self.view.bounds.size.width Fov:GLKMathDegreesToRadians(25.0f)];
     
     //settings for max smoothness in animation & display
     self.preferredFramesPerSecond = 60;
@@ -85,6 +90,7 @@ static GLKVector3 kLowerRightStartingVector;
         m.shadowMax = 0.5f;
         m.prs.pz = kMainZ;
         m.isHidden = YES;
+        m.dimensions2d = CGPointMake(2.0f, 2.0f);
         
         [self.cards addObject:m];
     }
@@ -118,6 +124,16 @@ static GLKVector3 kLowerRightStartingVector;
         [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
         [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
         
+        
+        if(i < kNcolumns)
+        {
+            kDeltCardXPosArr[i] = xPos;
+        }
+        
+        if(rowCount < kNrows)
+        {
+            kDeltCardYPosArr[rowCount] = yPos;
+        }
         
         ++columnCount;
         if(columnCount == kNcolumns)
@@ -222,15 +238,9 @@ static GLKVector3 kLowerRightStartingVector;
         [m clearAllCommands];
         
         m.alpha = 1.0f;
-      //  m.prs.position = kLowerRightStartingVector;
-      //  m.prs.rz = kPreDealZRotation;
-        
-        m.isHidden = NO;
-        
+             m.isHidden = NO;
         
         [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
-    //    [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
-        
         
         ++columnCount;
         if(columnCount == kNcolumns)
@@ -268,6 +278,73 @@ static GLKVector3 kLowerRightStartingVector;
         [m draw];
     }
   
+}
+
+
+- (CGPoint)getRowAndColumnOfModel:(SSGModel *)m
+{
+    CGPoint point;
+    
+    for(int i = 0; i < kNcolumns; ++i)
+    {
+        if(m.prs.px == kDeltCardXPosArr[i])
+        {
+            point.x = i;
+            break;
+        }
+    }
+    
+    for(int i = 0; i < kNrows; ++i)
+    {
+        if(m.prs.py == kDeltCardYPosArr[i])
+        {
+            point.y = i;
+            break;
+        }
+    }
+    
+    return point;
+}
+
+- (SSGModel*)getTouchedModelFromTouchPoint:(CGPoint)touchPoint
+{
+    CGPoint transformedPoint = [self.glmgr.zConverter convertScreenPt:touchPoint ProjecteZ:kMainZ];
+    
+    for(SSGModel *m in self.cards)
+    {
+        if([m isTransformedPointWithinModel2d:transformedPoint])
+        {
+            return m;
+        }
+    }
+    return nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self.view];
+    self.touchedModel = [self getTouchedModelFromTouchPoint:touchPoint];
+    if(self.touchedModel)
+    {
+        self.selectedColumnAndRow = [self getRowAndColumnOfModel:self.touchedModel];
+  //      self.touchedModel addCommand:[SSGCommand commandWithEnum:kssg Target:<#(GLKVector4)#> Duration:<#(GLfloat)#> IsAbsolute:<#(BOOL)#> Delay:<#(GLfloat)#>]
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
 }
 
 - (void)buttonViewDealPressed
