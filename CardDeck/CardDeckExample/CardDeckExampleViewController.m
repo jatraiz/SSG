@@ -23,7 +23,7 @@
 @property (nonatomic, assign) BOOL cardsStacked;
 @property (nonatomic, strong) SSGModel *touchedModel;
 @property (nonatomic, assign) CGPoint selectedColumnAndRow;
-@property (nonatomic, assign) GLint selectedCardIndex;
+@property (nonatomic, assign) NSUInteger selectedCardIndex;
 @end
 
 @implementation CardDeckExampleViewController
@@ -317,15 +317,13 @@ static GLKVector3 kLowerRightStartingVector;
     int colNumber = index % kNcolumns;
     int rowNumber = index / kNcolumns;
     
-    NSLog(@"row: %i column = %i",rowNumber,colNumber);
-    
     return CGPointMake(kDeltCardXPosArr[colNumber], kDeltCardYPosArr[rowNumber]);
 }
 
 - (void)handleDeltCardDrop
 {
     BOOL cardIntersectsAnother = NO;
-    int intersectionIndex = 0;
+    NSUInteger intersectionIndex = 0;
     
     for(SSGModel *m in self.cards)
     {
@@ -423,7 +421,6 @@ static GLKVector3 kLowerRightStartingVector;
     {
         [self handleDeltCardDrop];
     }
-    
 }
 
 - (void)buttonViewDealPressed
