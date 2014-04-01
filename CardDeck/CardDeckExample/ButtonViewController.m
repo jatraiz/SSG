@@ -20,7 +20,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -38,15 +39,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)sortPressed:(id)sender {
+- (IBAction)sortPressed:(id)sender
+{
     [self.delgate buttonViewSortPressed];
 }
 
-- (IBAction)stackPressed:(id)sender {
+- (IBAction)stackPressed:(id)sender
+{
     [self.delgate buttonViewStackPressed];
 }
 
-- (IBAction)dealPressed:(id)sender {
+- (IBAction)dealPressed:(id)sender
+{
     [self.delgate buttonViewDealPressed];
 }
 @end
