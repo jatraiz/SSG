@@ -21,6 +21,9 @@
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) ButtonViewController *buttonViewController;
 @property (nonatomic, assign) BOOL cardsStacked;
+@property (nonatomic, strong) SSGModel *touchedModel;
+@property (nonatomic, assign) CGPoint selectedColumnAndRow;
+@property (nonatomic, assign) NSUInteger selectedCardIndex;
 @end
 
 @implementation CardDeckExampleViewController
@@ -28,14 +31,21 @@
 static const int kNcards = 12;
 static const int kNcolumns = 3;
 static const int kNrows = 4;
+static  GLfloat kDeltCardXPosArr[kNcolumns];
+static  GLfloat kDeltCardYPosArr[kNrows];
 
-static const GLfloat kMainZ = -30.0f;
+static const GLfloat kMainZ = -150.0f;
+static const GLfloat kDeltPickedUpZAdj = 4.0f;
+static const GLfloat kPickUpZChangeDuration = 0.06f;
+static const GLfloat kDeltSnapDuration = 0.2f;
+static const GLfloat kDeltSnapDelayAdj = 0.1f;
+static const GLfloat kDeltDropSortTolerance = 1.0f;
 static const GLfloat kXspreadStartPos = -2.25f;
 static const GLfloat kYspreadStartPos = 5.0f;
 static const GLfloat kXSpacing = 2.25f;
 static const GLfloat kYSpacing = 2.5f;
 static const GLfloat kZspacing = 0.25f;
-static const GLfloat kStackedZTop = -10.0f;
+static const GLfloat kStackedZTop = -50.0f;
 static const GLfloat kPreDealZRotation = 1.0f;
 static GLKVector3 kLowerRightStartingVector;
 
@@ -52,8 +62,8 @@ static GLKVector3 kLowerRightStartingVector;
     [self.glmgr setClearColor:GLKVector4Make(0.8f, 0.8f, 0.8f, 1.0f)];
     
     //setting up perspective
-    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(25.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 100.0f);
-    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.width ScreenWidth:self.view.bounds.size.height Fov:GLKMathDegreesToRadians(25.0f)];
+    self.glmgr.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(5.0f), fabsf(self.view.bounds.size.width / self.view.bounds.size.height), 0.1f, 200.0f);
+    self.glmgr.zConverter = [[SSG2DZConverter alloc] initWithScreenHeight:self.view.bounds.size.height ScreenWidth:self.view.bounds.size.width Fov:GLKMathDegreesToRadians(5.0f)];
     
     //settings for max smoothness in animation & display
     self.preferredFramesPerSecond = 60;
@@ -69,6 +79,7 @@ static GLKVector3 kLowerRightStartingVector;
     self.buttonViewController.view.frame = frame;
     self.buttonViewController.delgate = self;
     [self.view addSubview:self.buttonViewController.view];
+    self.view.multipleTouchEnabled = NO;
 }
 
 - (void)createCards
@@ -85,6 +96,7 @@ static GLKVector3 kLowerRightStartingVector;
         m.shadowMax = 0.5f;
         m.prs.pz = kMainZ;
         m.isHidden = YES;
+        m.dimensions2d = CGPointMake(2.0f, 2.0f);
         
         [self.cards addObject:m];
     }
@@ -118,6 +130,16 @@ static GLKVector3 kLowerRightStartingVector;
         [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
         [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
         
+        
+        if(i < kNcolumns)
+        {
+            kDeltCardXPosArr[i] = xPos;
+        }
+        
+        if(rowCount < kNrows)
+        {
+            kDeltCardYPosArr[rowCount] = yPos;
+        }
         
         ++columnCount;
         if(columnCount == kNcolumns)
@@ -222,15 +244,9 @@ static GLKVector3 kLowerRightStartingVector;
         [m clearAllCommands];
         
         m.alpha = 1.0f;
-      //  m.prs.position = kLowerRightStartingVector;
-      //  m.prs.rz = kPreDealZRotation;
-        
-        m.isHidden = NO;
-        
+             m.isHidden = NO;
         
         [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
-    //    [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
-        
         
         ++columnCount;
         if(columnCount == kNcolumns)
@@ -268,6 +284,143 @@ static GLKVector3 kLowerRightStartingVector;
         [m draw];
     }
   
+}
+
+
+- (CGPoint)getRowAndColumnOfModel:(SSGModel *)m
+{
+    CGPoint point;
+    
+    for(int i = 0; i < kNcolumns; ++i)
+    {
+        if(m.prs.px == kDeltCardXPosArr[i])
+        {
+            point.x = i;
+            break;
+        }
+    }
+    
+    for(int i = 0; i < kNrows; ++i)
+    {
+        if(m.prs.py == kDeltCardYPosArr[i])
+        {
+            point.y = i;
+            break;
+        }
+    }
+    
+    return point;
+}
+
+- (CGPoint)calculateXYOfModelWithIndex:(int)index
+{
+    int colNumber = index % kNcolumns;
+    int rowNumber = index / kNcolumns;
+    
+    return CGPointMake(kDeltCardXPosArr[colNumber], kDeltCardYPosArr[rowNumber]);
+}
+
+- (void)handleDeltCardDrop
+{
+    BOOL cardIntersectsAnother = NO;
+    NSUInteger intersectionIndex = 0;
+    
+    for(SSGModel *m in self.cards)
+    {
+        if(m != self.touchedModel)
+        {
+            GLfloat xDist = fabsf(self.touchedModel.prs.px - m.prs.px);
+            GLfloat yDist = fabsf(self.touchedModel.prs.py - m.prs.py);
+            if(xDist + yDist <= kDeltDropSortTolerance)
+            {
+                cardIntersectsAnother = YES;
+                intersectionIndex= [self.cards indexOfObject:m];
+                break;
+            }
+        }
+    }
+    
+    if(cardIntersectsAnother)
+    {
+        
+        [self.cards removeObject:self.touchedModel];
+        [self.cards insertObject:self.touchedModel atIndex:intersectionIndex];
+        
+        GLfloat runningDelay = 0.0f;
+        
+        for(int i = 0; i < kNcards; ++i)
+        {
+            SSGModel *m = self.cards[i];
+            CGPoint correctPos = [self calculateXYOfModelWithIndex:i];
+            if(m.prs.px != correctPos.x || m.prs.py != correctPos.y)
+            {
+                [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(correctPos.x, correctPos.y, kMainZ) Duration:kDeltSnapDuration IsAbsolute:YES Delay:runningDelay]];
+                runningDelay += kDeltSnapDelayAdj;
+            }
+        }
+    }
+    else
+    {
+        [self.touchedModel addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(kDeltCardXPosArr[(int)self.selectedColumnAndRow.x],kDeltCardYPosArr[(int)self.selectedColumnAndRow.y] , kMainZ) Duration:kDeltSnapDuration IsAbsolute:YES Delay:0.0f]];
+    }
+    
+    self.touchedModel = nil;
+}
+
+- (SSGModel*)getTouchedModelFromTouchPoint:(CGPoint)touchPoint
+{
+    CGPoint transformedPoint = [self.glmgr.zConverter convertScreenPt:touchPoint ProjecteZ:kMainZ];
+    
+    for(SSGModel *m in self.cards)
+    {
+        if([m isTransformedPointWithinModel2d:transformedPoint])
+        {
+            return m;
+        }
+    }
+    return nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self.view];
+    self.touchedModel = [self getTouchedModelFromTouchPoint:touchPoint];
+    if(self.touchedModel)
+    {
+        self.selectedCardIndex = [self.cards indexOfObject:self.touchedModel];
+        self.selectedColumnAndRow = [self getRowAndColumnOfModel:self.touchedModel];
+        [self.touchedModel addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(0.0f, 0.0f, kDeltPickedUpZAdj) Duration:kPickUpZChangeDuration IsAbsolute:NO Delay:0.0f]];
+
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(self.touchedModel)
+    {
+        UITouch *touch = [touches anyObject];
+        CGPoint currentPoint = [touch locationInView:self.view];
+        CGPoint transformedPoint = [self.glmgr.zConverter convertScreenPt:currentPoint ProjecteZ:self.touchedModel.prs.pz];
+        self.touchedModel.prs.px = transformedPoint.x;
+        self.touchedModel.prs.py = transformedPoint.y;
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(self.touchedModel)
+    {
+        [self handleDeltCardDrop];
+    }
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(self.touchedModel)
+    {
+        [self handleDeltCardDrop];
+    }
 }
 
 - (void)buttonViewDealPressed
