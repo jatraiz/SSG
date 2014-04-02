@@ -16,6 +16,10 @@ typedef NS_ENUM(NSInteger, SSGCommandEnum)
     kSSGCommand_alpha,
     kSSGCommand_visible,
     kSSGCommand_font_alternatingSplit,
+    kSSGCommand_rotateTo,
+    kSSGCommand_rotateAlongPath,
+    kSSGCommand_scaleTo,
+    kSSGCommand_scaleAlongPath,
     kSSGCommand_setConstantRotation,
     kSSGCommand_moveTo,
     kSSGCommand_moveAlongPath

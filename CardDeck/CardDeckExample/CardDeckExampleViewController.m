@@ -13,6 +13,7 @@
 #import <SSGOGL/SSGAssetManager.h>
 #import <SSGOGL/SSGPrs.h>
 #import <SSGOGL/SSGCommand.h>
+#import <SSGOGL/SSGMathUtils.h>
 #import "ButtonViewController.h"
 
 @interface CardDeckExampleViewController ()<ButtonViewControllerDelegate>
@@ -47,6 +48,7 @@ static const GLfloat kYSpacing = 2.5f;
 static const GLfloat kZspacing = 0.25f;
 static const GLfloat kStackedZTop = -50.0f;
 static const GLfloat kPreDealZRotation = 1.0f;
+static const GLfloat kRotationMultiplierOnPlaceMin = 0.5f;
 static GLKVector3 kLowerRightStartingVector;
 
 
@@ -117,7 +119,6 @@ static GLKVector3 kLowerRightStartingVector;
     for(int i = 0; i < kNcards; ++i)
     {
         SSGModel *m = self.cards[i];
-        [m.prs removeAllCommands];
         [m clearAllCommands];
         
         m.alpha = 1.0f;
@@ -127,9 +128,8 @@ static GLKVector3 kLowerRightStartingVector;
         m.isHidden = NO;
         
         
-        [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
-        [m.prs rotateToVector:GLKVector3Make(0, 0, -kPreDealZRotation) Duration:durationOfThrow Delay:runningDelay IsAbsolute:NO];
-        
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(xPos, yPos, kMainZ) Duration:durationOfThrow IsAbsolute:YES Delay:runningDelay]];
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_rotateTo Target:command3float(0.0f, 0.0f, [SSGMathUtils randomGLfloatBetweenMin:-0.075f Max:0.075f]) Duration:durationOfThrow IsAbsolute:YES Delay:runningDelay]];
         
         if(i < kNcolumns)
         {
@@ -169,7 +169,6 @@ static GLKVector3 kLowerRightStartingVector;
         zPos = kStackedZTop - (kZspacing * i);
         
         SSGModel *m = self.cards[i];
-        [m.prs removeAllCommands];
         [m clearAllCommands];
         m.isHidden = NO;
         
@@ -182,8 +181,7 @@ static GLKVector3 kLowerRightStartingVector;
            targetY = ((GLfloat)(arc4random_uniform(99) + 1) - 50.0f) * 0.005;
         }
         
-        [m.prs moveToVector:GLKVector3Make(targetX, targetY, zPos) Duration:duration Delay:runningDelay IsAbsolute:YES];
-        
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(targetX, targetY, zPos) Duration:duration IsAbsolute:YES Delay:runningDelay]];
         [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(0.75f) Duration:duration * 0.5f IsAbsolute:YES Delay:runningDelay]];
         
         if(i == 0)
@@ -193,7 +191,7 @@ static GLKVector3 kLowerRightStartingVector;
         
         GLfloat randZ = ((GLfloat)(arc4random_uniform(99) + 1) - 50.0f) * 0.001;
   
-        [m.prs rotateToVector:GLKVector3Make(0.0f, 0.0f, randZ) Duration:duration Delay:runningDelay IsAbsolute:YES];
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_rotateTo Target:command3float(0.0f, 0.0f, randZ) Duration:duration IsAbsolute:YES Delay:runningDelay]];
         
         runningDelay += delayIncrement;
     }
@@ -244,10 +242,10 @@ static GLKVector3 kLowerRightStartingVector;
         [m clearAllCommands];
         
         m.alpha = 1.0f;
-             m.isHidden = NO;
+        m.isHidden = NO;
         
-        [m.prs moveToVector:GLKVector3Make(xPos, yPos, kMainZ) Duration:durationOfThrow Delay:runningDelay IsAbsolute:YES];
-        
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(xPos, yPos, kMainZ) Duration:durationOfThrow IsAbsolute:YES Delay:runningDelay]];
+        [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_rotateTo Target:command3float(0.0f, 0.0f, [SSGMathUtils randomGLfloatBetweenMin:-0.075f Max:0.075f]) Duration:durationOfThrow IsAbsolute:YES Delay:runningDelay]];
         ++columnCount;
         if(columnCount == kNcolumns)
         {
@@ -289,7 +287,7 @@ static GLKVector3 kLowerRightStartingVector;
 
 - (CGPoint)getRowAndColumnOfModel:(SSGModel *)m
 {
-    CGPoint point;
+    CGPoint point = CGPointZero;
     
     for(int i = 0; i < kNcolumns; ++i)
     {
@@ -354,6 +352,11 @@ static GLKVector3 kLowerRightStartingVector;
             CGPoint correctPos = [self calculateXYOfModelWithIndex:i];
             if(m.prs.px != correctPos.x || m.prs.py != correctPos.y)
             {
+                if(m.prs.rz != 0.0f)
+                {
+                    GLfloat newRZ =  m.prs.rz * [SSGMathUtils randomGLfloatBetweenMin:kRotationMultiplierOnPlaceMin Max:1.0f];
+                    [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_rotateTo Target:command3float(m.prs.rx, m.prs.ry, newRZ) Duration:kDeltSnapDuration IsAbsolute:YES Delay:runningDelay]];
+                }
                 [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(correctPos.x, correctPos.y, kMainZ) Duration:kDeltSnapDuration IsAbsolute:YES Delay:runningDelay]];
                 runningDelay += kDeltSnapDelayAdj;
             }

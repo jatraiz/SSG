@@ -8,7 +8,7 @@
 
 #import "SSGPrs.h"
 #import "SSGMoveCommand.h"
-#import "SSGMathC.h"
+#import "SSGMathUtils.h"
 
 @interface SSGPrs()
 @property (nonatomic) NSMutableArray *moveCommands;
@@ -20,6 +20,9 @@
 -(void)updateConstantRotationWithTime:(GLfloat)time;
 @end
 @implementation SSGPrs
+
+static const GLfloat TWO_PI = M_PI * 2.0f;
+
 -(instancetype) init
 {
     self = [super init];
@@ -63,15 +66,15 @@
 -(GLfloat)rz {return _rotation.z;}
 -(void)setRx:(float)x {
     _rotationQuaternion = GLKQuaternionMultiply(_rotationQuaternion, GLKQuaternionMakeWithAngleAndAxis(-_rotation.x, 1.0f, 0.0f, 0.0f));
-    _rotation.x = SSGMathCloopClampf(x, -TWO_PI, TWO_PI);
+    _rotation.x = [SSGMathUtils loopClampf:x WithInclusiveMin:-TWO_PI InclusiveMax:TWO_PI];
     _rotationQuaternion = GLKQuaternionMultiply(_rotationQuaternion, GLKQuaternionMakeWithAngleAndAxis(_rotation.x, 1.0f, 0.0f, 0.0f));}
 -(void)setRy:(float)y {
       _rotationQuaternion = GLKQuaternionMultiply(_rotationQuaternion, GLKQuaternionMakeWithAngleAndAxis(-_rotation.y, 0.0f, 1.0f, 0.0f));
-    _rotation.y = SSGMathCloopClampf(y, -TWO_PI, TWO_PI);
+    _rotation.y = [SSGMathUtils loopClampf:y WithInclusiveMin:-TWO_PI InclusiveMax:TWO_PI];
     _rotationQuaternion = GLKQuaternionMultiply(_rotationQuaternion, GLKQuaternionMakeWithAngleAndAxis(_rotation.y, 0.0f, 1.0f, 0.0f));}
 -(void)setRz:(float)z {
       _rotationQuaternion = GLKQuaternionMultiply(_rotationQuaternion, GLKQuaternionMakeWithAngleAndAxis(-_rotation.z, 0.0f, 0.0f, 1.0f));
-    _rotation.z = SSGMathCloopClampf(z, -TWO_PI, TWO_PI);
+    _rotation.z = [SSGMathUtils loopClampf:z WithInclusiveMin:-TWO_PI InclusiveMax:TWO_PI];
     _rotationQuaternion = GLKQuaternionMultiply(_rotationQuaternion, GLKQuaternionMakeWithAngleAndAxis(_rotation.z, 0.0f, 0.0f, 1.0f));}
 -(void)addVectorToRotation:(GLKVector3)vector
 {
