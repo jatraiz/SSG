@@ -288,6 +288,36 @@
             
             break;
             
+            // ROTATE //
+        case kSSGCommand_rotateTo:
+            if(!command.isStarted)
+            {
+                command.isStarted = YES;
+                
+                if(!command.isAbsolute)
+                {
+                    command.step = GLKVector4Make(command.target.x / command.duration, command.target.y / command.duration, command.target.z / command.duration, 0.0f);
+                    command.target = GLKVector4Make(command.target.x + self.prs.rx, command.target.y + self.prs.ry, command.target.z + self.prs.rz, 0.0f);
+                }
+                else
+                {
+                    command.step = GLKVector4Make((command.target.x - self.prs.rx) / command.duration, (command.target.y - self.prs.ry) / command.duration, (command.target.z - self.prs.rz) / command.duration, 0.0f);
+                }
+            }
+            
+            command.duration -= time;
+            
+            if(command.duration <= 0.0f)
+            {
+                [self.prs addVectorToRotation:GLKVector3Make(command.target.x, command.target.y, command.target.z)];
+                command.isFinished = YES;
+            }
+            else
+            {
+                [self.prs addVectorToRotation: GLKVector3Make(self.prs.rx + command.step.x * time, self.prs.ry + command.step.y * time, self.prs.rz + command.step.z * time)];
+            }
+            break;
+            
             
         default:
             break;

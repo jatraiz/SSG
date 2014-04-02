@@ -17,6 +17,8 @@
 		8A2EA3DE18CA2EC10071642C /* SSGBMFontModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2EA3D718CA1AC90071642C /* SSGBMFontModel.h */; };
 		8A2EA3DF18CA2FD10071642C /* SSGBMFontData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2EA3D418CA16100071642C /* SSGBMFontData.h */; };
 		8A2EA3E818CA4AC10071642C /* SSGBitmapFontShaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2EA3E718CA4AC10071642C /* SSGBitmapFontShaderSettings.m */; };
+		8A2F9D2F18EC35350073A39E /* SSGMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F9D2E18EC35350073A39E /* SSGMathUtils.m */; };
+		8A2F9D3018EC3A7B0073A39E /* SSGMathUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2F9D2D18EC35350073A39E /* SSGMathUtils.h */; };
 		8A309ED3183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
 		8A309EE1183D0334002F08DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309EE0183D0334002F08DE /* XCTest.framework */; };
 		8A309EE2183D0334002F08DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A309ED2183D0334002F08DE /* Foundation.framework */; };
@@ -41,7 +43,6 @@
 		8AA2742718B7D1E5009E0908 /* SSGCommand.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AA2742418B7ABD6009E0908 /* SSGCommand.h */; };
 		8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */; };
 		8AB73C56185668E300EF7A49 /* SSGOpenGLManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */; };
-		8AB8834F18808AA500360546 /* SSGMathC.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8834E18808AA500360546 /* SSGMathC.c */; };
 		8ADA49D218803D88005E8207 /* SSGPrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA49D118803D88005E8207 /* SSGPrs.m */; };
 		8ADA49D318804528005E8207 /* SSGPrs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8ADA49D018803D88005E8207 /* SSGPrs.h */; };
 		8AFBA58F18EB5E850086C169 /* SSGCommandPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBA58E18EB5E850086C169 /* SSGCommandPath.m */; };
@@ -72,6 +73,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				8A2F9D3018EC3A7B0073A39E /* SSGMathUtils.h in CopyFiles */,
 				8AFBA59018EB6C3F0086C169 /* SSGCommandPath.h in CopyFiles */,
 				8A2EA3DF18CA2FD10071642C /* SSGBMFontData.h in CopyFiles */,
 				8A2EA3DE18CA2EC10071642C /* SSGBMFontModel.h in CopyFiles */,
@@ -113,6 +115,8 @@
 		8A2EA3E318CA49050071642C /* BitmapFont.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = BitmapFont.vsh; sourceTree = "<group>"; };
 		8A2EA3E618CA4AC10071642C /* SSGBitmapFontShaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGBitmapFontShaderSettings.h; sourceTree = "<group>"; };
 		8A2EA3E718CA4AC10071642C /* SSGBitmapFontShaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGBitmapFontShaderSettings.m; sourceTree = "<group>"; };
+		8A2F9D2D18EC35350073A39E /* SSGMathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGMathUtils.h; sourceTree = "<group>"; };
+		8A2F9D2E18EC35350073A39E /* SSGMathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGMathUtils.m; sourceTree = "<group>"; };
 		8A309ECF183D0334002F08DE /* libSSGOGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSGOGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A309ED2183D0334002F08DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A309ED6183D0334002F08DE /* SSGOGL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSGOGL-Prefix.pch"; sourceTree = "<group>"; };
@@ -145,8 +149,6 @@
 		8AA2742518B7ABD6009E0908 /* SSGCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGCommand.m; sourceTree = "<group>"; };
 		8AB73C5018565E2600EF7A49 /* SSGOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGOpenGLManager.h; sourceTree = "<group>"; };
 		8AB73C5118565E2600EF7A49 /* SSGOpenGLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGOpenGLManager.m; sourceTree = "<group>"; };
-		8AB8834D18808A9400360546 /* SSGMathC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSGMathC.h; sourceTree = "<group>"; };
-		8AB8834E18808AA500360546 /* SSGMathC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SSGMathC.c; sourceTree = "<group>"; };
 		8ADA49D018803D88005E8207 /* SSGPrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGPrs.h; sourceTree = "<group>"; };
 		8ADA49D118803D88005E8207 /* SSGPrs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGPrs.m; sourceTree = "<group>"; };
 		8AFBA58D18EB5E850086C169 /* SSGCommandPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGCommandPath.h; sourceTree = "<group>"; };
@@ -331,8 +333,8 @@
 			children = (
 				8A309FB5183D35C2002F08DE /* SSG2DZConverter.h */,
 				8A309FB6183D35C2002F08DE /* SSG2DZConverter.m */,
-				8AB8834D18808A9400360546 /* SSGMathC.h */,
-				8AB8834E18808AA500360546 /* SSGMathC.c */,
+				8A2F9D2D18EC35350073A39E /* SSGMathUtils.h */,
+				8A2F9D2E18EC35350073A39E /* SSGMathUtils.m */,
 			);
 			name = "Math Utilities";
 			sourceTree = "<group>";
@@ -439,10 +441,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AB73C5218565E2600EF7A49 /* SSGOpenGLManager.m in Sources */,
-				8AB8834F18808AA500360546 /* SSGMathC.c in Sources */,
 				8A309F50183D0AFB002F08DE /* SSGModelData.c in Sources */,
 				8A2EA3D318CA143F0071642C /* SSGBMFontCharData.m in Sources */,
 				8A2CEA0918804D0000FA4561 /* SSGMoveCommand.m in Sources */,
+				8A2F9D2F18EC35350073A39E /* SSGMathUtils.m in Sources */,
 				8AA2742618B7ABD6009E0908 /* SSGCommand.m in Sources */,
 				8A2EA3D618CA16100071642C /* SSGBMFontData.m in Sources */,
 				8A309FAD183D26A5002F08DE /* SSGShaderManager.m in Sources */,
