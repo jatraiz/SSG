@@ -13,5 +13,4 @@
 static const float TWO_PI = 2.0f * M_PI;
 float SSGMathCclampf(float a, float inclusiveMin, float inclusiveMax);
 float SSGMathCloopClampf(float a, float inclusiveMin, float inclusiveMax);
-
 #endif

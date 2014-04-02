@@ -43,6 +43,8 @@
 - (BOOL)isTransformedPointWithinModel2d:(CGPoint)point;
 - (void)addCommand:(SSGCommand*)command;
 - (void)clearAllCommands;
+- (void)clearCommandsOfTypes:(NSArray*)commandTypes;
+- (void)clearCommandsOfType:(NSUInteger)commandType;
 - (void)updateWithTime:(GLfloat)time;
 - (void)processCommand:(SSGCommand*)command withTime:(GLfloat)time;
 - (void)updateModelViewProjection;

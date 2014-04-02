@@ -30,4 +30,31 @@
     return self;
 }
 
+
++ (instancetype)commandWithEnum:(SSGCommandEnum) command Path:(SSGCommandPath *)path IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay
+{
+    return [[SSGCommand alloc] initWithCommandEnum:command Path:path IsAbsolute:isAbsolute Delay:delay];
+}
+- (instancetype)initWithCommandEnum:(SSGCommandEnum) command Path:(SSGCommandPath *)path IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
+{
+    self = [super init];
+    if(self)
+    {
+        _commandEnum = command;
+        _path = path;
+        _isAbsolute = isAbsolute;
+        _delay = delay;
+    }
+    return self;
+}
+
++ (NSArray *)arrayFromX:(GLfloat)x Y:(GLfloat)y Z:(GLfloat)z W:(GLfloat)w
+{
+    return @[[NSNumber numberWithFloat:x],[NSNumber numberWithFloat:y], [NSNumber numberWithFloat:z], [NSNumber numberWithFloat:w]];
+}
++ (GLKVector4)vectorFromArray:(NSArray*)arr
+{
+     return GLKVector4Make([(NSNumber *)arr[0] floatValue], [(NSNumber *)arr[1] floatValue],[(NSNumber *)arr[2] floatValue], [(NSNumber *)arr[3] floatValue]);
+}
+
 @end

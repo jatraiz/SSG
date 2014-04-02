@@ -61,7 +61,6 @@ static GLKVector4 lastClearColor;
     self.bitmapFontShaderSettings = [[SSGBitmapFontShaderSettings alloc] initWithProgramId:programId];
 }
 
-
 //Assumes that depth testing is only changed via a manager class
 -(void)enableDepthTest
 {
