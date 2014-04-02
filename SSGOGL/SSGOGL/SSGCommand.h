@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 
+@class SSGCommandPath;
+
 typedef NS_ENUM(NSInteger, SSGCommandEnum)
 {
     kSSGCommand_alpha,
     kSSGCommand_visible,
     kSSGCommand_font_alternatingSplit,
     kSSGCommand_setConstantRotation,
-    kSSGCommand_moveTo
+    kSSGCommand_moveTo,
+    kSSGCommand_moveAlongPath
 };
 
 static __inline__ GLKVector4 command1Bool(BOOL boolValue)
@@ -58,9 +61,13 @@ static __inline__ GLKVector4 command3float(float x, float y, float z)
 @property (nonatomic, assign) BOOL isAbsolute;
 @property (nonatomic, assign) BOOL isStarted;
 @property (nonatomic, assign) BOOL isFinished;
-@property (nonatomic, assign) SSGCommand *commandOnFinish;
+@property (nonatomic, strong) SSGCommandPath *path;
 
 + (instancetype)commandWithEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 - (instancetype)initWithCommandEnum:(SSGCommandEnum) command Target:(GLKVector4)target Duration:(GLfloat)duration IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
++ (instancetype)commandWithEnum:(SSGCommandEnum) command Path:(SSGCommandPath *)path IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
+- (instancetype)initWithCommandEnum:(SSGCommandEnum) command Path:(SSGCommandPath *)path IsAbsolute:(BOOL)isAbsolute Delay:(GLfloat)delay;
 
++ (NSArray *)arrayFromX:(GLfloat)x Y:(GLfloat)y Z:(GLfloat)z W:(GLfloat)w;
++ (GLKVector4)vectorFromArray:(NSArray*)arr;
 @end

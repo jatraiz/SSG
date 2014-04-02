@@ -13,6 +13,7 @@
 #import "SSGShaderManager.h"
 #import "SSGDefaultShaderSettings.h"
 #import "SSGCommand.h"
+#import "SSGCommandPath.h"
 
 @interface SSGModel()
 
@@ -91,6 +92,27 @@
     [self.commands removeAllObjects];
 }
 
+- (void)clearCommandsOfTypes:(NSArray *)commandTypes
+{
+    NSMutableArray *commandsToErase = [[NSMutableArray alloc] init];
+    for(NSNumber *commandEnum in commandTypes)
+    {
+        for(SSGCommand *command in self.commands)
+        {
+            if(command.commandEnum == [commandEnum integerValue])
+            {
+                [commandsToErase addObject:command];
+            }
+        }
+    }
+    [self.commands removeObjectsInArray:commandsToErase];
+}
+
+- (void)clearCommandsOfType:(NSUInteger)commandType
+{
+    [self clearCommandsOfTypes:@[[NSNumber numberWithUnsignedInteger:commandType]]];
+}
+
 - (void)updateWithTime:(GLfloat)time
 {
     [self.prs updateWithTime:time];
@@ -110,10 +132,6 @@
         }
         if(command.isFinished)
         {
-            if(command.commandOnFinish)
-            {
-                [self addCommand:command.commandOnFinish];
-            }
             [self.finishedCommands addObject:command];
         }
     }
@@ -214,7 +232,59 @@
             {
                 self.prs.position = GLKVector3Make(self.prs.px + command.step.x * time, self.prs.py + command.step.y * time, self.prs.pz + command.step.z * time);
             }
+            break;
             
+        // MOVE ALONG PATH //
+        case kSSGCommand_moveAlongPath:
+            if(!command.isStarted)
+            {
+                command.isStarted = YES;
+                
+                GLKVector4 target = [command.path getFirstVector];
+                command.target = target;
+                command.duration = target.w;
+                
+                if(!command.isAbsolute)
+                {
+                    command.step = GLKVector4Make(command.target.x / command.duration, command.target.y / command.duration, command.target.z / command.duration, 0.0f);
+                    command.target = GLKVector4Make(command.target.x + self.prs.px, command.target.y + self.prs.py, command.target.z + self.prs.pz, 0.0f);
+                }
+                else
+                {
+                    command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
+                }
+            }
+            
+            command.duration -= time;
+            
+            if(command.duration <= 0.0f)
+            {
+                self.prs.position = GLKVector3Make(command.target.x, command.target.y, command.target.z);
+                if(command.path.currentIndex < command.path.nVectors || command.path.repeat)
+                {
+                    GLKVector4 target = [command.path getNextVector];
+                    command.target = target;
+                    command.duration = target.w;
+                    
+                    if(!command.isAbsolute)
+                    {
+                        command.step = GLKVector4Make(command.target.x / command.duration, command.target.y / command.duration, command.target.z / command.duration, 0.0f);
+                        command.target = GLKVector4Make(command.target.x + self.prs.px, command.target.y + self.prs.py, command.target.z + self.prs.pz, 0.0f);
+                    }
+                    else
+                    {
+                        command.step = GLKVector4Make((command.target.x - self.prs.px) / command.duration, (command.target.y - self.prs.py) / command.duration, (command.target.z - self.prs.pz) / command.duration, 0.0f);
+                    }
+                }
+                else
+                {
+                    command.isFinished = YES;
+                }
+            }
+            else
+            {
+                self.prs.position = GLKVector3Make(self.prs.px + command.step.x * time, self.prs.py + command.step.y * time, self.prs.pz + command.step.z * time);
+            }
             
             break;
             

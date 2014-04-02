@@ -8,9 +8,6 @@
 #import "SSGMathC.h"
 #include <stdio.h>
 
-
-
-
 float SSGMathCclampf(float a, float inclusiveMin, float inclusiveMax)
 {
     if(a < inclusiveMin) return inclusiveMin;

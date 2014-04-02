@@ -13,7 +13,8 @@
 #import <SSGOGL/SSGAssetManager.h>
 #import <SSGOGL/SSGPrs.h>
 #import <SSGOGL/SSGCommand.h>
-
+#import <SSGOGL/SSGCommandPath.h>
+#import <SSGOGL/SSGMathC.h>
 
 #define kNhuds 4
 #define kRingsAlphaMax 0.4f
@@ -31,8 +32,6 @@
 @property (nonatomic, strong) NSArray *spheres2;
 @property (nonatomic, strong) NSArray *allModels;
 @property (nonatomic, assign) int hudIndex;
-
-
 
 @end
 
@@ -77,9 +76,18 @@
     SSGModel *sphere21 = [[SSGModel alloc] initWithModelFileName:@"sphere1"];
     SSGModel *sphere22 = [[SSGModel alloc] initWithModelFileName:@"sphere2"];
     SSGModel *sphere23 = [[SSGModel alloc] initWithModelFileName:@"sphere3"];
-    self.spheres2 = @[sphere21, sphere22, sphere23];
+    SSGModel *sphere24 = [[SSGModel alloc] initWithModelFileName:@"sphere1"];
+    SSGModel *sphere25 = [[SSGModel alloc] initWithModelFileName:@"sphere2"];
+    SSGModel *sphere26 = [[SSGModel alloc] initWithModelFileName:@"sphere3"];
+    SSGModel *sphere27 = [[SSGModel alloc] initWithModelFileName:@"sphere1"];
+    SSGModel *sphere28 = [[SSGModel alloc] initWithModelFileName:@"sphere2"];
+    SSGModel *sphere29 = [[SSGModel alloc] initWithModelFileName:@"sphere3"];
+    SSGModel *sphere30 = [[SSGModel alloc] initWithModelFileName:@"sphere1"];
+    SSGModel *sphere31 = [[SSGModel alloc] initWithModelFileName:@"sphere2"];
+    SSGModel *sphere32 = [[SSGModel alloc] initWithModelFileName:@"sphere3"];
+    self.spheres2 = @[sphere21, sphere22, sphere23, sphere24, sphere25, sphere26, sphere27, sphere28, sphere29, sphere30, sphere31, sphere32];
     
-    self.allModels = @[ring1, ring2, ring3, sphere1, sphere2, sphere3, curve1, curve2, curve3, sphere21, sphere22, sphere23];
+    self.allModels = @[ring1, ring2, ring3, sphere1, sphere2, sphere3, curve1, curve2, curve3, sphere21, sphere22, sphere23, sphere24, sphere25, sphere26, sphere27, sphere28, sphere29, sphere30, sphere31, sphere32];
     
     for(SSGModel *m in self.allModels)
     {
@@ -115,9 +123,7 @@
     {
         m.prs.sxyz = 1.5f;
         m.prs.py = m.prs.py - 0.5f;
-        
     }
-    
 }
 
 - (void)setRotationConstants
@@ -135,27 +141,51 @@
     [((SSGModel*)self.curves[2]).prs setRotationConstantToVector:GLKVector3Make(0.0f, 16.0f, 3.0f)];
 }
 
+- (GLfloat)randomFloatBetweenMin:(GLfloat)min Max:(GLfloat)max
+{
+    return ((GLfloat)arc4random_uniform(((max-min)*100000)))/100000+min;
+}
+
+
 - (void)setSphere2MotionWithStartDelay:(GLfloat)startDelay
 {
     GLfloat startingX = -4.0f;
+    GLfloat startingY = -1.0f;
     GLfloat midX = 0.0f;
     GLfloat endingX = 4.0f;
-    GLfloat midY = 1.0f;
+    GLfloat midY = 0.5f;
+    GLfloat endingY = -1.0f;
     GLfloat duration = 0.2f;
     
     for(SSGModel *m in self.spheres2)
     {
-        GLfloat initialY = m.prs.py;
-        [m clearAllCommands];
-        m.prs.px = startingX;
+    
+        [m clearCommandsOfType:kSSGCommand_moveAlongPath];
+        m.prs.position = GLKVector3Make(startingX, startingY, self.mainZ);
         
-        SSGCommand *command = [SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(midX, midY, self.mainZ) Duration:duration IsAbsolute:YES Delay:startDelay];
-            command.commandOnFinish = [SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(endingX, initialY, self.mainZ) Duration:duration IsAbsolute:YES Delay:0.0f];
-            [m addCommand:command];
-      
+        
+        NSMutableArray *vectorsMutable = [[NSMutableArray alloc] init];
+        for(int i = 0; i < 100000; i++)
+        {
+            GLfloat xMax = 4.0f;
+            GLfloat yMax = 8.0f;
+            GLfloat durationMax = 0.5f;
+            GLfloat durationMin = 0.1f;
+            
+            [vectorsMutable addObject:[SSGCommand arrayFromX:[self randomFloatBetweenMin:-xMax Max:xMax] Y:[self randomFloatBetweenMin:-yMax Max:yMax] Z:self.mainZ W:[self randomFloatBetweenMin:durationMin Max:durationMax]]];
+            
+        }
+        
+      //  NSArray *vectors = @[[SSGCommand arrayFromX:startingX Y:startingY Z:self.mainZ W:0.0f],
+      //                       [SSGCommand arrayFromX:midX Y: midY Z: self.mainZ W:duration],
+      //                       [SSGCommand arrayFromX:endingX Y: endingY Z:self.mainZ W:duration]];
+        SSGCommandPath *path = [[SSGCommandPath alloc] initWithVectors:vectorsMutable Repeat:YES];
+        
+        SSGCommand *waveCommand = [SSGCommand commandWithEnum:kSSGCommand_moveAlongPath Path:path IsAbsolute:YES Delay:startDelay];
+        
+        [m addCommand:waveCommand];
     }
 }
-
 
 - (void)fadeModelArray:(NSArray *)models ToAbsoluteAlpha:(GLfloat)alpha WithDuration:(GLfloat)duration Delay:(GLfloat)delay
 {
@@ -163,7 +193,6 @@
     {
         [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_alpha Target:command1float(alpha) Duration:duration IsAbsolute:YES Delay:delay]];
     }
-    
 }
 
 - (void)setVisibilityForModelArray:(NSArray *)models toValue:(BOOL)value afterDelay:(GLfloat)delay
@@ -190,10 +219,10 @@
         ++self.hudIndex;
     } else if(self.hudIndex == 2) {
         [self fadeModelArray:self.curves ToAbsoluteAlpha:0.0f WithDuration:kFadeDuration Delay:0.0f];
-        [self fadeModelArray:self.spheres2 ToAbsoluteAlpha:kCurvesALphaMax WithDuration:kFadeDuration Delay:kFadeDuration];
+        [self fadeModelArray:self.spheres2 ToAbsoluteAlpha:kSpheresAlphaMax WithDuration:kFadeDuration Delay:kFadeDuration];
         [self setVisibilityForModelArray:self.curves toValue:NO afterDelay:kFadeDuration];
         [self setVisibilityForModelArray:self.spheres2 toValue:YES afterDelay:kFadeDuration];
-        [self setSphere2MotionWithStartDelay:kFadeDuration*2];
+        [self setSphere2MotionWithStartDelay:kFadeDuration];
         ++self.hudIndex;
     } else if(self.hudIndex == 3) {
         [self fadeModelArray:self.spheres2 ToAbsoluteAlpha:0.0f WithDuration:kFadeDuration Delay:0.0f];
