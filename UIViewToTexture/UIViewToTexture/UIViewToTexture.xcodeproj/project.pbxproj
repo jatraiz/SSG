@@ -28,6 +28,10 @@
 		8A67587318EDAC0E007EDFA7 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */; };
 		8A67587418EDAC0E007EDFA7 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587218EDAC0E007EDFA7 /* ModelDefault.fsh */; };
 		8A67587818EDAEEC007EDFA7 /* babou.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587718EDAEEC007EDFA7 /* babou.png */; };
+		8A67587C18EDCBED007EDFA7 /* brSwirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587B18EDCBED007EDFA7 /* brSwirl.png */; };
+		8A67587F18EDCCD2007EDFA7 /* tallRect.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587D18EDCCD2007EDFA7 /* tallRect.model */; };
+		8A67588018EDCCD2007EDFA7 /* tallRectSolidified.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */; };
+		8AC149D218EDE61700A19A92 /* tallRectUV2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AC149D118EDE61700A19A92 /* tallRectUV2.model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
 		8A67587218EDAC0E007EDFA7 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
 		8A67587718EDAEEC007EDFA7 /* babou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babou.png; sourceTree = "<group>"; };
+		8A67587B18EDCBED007EDFA7 /* brSwirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brSwirl.png; sourceTree = "<group>"; };
+		8A67587D18EDCCD2007EDFA7 /* tallRect.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRect.model; sourceTree = "<group>"; };
+		8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectSolidified.model; sourceTree = "<group>"; };
+		8AC149D118EDE61700A19A92 /* tallRectUV2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectUV2.model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,10 @@
 				8A67586C18EDABFC007EDFA7 /* CardViewController.h */,
 				8A67586D18EDABFC007EDFA7 /* CardViewController.m */,
 				8A67586E18EDABFC007EDFA7 /* CardViewController.xib */,
+				8AC149D118EDE61700A19A92 /* tallRectUV2.model */,
+				8A67587D18EDCCD2007EDFA7 /* tallRect.model */,
+				8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */,
+				8A67587B18EDCBED007EDFA7 /* brSwirl.png */,
 				8A67587718EDAEEC007EDFA7 /* babou.png */,
 				8A67583E18EDA956007EDFA7 /* Images.xcassets */,
 				8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */,
@@ -299,9 +311,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A67588018EDCCD2007EDFA7 /* tallRectSolidified.model in Resources */,
+				8A67587F18EDCCD2007EDFA7 /* tallRect.model in Resources */,
 				8A67583718EDA956007EDFA7 /* InfoPlist.strings in Resources */,
+				8A67587C18EDCBED007EDFA7 /* brSwirl.png in Resources */,
 				8A67587318EDAC0E007EDFA7 /* ModelDefault.vsh in Resources */,
 				8A67583F18EDA956007EDFA7 /* Images.xcassets in Resources */,
+				8AC149D218EDE61700A19A92 /* tallRectUV2.model in Resources */,
 				8A67587818EDAEEC007EDFA7 /* babou.png in Resources */,
 				8A67587018EDABFC007EDFA7 /* CardViewController.xib in Resources */,
 				8A67587418EDAC0E007EDFA7 /* ModelDefault.fsh in Resources */,
@@ -525,6 +541,7 @@
 				8A67585718EDA956007EDFA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A67585818EDA956007EDFA7 /* Build configuration list for PBXNativeTarget "UIViewToTextureTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +550,7 @@
 				8A67585A18EDA956007EDFA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,13 +11,16 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
+#import "SSGModelData.h"
 
 @class SSGVaoInfo;
+
 
 @interface SSGAssetManager : NSObject
 
 +(GLuint)loadTexture:(NSString*)name ofType:(NSString*)type shouldLoadWithMipMapping:(BOOL)mipMappingOn;
 +(SSGVaoInfo*)loadVaoInfo:(NSString*)name;
++(SSGVaoInfo*)loadVaoInfoFromData:(SSGModelData)data AssignName:(NSString*)name;
 +(void)destroyVAO:(GLuint) vaoName;
 +(void)unload;
 
