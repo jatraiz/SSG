@@ -42,7 +42,7 @@
     self.ratioX = _ratioY*_aspectRatio;
 }
 
--(CGPoint)convertScreenCoordsX:(GLfloat)x Y:(GLfloat)y ProjectedZ:(GLfloat)pz
+-(GLKVector2)convertScreenCoordsX:(GLfloat)x Y:(GLfloat)y ProjectedZ:(GLfloat)pz
 {
     GLfloat xEdge = pz * _ratioX;
     GLfloat yEdge = pz * _ratioY;
@@ -50,10 +50,10 @@
     GLfloat newY = yEdge - (yEdge/_halfScreenHeight)*y;
     //NSLog(@"Ratio:%f Edges:(%f,%f)",ratioX,xEdge,yEdge);
     //NSLog(@"Edge translation:(%f,%f)",newX,newY);
-    return CGPointMake(newX, -newY);
+    return GLKVector2Make(newX, -newY);
 }
 
--(CGPoint)convertScreenPt:(CGPoint)pt ProjecteZ:(GLfloat)pz
+-(GLKVector2)convertScreenPt:(CGPoint)pt ProjecteZ:(GLfloat)pz
 {
     return [self convertScreenCoordsX:pt.x Y:pt.y ProjectedZ:pz];
 }
