@@ -91,8 +91,8 @@
     md->arrayRows = 6;
     md->arraySize = md->arrayCount * sizeof(GLfloat);
     
-    GLfloat modelWidth =  bottomRight.x - topLeft.x;
-    GLfloat modelHeight = bottomRight.y - topLeft.y;
+    GLfloat modelWidth =  fabsf(bottomRight.x - topLeft.x);
+    GLfloat modelHeight = fabsf(bottomRight.y - topLeft.y);
     
     /*
      GLfloat px = -1.0f;
@@ -101,9 +101,9 @@
      GLfloat py2 = 1.943731;
      */
     GLfloat px = topLeft.x;
-    GLfloat px2 = topLeft.x + modelWidth * 0.5f;
-    GLfloat py = topLeft.y + modelHeight * 0.5f;
-    GLfloat py2 = topLeft.y;
+    GLfloat px2 = bottomRight.x - modelWidth * 0.5f;
+    GLfloat py = bottomRight.y;
+    GLfloat py2 = topLeft.y - modelHeight * 0.5f;
     
     GLfloat pz = 0.0f;
     GLfloat nx = 0.0f;
