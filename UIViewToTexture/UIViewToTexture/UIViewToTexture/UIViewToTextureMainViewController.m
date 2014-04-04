@@ -13,6 +13,7 @@
 #import <SSGOGL/SSGAssetManager.h>
 #import <SSGOGL/SSGPrs.h>
 #import <SSGOGL/SSGCommand.h>
+#import <SSGOGL/SSGMathUtils.h>
 #import "CardViewController.h"
 
 @interface UIViewToTextureMainViewController ()<GLKViewDelegate>
@@ -25,9 +26,10 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
 @property (nonatomic, strong) CardViewController *cardViewController;
-@property (nonatomic, strong) SSGModel *flatRect;
 @property (nonatomic, strong) GLKTextureInfo *textureInfo;
 @property (nonatomic, strong) UIImage *viewImage;
+
+@property (nonatomic, strong) NSMutableArray *quadrents;
 
 @end
 
@@ -70,21 +72,24 @@
     frame.origin.y = (self.view.frame.size.height - self.cardViewController.view.frame.size.height) / 2.0f;
     self.cardViewController.view.frame = frame;
     
-    self.flatRect = [[SSGModel alloc] initWithModelFileName:nil];
-    self.flatRect.defaultShaderSettings = self.glmgr.defaultShaderSettings;
-    self.flatRect.projection = self.glmgr.projectionMatrix;
-    // [self.flatRect setTexture0Id:[SSGAssetManager loadTexture:@"brSwirl" ofType:@"png" shouldLoadWithMipMapping:YES]];
-    self.flatRect.prs.pz = self.mainZ;
-    self.flatRect.alpha = 1.0f;
-    self.flatRect.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     
+    self.quadrents = [[NSMutableArray alloc] init];
     GLKVector2 topLeft = [self.glmgr.zConverter convertScreenCoordsX:frame.origin.x Y:frame.origin.y ProjectedZ: self.mainZ];
     GLKVector2 bottomRight= [self.glmgr.zConverter convertScreenCoordsX:frame.origin.x + frame.size.width Y:frame.origin.y + frame.size.height ProjectedZ:self.mainZ];
     
-    [self create2DrectWithTopLeft:topLeft BottomRight:bottomRight];
+    for(int i = 1; i < 5; ++i)
+    {
+        SSGModel *m = [[SSGModel alloc] initWithModelFileName:nil];
+        m.defaultShaderSettings = self.glmgr.defaultShaderSettings;
+        m.projection = self.glmgr.projectionMatrix;
+        m.prs.pz = self.mainZ;
+        m.alpha = 1.0f;
+        m.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
+        [m setVaoInfo:[self generateVaoInfo2DGLRectWithTopLeft:topLeft BottomRight:bottomRight andQuadrant:i]];
+        [self.quadrents addObject:m];
+    }
     
-    [self.flatRect setVaoInfo:[self generateVaoInfo2DGLRectWithTopLeft:topLeft BottomRight:bottomRight andQuadrant:4]];
-}
+   }
 
 - (SSGVaoInfo*)generateVaoInfo2DGLRectWithTopLeft:(GLKVector2)topLeft BottomRight:(GLKVector2)bottomRight andQuadrant:(GLint)quadrant
 {
@@ -273,7 +278,7 @@
     md->vertexArray[i+3] = nx; md->vertexArray[i+4] = ny; md->vertexArray[i+5] = nz;
     md->vertexArray[i+6] = u1; md->vertexArray[i+7] = v2;
     
-    [self.flatRect setVaoInfo:[SSGAssetManager loadVaoInfoFromData:*md AssignName:@"flatRect"]];
+   // [self.flatRect setVaoInfo:[SSGAssetManager loadVaoInfoFromData:*md AssignName:@"flatRect"]];
     
     free(md->vertexArray);
     free(md);
@@ -298,23 +303,71 @@
 
 - (void)update
 {
-    [self.flatRect updateWithTime:self.timeSinceLastUpdate];
+    for(SSGModel *m in self.quadrents)
+    {
+        [m updateWithTime:self.timeSinceLastUpdate];
+    }
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    [self.flatRect draw];
+    for(SSGModel *m in self.quadrents)
+    {
+        [m draw];
+    }
+}
+
+- (void)addMovementCommandsToModel:(SSGModel *)m inQuadrant:(GLint)quadrant
+{
+    GLfloat rMin = 0.2f;
+    GLfloat rMax = 3.0f;
+    GLfloat rz =  [SSGMathUtils randomGLfloatBetweenMin:rMin Max:rMax];
+    
+    GLfloat xMax = 8.0f;
+    GLfloat yMax = 14.0f;
+    GLfloat zMin = 1.0f;
+    GLfloat zMax = 20.0f;
+    GLfloat durationMin = 2.0f;
+    GLfloat durationMax = 6.0f;
+    
+    GLfloat xDest;
+    GLfloat yDest;
+    GLfloat zDest = self.mainZ - [SSGMathUtils randomGLfloatBetweenMin: zMin Max: zMax];
+    GLfloat duration = [SSGMathUtils randomGLfloatBetweenMin:durationMin Max:durationMax];
+    
+    
+    if(quadrant == 1)
+    {
+        xDest = -xMax;
+        yDest = -yMax;
+    }
+    else if(quadrant == 2)
+    {
+        xDest = xMax;
+        yDest = -yMax;
+    }
+    else if(quadrant == 3)
+    {
+        xDest = -xMax;
+        yDest = yMax;
+    }
+    else if(quadrant == 4)
+    {
+        xDest = xMax;
+        yDest = yMax;
+    }
+    [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(xDest, yDest, zDest) Duration:duration IsAbsolute:NO Delay:0.0f]];
+    [m addCommand:[SSGCommand commandWithEnum:kSSGCommand_setConstantRotation Target:command3float(0.0f, 0.0f, rz) Duration:0.0f IsAbsolute:YES Delay:0.0f]];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if(!self.cardViewController.view.isHidden)
     {
-        self.flatRect.prs.position = GLKVector3Make(0.0f, 0.0f, self.mainZ);
         self.viewImage = [self imageWithView:self.cardViewController.view];
-        [self.flatRect.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 0.0f)];
-        [self.flatRect clearAllCommands];
+        
         if(self.textureInfo)
         {
             const unsigned int n = self.textureInfo.name;
@@ -323,17 +376,28 @@
         }
         
         self.textureInfo = [GLKTextureLoader textureWithCGImage:[self.viewImage CGImage] options:@{GLKTextureLoaderOriginBottomLeft: @1} error:nil];
-        [self.flatRect setTexture0Id:self.textureInfo.name];
-        //     [self.flatRect addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(0.0f, 5.0f, -100.0f) Duration:0.2f IsAbsolute:YES Delay:0.0f]];
+        
+        int qCounter = 0;
+        for(SSGModel *m in self.quadrents)
+        {
+            [m clearCommandsOfType:kSSGCommand_moveTo];
+            [m.prs setRotationConstantToVector:GLKVector3Make(0.0f, 0.0f, 0.0f)];
+            [m.prs resetRotationWithVector:GLKVector3Make(0.0f, 0.0f, 0.0f)];
+            m.prs.position = GLKVector3Make(0.0f, 0.0f, self.mainZ);
+            [m setTexture0Id:self.textureInfo.name];
+            m.isHidden = NO;
+            [self addMovementCommandsToModel:m inQuadrant:++qCounter];
+        }
         self.cardViewController.view.hidden = YES;
-        self.flatRect.isHidden = NO;
-   //      [self.flatRect addCommand:[SSGCommand commandWithEnum:kSSGCommand_moveTo Target:command3float(1.0f, 20.0f, -100.0f) Duration:1.0 IsAbsolute:YES Delay:0.0f]];
-   //       [self.flatRect addCommand:[SSGCommand commandWithEnum:kSSGCommand_setConstantRotation Target:command3float(0.0f, 0.0f, 30.0f) Duration:0.0f IsAbsolute:NO Delay:0.0f]];
-    }
+        
+     }
     else
     {
         self.cardViewController.view.hidden = NO;
-        self.flatRect.isHidden = YES;
+        for(SSGModel *m in self.quadrents)
+        {
+            m.isHidden = YES;
+        }
     }
 }
 

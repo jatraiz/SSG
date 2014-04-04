@@ -9,7 +9,6 @@
 #import "CardViewController.h"
 
 @interface CardViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 

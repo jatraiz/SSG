@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController">
             <connections>
-                <outlet property="textView" destination="Fqu-gb-LKV" id="nm8-cf-b2e"/>
+                <outlet property="textView" destination="Fqu-gb-LKV" id="0rK-pD-M31"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
