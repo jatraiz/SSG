@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A67582D18EDA956007EDFA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67582C18EDA956007EDFA7 /* Foundation.framework */; };
+		8A67582F18EDA956007EDFA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67582E18EDA956007EDFA7 /* CoreGraphics.framework */; };
+		8A67583118EDA956007EDFA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67583018EDA956007EDFA7 /* UIKit.framework */; };
+		8A67583718EDA956007EDFA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A67583518EDA956007EDFA7 /* InfoPlist.strings */; };
+		8A67583918EDA956007EDFA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A67583818EDA956007EDFA7 /* main.m */; };
+		8A67583D18EDA956007EDFA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A67583C18EDA956007EDFA7 /* AppDelegate.m */; };
+		8A67583F18EDA956007EDFA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A67583E18EDA956007EDFA7 /* Images.xcassets */; };
+		8A67584618EDA956007EDFA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67584518EDA956007EDFA7 /* XCTest.framework */; };
+		8A67584718EDA956007EDFA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67582C18EDA956007EDFA7 /* Foundation.framework */; };
+		8A67584818EDA956007EDFA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67583018EDA956007EDFA7 /* UIKit.framework */; };
+		8A67585018EDA956007EDFA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A67584E18EDA956007EDFA7 /* InfoPlist.strings */; };
+		8A67585218EDA956007EDFA7 /* UIViewToTextureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A67585118EDA956007EDFA7 /* UIViewToTextureTests.m */; };
+		8A67586418EDA9D5007EDFA7 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67586118EDA9AA007EDFA7 /* libSSGOGL.a */; };
+		8A67586618EDAA29007EDFA7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67586518EDAA29007EDFA7 /* OpenGLES.framework */; };
+		8A67586818EDAA34007EDFA7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67586718EDAA34007EDFA7 /* GLKit.framework */; };
+		8A67586F18EDABFC007EDFA7 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A67586D18EDABFC007EDFA7 /* CardViewController.m */; };
+		8A67587018EDABFC007EDFA7 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A67586E18EDABFC007EDFA7 /* CardViewController.xib */; };
+		8A67587318EDAC0E007EDFA7 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */; };
+		8A67587418EDAC0E007EDFA7 /* ModelDefault.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587218EDAC0E007EDFA7 /* ModelDefault.fsh */; };
+		8A67587818EDAEEC007EDFA7 /* babou.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587718EDAEEC007EDFA7 /* babou.png */; };
+		8A67587C18EDCBED007EDFA7 /* brSwirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587B18EDCBED007EDFA7 /* brSwirl.png */; };
+		8A67587F18EDCCD2007EDFA7 /* tallRect.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587D18EDCCD2007EDFA7 /* tallRect.model */; };
+		8A67588018EDCCD2007EDFA7 /* tallRectSolidified.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */; };
+		8A6F2CCF18EDF540002E9612 /* tallRectUV2Broke4.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A6F2CCE18EDF540002E9612 /* tallRectUV2Broke4.model */; };
+		8AC149D218EDE61700A19A92 /* tallRectUV2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AC149D118EDE61700A19A92 /* tallRectUV2.model */; };
+		8AC546F018EED82F0062B59A /* UIViewToTextureMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC546EF18EED82F0062B59A /* UIViewToTextureMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A67584918EDA956007EDFA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A67582118EDA956007EDFA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A67582818EDA956007EDFA7;
+			remoteInfo = UIViewToTexture;
+		};
+		8A67586018EDA9AA007EDFA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A67585B18EDA9AA007EDFA7 /* SSGOGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A309ECF183D0334002F08DE;
+			remoteInfo = SSGOGL;
+		};
+		8A67586218EDA9AA007EDFA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A67585B18EDA9AA007EDFA7 /* SSGOGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A309EDF183D0334002F08DE;
+			remoteInfo = SSGOGLTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A67582918EDA956007EDFA7 /* UIViewToTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewToTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A67582C18EDA956007EDFA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A67582E18EDA956007EDFA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A67583018EDA956007EDFA7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A67583418EDA956007EDFA7 /* UIViewToTexture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIViewToTexture-Info.plist"; sourceTree = "<group>"; };
+		8A67583618EDA956007EDFA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A67583818EDA956007EDFA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A67583A18EDA956007EDFA7 /* UIViewToTexture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewToTexture-Prefix.pch"; sourceTree = "<group>"; };
+		8A67583B18EDA956007EDFA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8A67583C18EDA956007EDFA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8A67583E18EDA956007EDFA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A67584418EDA956007EDFA7 /* UIViewToTextureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIViewToTextureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A67584518EDA956007EDFA7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A67584D18EDA956007EDFA7 /* UIViewToTextureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIViewToTextureTests-Info.plist"; sourceTree = "<group>"; };
+		8A67584F18EDA956007EDFA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A67585118EDA956007EDFA7 /* UIViewToTextureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewToTextureTests.m; sourceTree = "<group>"; };
+		8A67585B18EDA9AA007EDFA7 /* SSGOGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSGOGL.xcodeproj; path = ../../SSGOGL/SSGOGL.xcodeproj; sourceTree = "<group>"; };
+		8A67586518EDAA29007EDFA7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A67586718EDAA34007EDFA7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8A67586C18EDABFC007EDFA7 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		8A67586D18EDABFC007EDFA7 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		8A67586E18EDABFC007EDFA7 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.vsh; sourceTree = "<group>"; };
+		8A67587218EDAC0E007EDFA7 /* ModelDefault.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ModelDefault.fsh; sourceTree = "<group>"; };
+		8A67587718EDAEEC007EDFA7 /* babou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babou.png; sourceTree = "<group>"; };
+		8A67587B18EDCBED007EDFA7 /* brSwirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brSwirl.png; sourceTree = "<group>"; };
+		8A67587D18EDCCD2007EDFA7 /* tallRect.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRect.model; sourceTree = "<group>"; };
+		8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectSolidified.model; sourceTree = "<group>"; };
+		8A6F2CCE18EDF540002E9612 /* tallRectUV2Broke4.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectUV2Broke4.model; sourceTree = "<group>"; };
+		8AC149D118EDE61700A19A92 /* tallRectUV2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectUV2.model; sourceTree = "<group>"; };
+		8AC546EE18EED82F0062B59A /* UIViewToTextureMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewToTextureMainViewController.h; sourceTree = "<group>"; };
+		8AC546EF18EED82F0062B59A /* UIViewToTextureMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToTextureMainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A67582618EDA956007EDFA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A67586818EDAA34007EDFA7 /* GLKit.framework in Frameworks */,
+				8A67586618EDAA29007EDFA7 /* OpenGLES.framework in Frameworks */,
+				8A67586418EDA9D5007EDFA7 /* libSSGOGL.a in Frameworks */,
+				8A67582F18EDA956007EDFA7 /* CoreGraphics.framework in Frameworks */,
+				8A67583118EDA956007EDFA7 /* UIKit.framework in Frameworks */,
+				8A67582D18EDA956007EDFA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A67584118EDA956007EDFA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A67584618EDA956007EDFA7 /* XCTest.framework in Frameworks */,
+				8A67584818EDA956007EDFA7 /* UIKit.framework in Frameworks */,
+				8A67584718EDA956007EDFA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A67582018EDA956007EDFA7 = {
+			isa = PBXGroup;
+			children = (
+				8A67583218EDA956007EDFA7 /* UIViewToTexture */,
+				8A67584B18EDA956007EDFA7 /* UIViewToTextureTests */,
+				8A67582B18EDA956007EDFA7 /* Frameworks */,
+				8A67582A18EDA956007EDFA7 /* Products */,
+				8A67585B18EDA9AA007EDFA7 /* SSGOGL.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		8A67582A18EDA956007EDFA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A67582918EDA956007EDFA7 /* UIViewToTexture.app */,
+				8A67584418EDA956007EDFA7 /* UIViewToTextureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A67582B18EDA956007EDFA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A67586718EDAA34007EDFA7 /* GLKit.framework */,
+				8A67586518EDAA29007EDFA7 /* OpenGLES.framework */,
+				8A67582C18EDA956007EDFA7 /* Foundation.framework */,
+				8A67582E18EDA956007EDFA7 /* CoreGraphics.framework */,
+				8A67583018EDA956007EDFA7 /* UIKit.framework */,
+				8A67584518EDA956007EDFA7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A67583218EDA956007EDFA7 /* UIViewToTexture */ = {
+			isa = PBXGroup;
+			children = (
+				8A67583B18EDA956007EDFA7 /* AppDelegate.h */,
+				8A67583C18EDA956007EDFA7 /* AppDelegate.m */,
+				8AC546EE18EED82F0062B59A /* UIViewToTextureMainViewController.h */,
+				8AC546EF18EED82F0062B59A /* UIViewToTextureMainViewController.m */,
+				8A67586C18EDABFC007EDFA7 /* CardViewController.h */,
+				8A67586D18EDABFC007EDFA7 /* CardViewController.m */,
+				8A67586E18EDABFC007EDFA7 /* CardViewController.xib */,
+				8AC149D118EDE61700A19A92 /* tallRectUV2.model */,
+				8A6F2CCE18EDF540002E9612 /* tallRectUV2Broke4.model */,
+				8A67587D18EDCCD2007EDFA7 /* tallRect.model */,
+				8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */,
+				8A67587B18EDCBED007EDFA7 /* brSwirl.png */,
+				8A67587718EDAEEC007EDFA7 /* babou.png */,
+				8A67583E18EDA956007EDFA7 /* Images.xcassets */,
+				8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */,
+				8A67587218EDAC0E007EDFA7 /* ModelDefault.fsh */,
+				8A67583318EDA956007EDFA7 /* Supporting Files */,
+			);
+			path = UIViewToTexture;
+			sourceTree = "<group>";
+		};
+		8A67583318EDA956007EDFA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A67583418EDA956007EDFA7 /* UIViewToTexture-Info.plist */,
+				8A67583518EDA956007EDFA7 /* InfoPlist.strings */,
+				8A67583818EDA956007EDFA7 /* main.m */,
+				8A67583A18EDA956007EDFA7 /* UIViewToTexture-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A67584B18EDA956007EDFA7 /* UIViewToTextureTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A67585118EDA956007EDFA7 /* UIViewToTextureTests.m */,
+				8A67584C18EDA956007EDFA7 /* Supporting Files */,
+			);
+			path = UIViewToTextureTests;
+			sourceTree = "<group>";
+		};
+		8A67584C18EDA956007EDFA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A67584D18EDA956007EDFA7 /* UIViewToTextureTests-Info.plist */,
+				8A67584E18EDA956007EDFA7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A67585C18EDA9AA007EDFA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A67586118EDA9AA007EDFA7 /* libSSGOGL.a */,
+				8A67586318EDA9AA007EDFA7 /* SSGOGLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A67582818EDA956007EDFA7 /* UIViewToTexture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A67585518EDA956007EDFA7 /* Build configuration list for PBXNativeTarget "UIViewToTexture" */;
+			buildPhases = (
+				8A67582518EDA956007EDFA7 /* Sources */,
+				8A67582618EDA956007EDFA7 /* Frameworks */,
+				8A67582718EDA956007EDFA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIViewToTexture;
+			productName = UIViewToTexture;
+			productReference = 8A67582918EDA956007EDFA7 /* UIViewToTexture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A67584318EDA956007EDFA7 /* UIViewToTextureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A67585818EDA956007EDFA7 /* Build configuration list for PBXNativeTarget "UIViewToTextureTests" */;
+			buildPhases = (
+				8A67584018EDA956007EDFA7 /* Sources */,
+				8A67584118EDA956007EDFA7 /* Frameworks */,
+				8A67584218EDA956007EDFA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A67584A18EDA956007EDFA7 /* PBXTargetDependency */,
+			);
+			name = UIViewToTextureTests;
+			productName = UIViewToTextureTests;
+			productReference = 8A67584418EDA956007EDFA7 /* UIViewToTextureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A67582118EDA956007EDFA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Stricker";
+				TargetAttributes = {
+					8A67584318EDA956007EDFA7 = {
+						TestTargetID = 8A67582818EDA956007EDFA7;
+					};
+				};
+			};
+			buildConfigurationList = 8A67582418EDA956007EDFA7 /* Build configuration list for PBXProject "UIViewToTexture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A67582018EDA956007EDFA7;
+			productRefGroup = 8A67582A18EDA956007EDFA7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A67585C18EDA9AA007EDFA7 /* Products */;
+					ProjectRef = 8A67585B18EDA9AA007EDFA7 /* SSGOGL.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8A67582818EDA956007EDFA7 /* UIViewToTexture */,
+				8A67584318EDA956007EDFA7 /* UIViewToTextureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8A67586118EDA9AA007EDFA7 /* libSSGOGL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSSGOGL.a;
+			remoteRef = 8A67586018EDA9AA007EDFA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A67586318EDA9AA007EDFA7 /* SSGOGLTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SSGOGLTests.xctest;
+			remoteRef = 8A67586218EDA9AA007EDFA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A67582718EDA956007EDFA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A67588018EDCCD2007EDFA7 /* tallRectSolidified.model in Resources */,
+				8A67587F18EDCCD2007EDFA7 /* tallRect.model in Resources */,
+				8A67583718EDA956007EDFA7 /* InfoPlist.strings in Resources */,
+				8A67587C18EDCBED007EDFA7 /* brSwirl.png in Resources */,
+				8A67587318EDAC0E007EDFA7 /* ModelDefault.vsh in Resources */,
+				8A67583F18EDA956007EDFA7 /* Images.xcassets in Resources */,
+				8AC149D218EDE61700A19A92 /* tallRectUV2.model in Resources */,
+				8A6F2CCF18EDF540002E9612 /* tallRectUV2Broke4.model in Resources */,
+				8A67587818EDAEEC007EDFA7 /* babou.png in Resources */,
+				8A67587018EDABFC007EDFA7 /* CardViewController.xib in Resources */,
+				8A67587418EDAC0E007EDFA7 /* ModelDefault.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A67584218EDA956007EDFA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A67585018EDA956007EDFA7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A67582518EDA956007EDFA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AC546F018EED82F0062B59A /* UIViewToTextureMainViewController.m in Sources */,
+				8A67586F18EDABFC007EDFA7 /* CardViewController.m in Sources */,
+				8A67583D18EDA956007EDFA7 /* AppDelegate.m in Sources */,
+				8A67583918EDA956007EDFA7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A67584018EDA956007EDFA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A67585218EDA956007EDFA7 /* UIViewToTextureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A67584A18EDA956007EDFA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A67582818EDA956007EDFA7 /* UIViewToTexture */;
+			targetProxy = 8A67584918EDA956007EDFA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A67583518EDA956007EDFA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A67583618EDA956007EDFA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A67584E18EDA956007EDFA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A67584F18EDA956007EDFA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A67585318EDA956007EDFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A67585418EDA956007EDFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A67585618EDA956007EDFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIViewToTexture/UIViewToTexture-Prefix.pch";
+				INFOPLIST_FILE = "UIViewToTexture/UIViewToTexture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A67585718EDA956007EDFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIViewToTexture/UIViewToTexture-Prefix.pch";
+				INFOPLIST_FILE = "UIViewToTexture/UIViewToTexture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A67585918EDA956007EDFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UIViewToTexture.app/UIViewToTexture";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIViewToTexture/UIViewToTexture-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UIViewToTextureTests/UIViewToTextureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A67585A18EDA956007EDFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UIViewToTexture.app/UIViewToTexture";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIViewToTexture/UIViewToTexture-Prefix.pch";
+				INFOPLIST_FILE = "UIViewToTextureTests/UIViewToTextureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A67582418EDA956007EDFA7 /* Build configuration list for PBXProject "UIViewToTexture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A67585318EDA956007EDFA7 /* Debug */,
+				8A67585418EDA956007EDFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A67585518EDA956007EDFA7 /* Build configuration list for PBXNativeTarget "UIViewToTexture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A67585618EDA956007EDFA7 /* Debug */,
+				8A67585718EDA956007EDFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A67585818EDA956007EDFA7 /* Build configuration list for PBXNativeTarget "UIViewToTextureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A67585918EDA956007EDFA7 /* Debug */,
+				8A67585A18EDA956007EDFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A67582118EDA956007EDFA7 /* Project object */;
+}

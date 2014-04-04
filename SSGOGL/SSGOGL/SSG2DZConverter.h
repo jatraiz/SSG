@@ -15,8 +15,8 @@
 
 -(instancetype)initWithScreenHeight:(GLfloat)sh ScreenWidth:(GLfloat)sw Fov:(GLfloat) f;
 -(void)resetWithScreenHeight:(GLfloat)sh ScreenWidth:(GLfloat)sw Fov:(GLfloat)f;
--(CGPoint)convertScreenCoordsX:(GLfloat)x Y:(GLfloat)y ProjectedZ:(GLfloat)pz;
--(CGPoint)convertScreenPt:(CGPoint)pt ProjecteZ:(GLfloat)pz;
+-(GLKVector2)convertScreenCoordsX:(GLfloat)x Y:(GLfloat)y ProjectedZ:(GLfloat)pz;
+-(GLKVector2)convertScreenPt:(CGPoint)pt ProjecteZ:(GLfloat)pz;
 -(GLKVector2)getScreenEdgesForZ:(GLfloat)z;
 
 @end

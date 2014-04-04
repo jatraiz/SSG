@@ -21,11 +21,9 @@ typedef struct SSGModelData
     GLfloat * vertexArray;
 }SSGModelData;
 
-//load data only
-SSGModelData* loadModelAtPath(const char *filepath);
 
 //load data and return a VAO
 //assumes an active OpenGL context
 void generateVaoInfoFromModelAtPath(const char *filepath, GLuint *vaoIndex, GLuint *vboIndex, GLuint *nVerts);
-
+void generateVaoInfoFromModelData(SSGModelData *data, GLuint *vaoIndex, GLuint *vboIndex, GLuint *nVerts);
 #endif

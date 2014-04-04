@@ -85,6 +85,23 @@ static NSMutableDictionary *loadedVaos;
     return vic;
 }
 
++(SSGVaoInfo*)loadVaoInfoFromData:(SSGModelData)data AssignName:(NSString *)name
+{
+    if((loadedVaos) && [loadedVaos objectForKey:name])
+    {
+        return (SSGVaoInfo*)[loadedVaos objectForKey:name];
+    }
+    if(!loadedVaos)
+    {
+        loadedVaos = [[NSMutableDictionary alloc] init];
+    }
+    GLuint vao,vbo,nVerts;
+    generateVaoInfoFromModelData(&data, &vao, &vbo, &nVerts);
+    SSGVaoInfo *vic = [[SSGVaoInfo alloc] initWithVaoIndex:vao vboIndex:vbo andNVerts:nVerts];
+    [loadedVaos setValue:vic forKey:name];
+    return vic;
+}
+
 //straight from iOS GLEssentials
 +(void)destroyVAO:(GLuint) vaoName
 {
