@@ -22,7 +22,6 @@
 		8A67586418EDA9D5007EDFA7 /* libSSGOGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67586118EDA9AA007EDFA7 /* libSSGOGL.a */; };
 		8A67586618EDAA29007EDFA7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67586518EDAA29007EDFA7 /* OpenGLES.framework */; };
 		8A67586818EDAA34007EDFA7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A67586718EDAA34007EDFA7 /* GLKit.framework */; };
-		8A67586B18EDAA62007EDFA7 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A67586A18EDAA62007EDFA7 /* DemoViewController.m */; };
 		8A67586F18EDABFC007EDFA7 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A67586D18EDABFC007EDFA7 /* CardViewController.m */; };
 		8A67587018EDABFC007EDFA7 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A67586E18EDABFC007EDFA7 /* CardViewController.xib */; };
 		8A67587318EDAC0E007EDFA7 /* ModelDefault.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587118EDAC0E007EDFA7 /* ModelDefault.vsh */; };
@@ -31,7 +30,9 @@
 		8A67587C18EDCBED007EDFA7 /* brSwirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587B18EDCBED007EDFA7 /* brSwirl.png */; };
 		8A67587F18EDCCD2007EDFA7 /* tallRect.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587D18EDCCD2007EDFA7 /* tallRect.model */; };
 		8A67588018EDCCD2007EDFA7 /* tallRectSolidified.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */; };
+		8A6F2CCF18EDF540002E9612 /* tallRectUV2Broke4.model in Resources */ = {isa = PBXBuildFile; fileRef = 8A6F2CCE18EDF540002E9612 /* tallRectUV2Broke4.model */; };
 		8AC149D218EDE61700A19A92 /* tallRectUV2.model in Resources */ = {isa = PBXBuildFile; fileRef = 8AC149D118EDE61700A19A92 /* tallRectUV2.model */; };
+		8AC546F018EED82F0062B59A /* UIViewToTextureMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC546EF18EED82F0062B59A /* UIViewToTextureMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +79,6 @@
 		8A67585B18EDA9AA007EDFA7 /* SSGOGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSGOGL.xcodeproj; path = ../../SSGOGL/SSGOGL.xcodeproj; sourceTree = "<group>"; };
 		8A67586518EDAA29007EDFA7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8A67586718EDAA34007EDFA7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		8A67586918EDAA62007EDFA7 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
-		8A67586A18EDAA62007EDFA7 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		8A67586C18EDABFC007EDFA7 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
 		8A67586D18EDABFC007EDFA7 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		8A67586E18EDABFC007EDFA7 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
@@ -89,7 +88,10 @@
 		8A67587B18EDCBED007EDFA7 /* brSwirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brSwirl.png; sourceTree = "<group>"; };
 		8A67587D18EDCCD2007EDFA7 /* tallRect.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRect.model; sourceTree = "<group>"; };
 		8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectSolidified.model; sourceTree = "<group>"; };
+		8A6F2CCE18EDF540002E9612 /* tallRectUV2Broke4.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectUV2Broke4.model; sourceTree = "<group>"; };
 		8AC149D118EDE61700A19A92 /* tallRectUV2.model */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallRectUV2.model; sourceTree = "<group>"; };
+		8AC546EE18EED82F0062B59A /* UIViewToTextureMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewToTextureMainViewController.h; sourceTree = "<group>"; };
+		8AC546EF18EED82F0062B59A /* UIViewToTextureMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToTextureMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,12 +159,13 @@
 			children = (
 				8A67583B18EDA956007EDFA7 /* AppDelegate.h */,
 				8A67583C18EDA956007EDFA7 /* AppDelegate.m */,
-				8A67586918EDAA62007EDFA7 /* DemoViewController.h */,
-				8A67586A18EDAA62007EDFA7 /* DemoViewController.m */,
+				8AC546EE18EED82F0062B59A /* UIViewToTextureMainViewController.h */,
+				8AC546EF18EED82F0062B59A /* UIViewToTextureMainViewController.m */,
 				8A67586C18EDABFC007EDFA7 /* CardViewController.h */,
 				8A67586D18EDABFC007EDFA7 /* CardViewController.m */,
 				8A67586E18EDABFC007EDFA7 /* CardViewController.xib */,
 				8AC149D118EDE61700A19A92 /* tallRectUV2.model */,
+				8A6F2CCE18EDF540002E9612 /* tallRectUV2Broke4.model */,
 				8A67587D18EDCCD2007EDFA7 /* tallRect.model */,
 				8A67587E18EDCCD2007EDFA7 /* tallRectSolidified.model */,
 				8A67587B18EDCBED007EDFA7 /* brSwirl.png */,
@@ -318,6 +321,7 @@
 				8A67587318EDAC0E007EDFA7 /* ModelDefault.vsh in Resources */,
 				8A67583F18EDA956007EDFA7 /* Images.xcassets in Resources */,
 				8AC149D218EDE61700A19A92 /* tallRectUV2.model in Resources */,
+				8A6F2CCF18EDF540002E9612 /* tallRectUV2Broke4.model in Resources */,
 				8A67587818EDAEEC007EDFA7 /* babou.png in Resources */,
 				8A67587018EDABFC007EDFA7 /* CardViewController.xib in Resources */,
 				8A67587418EDAC0E007EDFA7 /* ModelDefault.fsh in Resources */,
@@ -339,8 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC546F018EED82F0062B59A /* UIViewToTextureMainViewController.m in Sources */,
 				8A67586F18EDABFC007EDFA7 /* CardViewController.m in Sources */,
-				8A67586B18EDAA62007EDFA7 /* DemoViewController.m in Sources */,
 				8A67583D18EDA956007EDFA7 /* AppDelegate.m in Sources */,
 				8A67583918EDA956007EDFA7 /* main.m in Sources */,
 			);

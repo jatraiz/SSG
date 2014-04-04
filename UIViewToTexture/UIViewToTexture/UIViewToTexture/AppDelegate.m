@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DemoViewController.h"
+#import "UIViewToTextureMainViewController.h"
 
 @implementation AppDelegate
 
@@ -15,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [DemoViewController new];
+    self.window.rootViewController = [UIViewToTextureMainViewController new];
     [self.window makeKeyAndVisible];
     return YES;
 }
